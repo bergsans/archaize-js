@@ -1,0 +1,28 @@
+{
+  "name": "archaizeJS",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/archaize.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claes-magnus/archaize-js.git"
+  },
+  "author": "claes-magnus <cmbernson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claes-magnus/archaize-js/issues"
+  },
+  "homepage": "https://github.com/claes-magnus/archaize-js#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "dandy-ui": "^1.5.0",
+    "esprima": "^4.0.1",
+    "estraverse": "^4.2.0"
+  }
+}
