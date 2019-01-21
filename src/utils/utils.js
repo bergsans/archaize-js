@@ -1,29 +1,33 @@
+const { generate } = require('escodegen');
 const { readJSFile, writeToFile } = require('../helpers/helpers.js');
 const { parseScript } = require('esprima');
 const { debugMsg, redTxt } = require('dandy-ui');
-const { traverse } = require('estraverse');
-const { isTemplateLiteral, manipulateTemplateLiteral } = require('../transpiler/templateliteral.js');
+const { traverse, replace } = require('estraverse');
+const { isTemplateLiterals, manipulateTemplateLiterals } = require('../transpiler/templateliteral.js');
 
 const makeAST = (expression) => parseScript(expression);
 
 function transpile(expression) {
   const code = readJSFile('../random_js_code.js');
 
-  const analysis = makeAST(code);
+  const ast = makeAST(code);
 
-  if(analysis.type === 'Program') {
-    traverse(analysis, {
+  if(ast.type === 'Program') {
+    replace(ast, {
       enter: (node) => {
-        if(isTemplateLiteral(node)) {
-          manipulateTemplateLiteral(node);
+        if(isTemplateLiterals(node)) {
+          let tempNode = manipulateTemplateLiterals(node);      
+          return tempNode;
         }  
       }
     });
   } else {
-    redTxt('This is not ES2015/ES6 code.');
+    redTxt('This is not ES2015/ES6 code. Nothing to transpile.');
     process.exit(1);
   }
-  writeToFile("templateliterals", analysis);
+  
+  console.log(generate(ast));
+  writeToFile("templateliterals2", ast);
 }
 transpile("");
 
