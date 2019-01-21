@@ -1,25 +1,25 @@
 # Overview. How compilers work
 
-A compiler consist of two parts: analysis (front end) and synthesis (back end). 
-Analysis precedes synthesis in the compiling process. Before compiling the source
-code it broken into parts, enforcing a grammatical structure. This form a 
+A compiler consists of two parts: analysis (front end) and synthesis (back end). 
+Analysis of precedes synthesis in the compiling process. Before compiling the source
+code is broken into parts, enforcing a grammatical structure. This form an
 intermediate structure of 'abstractions', representations of the source at hand. 
 
-If the compiler find that the source code is problematic or even erroneous, it will 
-halt and log the warning and/or errors. If the source on the other hand is correct, 
-it produces a symbol table storing data present in the code. The synthesis build 
-upon the representations and the symbol table from the front end, producing an 
+If the compiler finds that the source code is problematic or even erroneous, 
+it will halt and log the warning and/or errors. If the source, on the other hand, is correct, 
+it produces a symbol table storing data present in the code. The synthesis builds
+upon the representations and the symbol table from the front end, producing a
 translation into a new code — the target code.
 
 I will explain in more detail the inner workings of a compiler/transpiler more 
 properly later on, but the table below should provide a basic understanding of the
 subject matter. I've made the table by melding figure 1.5 (p. 4), 1.6 (p. 5) and 
 1.7 (p. 7) in Compilers, Principles, Techniques, and Tools (the second edition, 
-2014) - also know as The Dragon book - by Alfred V. Aho, Monica S. Lam, 
+2014) - also known as The Dragon book - by Alfred V. Aho, Monica S. Lam, 
 Ravi Sethi & Jeffrey D. Ullman. 
 
 For now, don't bother much about the terminology to the left. Concentrate on
-code and how it gets transformed. I beleive the example to be quite selfexplanatory.
+code and how it gets transformed. I believe the example to be quite self-explanatory.
 
 
 ```

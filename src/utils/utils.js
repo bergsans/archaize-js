@@ -1,11 +1,22 @@
-const { generate } = require('escodegen');
-const { readJSFile, writeToFile } = require('../helpers/helpers.js');
-const { parseScript } = require('esprima');
 const { debugMsg, redTxt } = require('dandy-ui');
-const { traverse, replace } = require('estraverse');
-const { isTemplateLiterals, manipulateTemplateLiterals } = require('../transpiler/templateliteral.js');
 
+const { generate } = require('escodegen');
+const { parseScript } = require('esprima');
+const { traverse, replace } = require('estraverse');
+
+const { readJSFile, writeToFile } = require('../helpers/helpers.js');
+const { isTemplateLiterals, replaceTemplateLiterals } = require('../transpiler/templateliteral.js');
+const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclarations.js');
+
+
+/*
+ * function return the Abstract Syntax Tree (AST)
+ */
 const makeAST = (expression) => parseScript(expression);
+
+/*
+ * 
+ */
 
 function transpile(expression) {
   const code = readJSFile('../random_js_code.js');
@@ -16,7 +27,10 @@ function transpile(expression) {
     replace(ast, {
       enter: (node) => {
         if(isTemplateLiterals(node)) {
-          let tempNode = manipulateTemplateLiterals(node);      
+          let tempNode = replaceTemplateLiterals(node);      
+          return tempNode;
+        } else if(isVariableDeclarationi(node)) {
+          let tempNode = replaceVariableDeclarations;
           return tempNode;
         }  
       }
