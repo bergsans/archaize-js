@@ -6,7 +6,7 @@ const { traverse, replace } = require('estraverse');
 
 const { readJSFile, writeToFile } = require('../helpers/helpers.js');
 const { isTemplateLiterals, replaceTemplateLiterals } = require('../transpiler/templateliteral.js');
-const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclarations.js');
+const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclaration.js');
 
 
 /*
@@ -29,7 +29,7 @@ function transpile(expression) {
         if(isTemplateLiterals(node)) {
           let tempNode = replaceTemplateLiterals(node);      
           return tempNode;
-        } else if(isVariableDeclarationi(node)) {
+        } else if(isVariableDeclaration(node)) {
           let tempNode = replaceVariableDeclarations;
           return tempNode;
         }  
