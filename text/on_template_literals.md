@@ -689,6 +689,12 @@ This would produce quite a different AST: (1)
 
 ```
 
+Luckily, you can use applications diff and sdiff to display the differences in a more
+lucid manor. This problem took me some time to analyze and solve, but the solution was
+in the end quite simple. To handle the problem you save the relevant parts (the values
+and their location in the chain of expressions joined together) and convert them to the 
+syntax of ES5 by traversing and transformaing each included value.
+
 -------------------------------------------------------------------------------------
 1) From now on, I will not include as lengthy AST's. But I thought it was important,
    as well as interesting, to do so with the feature described first.

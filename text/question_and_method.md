@@ -22,6 +22,7 @@ The user will input JavaScript code, stored in a file, to a command-line interfa
 and get it translated - if everything works out properly - to less modern JavaScript to
 another file, specified by the user. This project will not cover all features.
 
+
 ## Method
 
 Later on, I will describe what set of tools I'll use. But I believe it's possible to in
@@ -38,5 +39,19 @@ code snippets using the BASH application diff and sdiff. In a sort, a compiler i
 advanced data transformer and the main difficulty of writing a compiler/transpiler is
 to transform data according to specific rules. Surely this general formula could describe
 any programming task (you always work with transformations of data), but I think that
-the metaphor is more accurate in these case than in many others, if you don't take it
-too literally. 
+the metaphor is more accurate in this case than in many others, if you don't take it
+too literally.
+
+
+## In a nutshell
+
+In short, the purpose of this essay is not of scientific nature; it's more a proof of 
+concept (and then you still would have to be quite liberal even then). My view on the 
+purpose is twofold: firstly, I acquire knowledge of how compilers are built; secondly, I'm 
+sharing this knowledge.
+
+As far as my knowledge goes, there are few, if any, in-depth texts Online written in 
+the context of JavaScript on how a transpiler is configured, combining concrete code
+examples with 'theory'. There are quite a few texts on Babel, but none of them really 
+deals with examples and only in very general terms explain the meaning of compilers.
+

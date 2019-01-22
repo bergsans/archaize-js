@@ -8,7 +8,7 @@ the inventor of the Web, stated it 1996 in [The World Wide Web: Past, Present, a
 at the section Design Criteria, "information must be available on all
 platforms, including future one".
 
-If you want to use modern JavaScript, it's very important to a use transpiler, otherwise
+If you want to use modern JavaScript, it's very important to also use atranspiler, otherwise
 you'll most likely exclude users with old Web-browsers. To me, there's a 
 the ethical dimension of this, but for companies and organizations there also might
 be economical motifs for backward-compatibility (otherwise you face the risk
@@ -43,4 +43,16 @@ well as do the required programming.
 My transpiler, named Archaize JS, will neither be the best or even good, nor support
 full functionality. But it will (hopefully) include all necessary parts of a fully
 functional transpiler, even though most language features will be missing out.
+
+
+## Project Scope
+
+The Website [es6-features.org](es6-features.org) lists all features of ES6. Archaize.js
+won't be able to handle more than a handful of the present features. My goal is to 
+finish these features:
+
+* variable declarations 
+* template literals
+
+
 
