@@ -1,5 +1,33 @@
+# Variable Declaration
+
+## Background
+
+JavaScript have data types of the same kind as most other programming 
+languages: `boolean`, `null`, `undefined`, `strings`, `numbers` and as of ES6 also `symbols`. 
+A contrast, though, to for instance C or Rust, is that JavaScript is loosely 
+typed. You are not locked to the data type of your variable declaration; something that 
+can be equally dynamic and useful as problematic and confusing.
+
+With ES6 it's possible to use both `let` and `const`, as well as the pre-ES5 `var` to 
+declare values. The difference resides in what scope the variable and its inherent 
+value have. Also, there is a difference between `let` and `const`, `const` being (sort 
+of) constant in most cases. 
+
+### Problem
+*The question relevant to us, is though if the scoping matter in the case of a transpiler?* And the 
+short answer is no. The most simple way to investigate this - as a proof of concept - is 
+to look at some code examples, firstly explaining the difference and then by explaining why it's not
+problematic (in the context of a transpilers main task, at least) to translate from 
+ES6, while translating from ES5 may (or may not) be very problematic since you'd also 
+have to include a scope analysis. 
+
+**What I write about blocks and scopes is heavily incluenced by 
+the section Static Scope and Block Structure in the Dragon-book (p. 28 - 33).**
+
 It's possible to determine the scope of a declared
-value by investigating 'blocks'.
+value by investigating 'blocks'. This will illustrate the differences and later on
+why they're not that important in this specific context.
+
 
 ```
 {                                       start > | *BLOCK 1* |
@@ -98,8 +126,48 @@ console.log(`a: ${a.value}`);
 // output: "a: 1" (still...)
 
 
+*But nothing of this really changes everything*, partly because JavaScript 
+is a loosely typed language. In all cases described above, we could 
+replace `let` and `const` with `var`. The purpose with `let` and `const` would 
+(of course) be lost, but that's not true for the opposite. To translate from `var` 
+to `let` and fully make use of the advantages of `let` would be complex; you 
+would have to make a scope analysis and rearrange the code if it were to be truly 
+meaningful. And even then these changes would only make sense to the human reader, 
+not the 'ghost in the machine' (the interpreter). The advantage is only 
+in the scoping.
 
+There *can* be a problem here though. Even though it is possible to reuse 
+variable names, this would not be to recommend. Depending on the scope, you can use 
+the same variable name declared with `let` or `const` (i.e. for the index of a classic 
+for-loop). Simply converting each `let` and `const` to `var` might cause 
+problems, simply because the potential problems would only stand in relation to 
+the developers' intention. To put it plainly: the code would still run. This 
+could, of course, be solved with some kind of re-naming strategy (if a name 
+conflict arises, then rename the variable...). 
 
+This is how Babel.js seems to solve the problem stated above:
+
+```
+{
+  var a = 0;
+    {
+       console.log("previously declared value a: ", a);
+       var _a = 1;
+       console.log("inside scope a: ", _a);
+    }
+  console.log("outside scope a:", a);
+}
+```
+(The solution from [the Babel.js Online transpiler](https://babeljs.io/) as of 2019-01-22.)
+
+To me, the purpose of the limited scoping and the immutability of `const` *is* the 
+limits, that they establish limits lacking in JavaScript. This is also the case with 
+TypeScript. Sometimes borders and limits make your life as a developer simpler, even 
+though you *can* do without them.
+
+Archaize.js, the transpiler I develop as a proof of concept, anyhow don't navigate between 
+these possibilities. It would have been interesting though to make a transpiler that 
+actually would acknowledge this.
 
 
 
