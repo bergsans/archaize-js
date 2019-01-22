@@ -1,30 +1,31 @@
-const isTemplateLiteral = (node) => (node.type === 'TemplateLiteral');
+const { debugMsg } = require('dandy-ui');
 
-function manipulateTemplateLiteral(node) {
 
-  let literals = [];
-  let binaries = [];
+const isTemplateLiterals = (node) => (node.type === 'TemplateLiteral');
 
-  node.quasis.forEach((quasi, i) => {
+function replaceTemplateLiterals(node) {
 
+  node.quasis = node.quasis.map((quasi, i) => {
     let literal = {
-            type: "Literal",
-            value: quasi.value.raw,
-            raw: `\"${quasi.value.raw}\"` };
-    literals = [...literals, literal]
+      type: "Literal",
+      value: quasi.value.raw,
+      raw: `\"${quasi.value.raw}\"`,
+      loc: quasi.loc
+    };
+    return literal;
   });
 
-  node.expressions.forEach((expression, i) => {
-    if(expression.type === 'BinaryExpression') {  
-      binaries = [...binaries, expression]; 
-      
-    } else if(expression.type === 'Identifier') {
-    
-    } else if(expression.type === 'ArrowFunctionExpression') {
+  let rawEls = [...node.expressions, ...node.quasis];
+  let els = rawEls.sort((a, b) => (a.loc.start.column - b.loc.start.column));
 
-    }
-  });
-  console.log(literals, binaries);
+  const asES5 = rawEls.reduce((a, b) => ({ 
+    type: "BinaryExpression",
+    operator: "+",
+    left: a,
+    right: b
+  })); 
+  
+  return asES5;
 }
 
-module.exports = { isTemplateLiteral, manipulateTemplateLiteral };
+module.exports = { isTemplateLiterals, replaceTemplateLiterals };
