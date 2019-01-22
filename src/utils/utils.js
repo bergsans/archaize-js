@@ -30,7 +30,7 @@ function transpile(expression) {
           let tempNode = replaceTemplateLiterals(node);      
           return tempNode;
         } else if(isVariableDeclaration(node)) {
-          let tempNode = replaceVariableDeclarations;
+          let tempNode = replaceVariableDeclarations(node);
           return tempNode;
         }  
       }
