@@ -41,7 +41,7 @@ function transpile(expression) {
   }
   
   console.log(generate(ast));
-  writeToFile("templateliterals2", ast);
+  writeToFile('templateliterals2', ast);
 }
 transpile("");
 
