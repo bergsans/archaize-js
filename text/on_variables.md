@@ -160,7 +160,7 @@ This is how Babel.js seems to solve the problem stated above:
 ```
 (The solution from [the Babel.js Online transpiler](https://babeljs.io/) as of 2019-01-22.)
 
-To me, the purpose of the limited scoping and the immutability of `const` *is* the 
+To me, the purpose of the limited scoping and the immutability of `const`(1) *is* the 
 limits, that they establish limits lacking in JavaScript. This is also the case with 
 TypeScript. Sometimes borders and limits make your life as a developer simpler, even 
 though you *can* do without them.
@@ -168,6 +168,13 @@ though you *can* do without them.
 Archaize.js, the transpiler I develop as a proof of concept, anyhow don't navigate between 
 these possibilities. It would have been interesting though to make a transpiler that 
 actually would acknowledge this.
+
+
+-------------------------------------------------------------------------------------
+1) Immutability can also - in modern JavaScript - be accomplished with 
+   the `freeze` method of Object. It is, however, possible to the same in ES5 by
+   use of the `defineProperty` in Object. Setting the change-is-possible-flags to
+   false, would include more of a ceremony though. 
 
 
 
