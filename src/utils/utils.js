@@ -8,17 +8,10 @@ const { readJSFile, writeToFile } = require('../helpers/helpers.js');
 const { isTemplateLiterals, replaceTemplateLiterals } = require('../transpiler/templateliteral.js');
 const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclaration.js');
 
-
-/*
- * function return the Abstract Syntax Tree (AST)
- */
-const makeAST = (expression) => parseScript(expression);
-
-/*
- * 
- */
+const makeAST = (expression) => parseScript(expression, { comment: true, loc: true});
 
 function transpile(expression) {
+
   const code = readJSFile('../random_js_code.js');
 
   const ast = makeAST(code);
@@ -26,7 +19,7 @@ function transpile(expression) {
   if(ast.type === 'Program') {
     replace(ast, {
       enter: (node) => {
-        if(isTemplateLiterals(node)) {
+        if (isTemplateLiterals(node)) {
           let tempNode = replaceTemplateLiterals(node);      
           return tempNode;
         } else if(isVariableDeclaration(node)) {

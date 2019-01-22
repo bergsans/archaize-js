@@ -1,7 +1,7 @@
 const isVariableDeclaration = (node) => (node.type === 'VariableDeclaration');
 
-function replaceVariableDeclaration(node) {
-  
+function replaceVariableDeclarations(node) {
+  return { ...node, kind: "var" };
 }
 
-module.exports = { isVariableDeclaration, replaceVariableDeclaration };
+module.exports = { isVariableDeclaration, replaceVariableDeclarations };
