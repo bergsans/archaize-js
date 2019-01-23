@@ -1,7 +1,7 @@
 const isCallExpression = (node) => (node.type === 'CallExpression');
 
 function replaceCallExpression(node) {
-
+   
   if (node.arguments.includes('ArrowFunctionExpression')) {
 
     if (node.arguments[0].body.type !== 'BlockStatement') {
@@ -22,7 +22,15 @@ function replaceCallExpression(node) {
       node.arguments[0].body.type = 'BlockStatement';
     }  
   node.arguments[0].type = 'FunctionExpression';
-  }
+  } 
+
+  node.arguments.forEach((arg) => {
+    if(arg.type.includes("ThisExpression")) {
+      arg.type = 'Identifier';
+      arg.name = 'self';
+    }
+  });
+  
   return node;
 }
 
