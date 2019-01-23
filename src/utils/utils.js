@@ -16,25 +16,20 @@ function transpile(expression) {
 
   const ast = makeAST(code);
 
-  if(ast.type === 'Program') {
-    replace(ast, {
-      enter: (node) => {
-        if (isTemplateLiterals(node)) {
-          let tempNode = replaceTemplateLiterals(node);      
-          return tempNode;
-        } else if(isVariableDeclaration(node)) {
-          let tempNode = replaceVariableDeclarations(node);
-          return tempNode;
-        }  
-      }
-    });
-  } else {
-    redTxt('This is not ES2015/ES6 code. Nothing to transpile.');
-    process.exit(1);
-  }
-  
+  replace(ast, {
+    enter: (node) => {
+      if (isTemplateLiterals(node)) {
+        let tempNode = replaceTemplateLiterals(node);      
+        return tempNode;
+      } else if(isVariableDeclaration(node)) {
+        let tempNode = replaceVariableDeclarations(node);
+        return tempNode;
+      }  
+    }
+  }); 
+
   console.log(generate(ast));
-  writeToFile('templateliterals2', ast);
+  writeToFile('templateliterals', ast);
 }
 transpile("");
 
