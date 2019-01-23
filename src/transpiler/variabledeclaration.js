@@ -16,9 +16,8 @@ function replaceVariableDeclarations(node) {
   node.declarations[0].init.type = node.declarations[0].init.type === 'ArrowFunctionExpression'? 
         'FunctionExpression'
         : 
-        node.declarations[0].init.type
- 
-console.log(node.declarations[0].init.type)
+node.declarations[0].init.type
+
   return { ...node, 
     kind: 'var' 
   };

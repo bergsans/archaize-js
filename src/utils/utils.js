@@ -8,8 +8,9 @@ const { readJSFile, writeToFile } = require('../helpers/helpers.js');
 const { isTemplateLiterals, replaceTemplateLiterals } = require('../transpiler/templateliteral.js');
 const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclaration.js');
 const { isCallExpression, replaceCallExpression } = require('../transpiler/callexpression.js');
+const { isFunctionDeclaration, replaceFunctionDeclaration } = require('../transpiler/functiondeclarator.js');
 
-const makeAST = (expression) => parseScript(expression, { comment: true, loc: true});
+const makeAST = (expression) => parseScript(expression, { comment: true, loc: true, range: true});
 
 function transpile(expression) {
 
@@ -28,6 +29,9 @@ function transpile(expression) {
       } else if (isCallExpression(node)) {
         let tempNode = replaceCallExpression(node);
         return tempNode; 
+      } else if (isFunctionDeclaration(node)) {
+        let tempNode = replaceFunctionDeclaration(node);
+        return tempNode;
       }
     }
   }); 
