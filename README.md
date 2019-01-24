@@ -8,7 +8,7 @@
 - /tests (Jest - main functionality)
 - /text (essay on transpilers)
 
-##TASKS
+## TASKS
  
 
 **General (code)**
