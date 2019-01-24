@@ -52,6 +52,25 @@ but I think that the metaphor is more accurate in this case than in many others,
 don't take it literally.
 
 
+
+## Project Scope
+
+The Website [es6-features.org](es6-features.org) lists all features of ES6. Archaize.js
+won't be able to handle more than a handful of the present features. My goal is to 
+finish these features:
+
+* variable declarations 
+* template literals
+* arrow functions
+* string method: repeat
+* string method: includes
+* string method: startsWith
+* string method: endsWith
+* array method: find index
+* operator: rest
+* operator: spread
+
+
 ## In a nutshell
 
 In short, the purpose of this essay is not of scientific nature; it's more a proof of 

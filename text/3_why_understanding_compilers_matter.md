@@ -46,25 +46,3 @@ parts of a fully functional transpiler, even though most language features will
 be missing out.
 
 
-## Project Scope
-
-The Website [es6-features.org](es6-features.org) lists all features of ES6. Archaize.js
-won't be able to handle more than a handful of the present features. My goal is to 
-finish these features:
-
-* variable declarations 
-* template literals
-* arrow functions
-* string method: repeat
-* string method: includes
-* string method: startsWith
-* string method: endsWith
-* array method: find index
-* operator: rest
-* operator: spread
-
-
-
-
-
-
