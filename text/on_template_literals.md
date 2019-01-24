@@ -11,14 +11,17 @@ A template literal in ES6 admits embedded expressions in strings. You can embed 
 functions or general expressions (for instance mathematics) - all kinds of expressions.
 
 Let's begin by exemplifiing how template literals are used:
- ```
+
+```
 const firstName = "Luke";
 const surName = "Skywalker";
 const name = `${firstName} ${surName}`;
 ```
+
 This contrasts with the old, pre-ES6 way of doing things. A transpiler whose task is to 'archaize' 
 modern JavaScript must handle this change. With and before ES5, you would have to use a 
 binary expression (a 'join') to manage the same kind of problem:
+
 ```
 var firstName = "Luke";
 var surName = "Skywalker";
