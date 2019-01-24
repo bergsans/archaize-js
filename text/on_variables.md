@@ -1,5 +1,6 @@
 # Variable Declaration
 
+
 ## Background
 
 JavaScript have data types of the same kind as most other programming 

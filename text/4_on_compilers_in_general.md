@@ -1,13 +1,15 @@
 # Overview. How compilers work
 
 A compiler consists of two parts: analysis (front end) and synthesis (back end). 
-Analysis of precedes synthesis in the compiling process. Before compiling the source
-code is broken into parts, enforcing a grammatical structure. This form an
-intermediate structure of 'abstractions', representations of the source at hand. 
+Analysis of the code precedes synthesis in the compiling process. Before compiling 
+the source code is broken into parts, enforcing a grammatical structure. This form an
+intermediate structure of 'abstractions' (a abstract syntax tree), representations of 
+the source at hand. 
 
-If the compiler finds that the source code is problematic or even erroneous, 
-it will halt and log the warning and/or errors. If the source, on the other hand, is correct, 
-it produces a symbol table storing data present in the code. The synthesis builds
+If the compiler finds that the source code is problematic/erroneous, it will halt and 
+log the warning and/or errors. If the source, on the other hand, is correct (there by
+not guarteing it actually works; it can still include major bugs), it produces a symbol 
+table storing data present in the code. The synthesis builds
 upon the representations and the symbol table from the front end, producing a
 translation into a new code — the target code.
 
@@ -64,8 +66,8 @@ code and how it gets transformed. I believe the example to be quite self-explana
 |  Code Generator                  |                                   |
 |                 ↓                |                                   |
 |  target-machine code             |  Weird code, your name is...      |
-|                 ↓                |  ...ASSEMBLER                     |
-|  Machine-Dependent               |                                   | 
+|                 ↓                |  ...ASSEMBLER... (or something    |
+|  Machine-Dependent               |  else)                            | 
 |  Code Optimizer                  |                                   | 
 |                 ↓                |                                   |
 |  target-machine code             |  ... 010010000101011 ...          |
