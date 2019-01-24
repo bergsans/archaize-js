@@ -24,7 +24,7 @@ function readJSFile(filename) {
 }
 
 /*
- * write contents to a file
+ * write content to a file
  *
  */
 function writeToFile(filename, contents) {

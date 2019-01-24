@@ -10,13 +10,14 @@ const { isVariableDeclaration, replaceVariableDeclarations } = require('../trans
 const { isCallExpression, replaceCallExpression } = require('../transpiler/callexpression.js');
 const { isFunctionDeclaration, replaceFunctionDeclaration } = require('../transpiler/functiondeclarator.js');
 
-const makeAST = (expression) => parseScript(expression, { comment: true, loc: true, range: true});
+const makeAST = (expression) => parseScript(expression, { comment: true, loc: true });
 
 function transpile(expression) {
 
-  const code = readJSFile('../random_js_code.js');
+  //const code = readJSFile('../random_js_code.js');
+  //console.log(code);
 
-  const ast = makeAST(code);
+  const ast = makeAST(expression);
 
   replace(ast, {
     enter: (node) => {
@@ -36,10 +37,12 @@ function transpile(expression) {
     }
   }); 
 
-  console.log(generate(ast));
-  writeToFile('templateliterals', ast);
+  return generate(ast);
+   
+ // console.log(generate(ast));
+ // writeToFile('templateliterals', ast);
 }
-transpile("");
+//transpile("");
 
 module.exports = { makeAST, transpile };
 
