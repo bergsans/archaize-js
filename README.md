@@ -1,6 +1,6 @@
 ![logo](assets/logo.png)
 
-# Installation
+## Installation
 
 ```
 npm install
@@ -9,7 +9,7 @@ npm test
 
 ```
 
-# Usage
+## Usage
 
 ```
 Usage: archaize [options]
@@ -24,7 +24,7 @@ Options:
   -h, --help               output usage information
 ```
 
-# Folder structure
+## Folder structure
 
 - /assets (images)
 - /examples (transpiled code snippets - before/after)
