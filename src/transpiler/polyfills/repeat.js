@@ -1,26 +1,26 @@
 /*
- * https://tc39.github.io/ecma262/#sec-string-objects
- *
+ * https://www.ecma-international.org/ecma-262/9.0/index.html#sec-string.prototype.repeat
  */
 
-String.prototype.repeat2 = function(n) {
-  if(isNaN(n)) {
+String.prototype.repeat = function(count) {
+  if (isNaN(count)) {
     throw new RangeError('Not a number');
   }
   var string = this;
   var content = this;
-  n = Math.round(n);
-  if(n > 0 && n < Infinity) {
-    for(var i = 0; i < n; i++) {
+  count = Math.round(count);
+  if (count > 0 && count < Infinity) {
+    for (var i = 0; i < count; i++) {
       string += content;
     }
     return string;
-  } else if(n === 0) {
+  } else if (count == 0) {
     return content;
-  } else if(n >= Infinity) {
+  } else if (count >= Infinity) {
     throw new RangeError('Larger than Infinity.');
-  } else {
-    return undefined;
+  } else if (count < 0) {
+    throw new RangeError('Negative number');
   }
+  return undefined;
 }
-console.log("test".repeat2(10));
+module.exports = { String };

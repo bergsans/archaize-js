@@ -1,13 +1,24 @@
-String.prototype.includes2 = function(searchTerm) {
+/*
+ * https://www.ecma-international.org/ecma-262/9.0/index.html#sec-string.prototype.includes
+ */
+
+String.prototype.includes = function(searchTerm, start) {
+  if(!start) {
+    start = 0; 
+  }
+  if(typeof searchTerm != "string" || typeof start != "number") {
+    throw new TypeError("Invalid parameters.");
+  }
+
   var string = this;
-  var charsInMsg = string.split("");
-  for (var i = 0; i < charsInMsg.length; i++) {
+  var charsInString = string.split("");
+  for (var i = start; i < charsInString.length; i++) {
     var tempString = "";
     var char = 0;
-    while (char <= 27) {
-      if ((i + char) < charsInMsg.length) {
+    while (char <= string) {
+      if ((i + char) < charsInString.length) {
         var tempIndex = i + char;
-        tempString += charsInMsg[tempIndex];
+        tempString += charsInString[tempIndex];
         if (tempString == searchTerm) {
           return true;
         }
@@ -17,5 +28,5 @@ String.prototype.includes2 = function(searchTerm) {
   }
   return false;
 }
-
+module.exports = { String };
 
