@@ -1,5 +1,29 @@
 ![logo](assets/logo.png)
 
+# Installation
+
+```
+npm install
+
+npm test
+
+```
+
+# Usage
+
+```
+Usage: archaize [options]
+
+Options:
+  -V, --version            output the version number
+  -a, --about              About Archaize JS
+  -i, --input <filename>   Specify source code
+  -o, --output <filename>  Specify output filename
+  -m, --ast                AST analysis of file
+  -t, --transpile          Transpile ES6 -> ES5
+  -h, --help               output usage information
+```
+
 # Folder structure
 
 - /assets (images)
@@ -35,6 +59,7 @@
 - [ ] string method: startsWith
 - [ ] string method: endsWith
 - [ ] array method: find index
+- [ ] array method: find
 - [ ] operator: rest
 - [ ] operator: spread
 
@@ -47,6 +72,7 @@
 - [ ] string method: startsWith
 - [ ] string method: endsWith
 - [ ] array method: find index
+- [ ] array method: find
 - [ ] operator: rest
 - [ ] operator: spread
 
