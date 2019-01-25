@@ -4,20 +4,8 @@
 
 String.prototype.endsWith = function(searchTerm, end) {
   var string = this;
-  var compareString = "";
-  if(!end) {
-    string.slice((string.length - searchTerm.length), string.length);
-  } else if(end) {
-    if(isNaN(end)) {
-      throw new TypeError('Parameter not a number');
-    } else if(end < 0) {
-      throw new TypeError('Negative number');
-    }
-      else {
-      end = parseInt(end, 10);
-      string.slice((string.length - searchTerm.length), end);
-    }
-  }
+  end = end || string.length;
+  var compareString = string.slice((end - searchTerm.length), end); 
   if(compareString == searchTerm) {
     return true;
   } else {

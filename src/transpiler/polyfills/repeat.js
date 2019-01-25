@@ -2,12 +2,12 @@
  * https://www.ecma-international.org/ecma-262/9.0/index.html#sec-string.prototype.repeat
  */
 
-String.prototype.repeat = function(count) {
-  if (isNaN(count)) {
-    throw new RangeError('Not a number');
-  }
+String.prototype.repeat = function(count) { 
   var string = this;
-  var content = this;
+  if (typeof count != 'number') {
+    throw new TypeError('Not a number');
+  }
+  var content = string;
   count = Math.round(count);
   if (count > 0 && count < Infinity) {
     for (var i = 0; i < count; i++) {

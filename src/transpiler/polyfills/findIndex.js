@@ -9,7 +9,7 @@ Array.prototype.findIndex = function(findTest, thisArg) {
   }
 
   for(var i = 0; i < arr.length; i++) {
-    if(findTest(arr[i]), i, obj) {
+    if(findTest(arr[i])) { // i, obj
       return i;
     }
   }

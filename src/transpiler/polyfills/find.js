@@ -9,7 +9,7 @@ Array.prototype.find = function(testFind, thisArg) {
   }
 
   for(var i = 0; i < arr.length; i++) {
-    if(testFind(arr[i]), i, obj) {
+    if(testFind(arr[i])) { // i, obj?
       return arr[i];
     }
   }
