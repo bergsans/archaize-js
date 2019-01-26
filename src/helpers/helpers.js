@@ -3,9 +3,8 @@ const { redTxt, greenTxt } = require('dandy-ui');
 const fs = require('fs');
 
 /*
- * helper function that places a content within the box, provided
- * by dandy-ui. 
- *
+ * helper function that places text(s) within a box,
+ * using dandy-ui.
  */
 function createContent(...strings) {
   return [...logo.arr, ...strings];

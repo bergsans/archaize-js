@@ -1,6 +1,7 @@
 const isFunctionDeclaration = (node) => (node.type === 'FunctionExpression');
 
 function replaceFunctionDeclaration(node) {
+
   if(node.body.body) {
     const body = [...node.body.body];
     const callExpressionsInBody = body.filter((el) => el.type === 'ExpressionStatement');
@@ -11,7 +12,6 @@ function replaceFunctionDeclaration(node) {
       let matches = temp.find((el) => el[0].type === 'ThisExpression');
       
       if(matches) {
-
         let thisDeclared = {
           type: 'VariableDeclaration',
           declarations: [
@@ -32,7 +32,9 @@ function replaceFunctionDeclaration(node) {
         let declarations = [thisDeclared, ...node.body.body];
         node.body.body = declarations;
       }
+
     }
+
   }
   node.type = 'FunctionExpression';
   return node;

@@ -1,6 +1,6 @@
 /*
  * logo for archaize returned as array of strings
- *
+ * nec. for dandy-ui to boxify
  */
 const str_logoArchaizeJS = ` 
  █████╗ ██████╗  ██████╗██╗  ██╗ █████╗ ██╗███████╗███████╗         ██╗███████╗

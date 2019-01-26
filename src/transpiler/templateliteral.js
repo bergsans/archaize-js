@@ -23,6 +23,5 @@ function replaceTemplateLiterals(node) {
   
   return translatedToES5;
 }
-
 module.exports = { isTemplateLiterals, replaceTemplateLiterals };
 

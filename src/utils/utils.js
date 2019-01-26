@@ -14,9 +14,6 @@ const makeAST = (expression) => parseScript(expression, { comment: true, loc: tr
 
 function transpile(expression) {
 
-  //const code = readJSFile('../random_js_code.js');
-  //console.log(code);
-
   const ast = makeAST(expression);
 
   replace(ast, {
@@ -38,11 +35,6 @@ function transpile(expression) {
   }); 
 
   return generate(ast);
-   
- // console.log(generate(ast));
- // writeToFile('templateliterals', ast);
 }
-//transpile("");
-
 module.exports = { makeAST, transpile };
 

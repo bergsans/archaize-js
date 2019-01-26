@@ -16,12 +16,12 @@ const {
 } = require('./utils/utils');
 
 /*
- * IIFE using commander.js to provide some if the cli functionality
+ * IIFE using commander.js to provide cli functionality
  *
  */
 {
   program
-    .version('0.1.0')
+    .version('0.5.0')
     .option('-a, --about', 'About Archaize JS')
     .option('-i, --input <filename>', 'Specify source code')
     .option('-o, --output <filename>', 'Specify output filename')
@@ -30,8 +30,8 @@ const {
     .parse(process.argv);
 
   if(program.about) {
-    const content = createContent('V. 0.0.1', 'Claes-Magnus Bernson, 2019');
-    boxify(content);
+    const text = createContent('V. 0.5.0', 'Claes-Magnus Bernson, 2019');
+    boxify(text);
     process.exit(0);
   } else if(program.input && program.transpile) {
     let fileContents = readJSFile(program.input);
