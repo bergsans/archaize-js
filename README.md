@@ -22,6 +22,18 @@ Options:
   -m, --ast                AST analysis of file
   -t, --transpile          Transpile ES6 -> ES5
   -h, --help               output usage information
+
+Examples: 
+
+node archaize -i someCode.js -o code-analysis -m (will save AST as 'code-analysis.ast') 
+
+-*-*-*-*-*
+
+not supported yet:
+
+node archaize -i someES6Code.js -o someES5Code.js -t 
+
+-*-*-*-*-*
 ```
 
 ## Folder structure
