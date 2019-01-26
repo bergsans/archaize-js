@@ -8,7 +8,7 @@ String.prototype.repeat = function(count) {
     throw new TypeError('Not a number');
   }
   var content = string;
-  count = Math.round(count);
+  count = parseInt(count, 10);
   if (count > 0 && count < Infinity) {
     for (var i = 0; i < count; i++) {
       string += content;

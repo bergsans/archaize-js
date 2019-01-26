@@ -2,24 +2,29 @@
  * https://www.ecma-international.org/ecma-262/9.0/index.html#sec-string.prototype.startswith
  */
 
-String.prototype.startsWith = function(searchTerm, start) {
+String.prototype.startsWith = function(searchStr, position) {
   var string = this;
-  if(start) {
-    if (typeof start == 'number') {
-      start = parseInt(start, 10);
-      if(start < 0) {
+  var len = string.length;
+  var searchStrLen = searchStr.length;
+
+  if(position) {
+    if (typeof position == 'number') {
+      position = parseInt(position, 10);
+      if(position < 0) {
         throw new RangeError('Negative number.');
-      } else if(start > string.length) {
+      } else if((position + searchStrLen) > len) {
         throw new Error('Start position larger than string length');
       }
     } else {
       throw new TypeError('Not a number');
     }
   } else {
-    start = 0;
+    position = 0;
   } 
-  var compareString = string.slice(start, searchTerm.length);
-  if(compareString == searchTerm) {
+  
+  var compareString = string.slice(position, searchStrLen);
+
+  if(compareString == searchStr) {
     return true;
   } else {
     return false;
