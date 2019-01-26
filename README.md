@@ -50,6 +50,7 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 **General (code)**
 - [x] Add basic functionality to CLI
 - [x] Create 'only AST' output option
+- [ ] Link transpile option writeToFile
 
 **General (text)**
 - [x] State question. About method & project scope
@@ -60,31 +61,27 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [ ] Transformation 
 - [ ] Summary
 - [ ] General reflections. Difficulties, the future (...)
+- [ ] Appendix
 
 
 **Features (code)**
 - [x] template literals 
 - [x] variable declarations
-- [x] arrow functions 
-- [ ] string method: repeat
-- [ ] string method: includes
-- [ ] string method: startsWith
-- [ ] string method: endsWith
-- [ ] array method: find index
-- [ ] array method: find
+- [x] arrow functions **BUG FOUND**
+- [x] string method: repeat
+- [x] string method: includes
+- [x] string method: startsWith
+- [x] string method: endsWith
+- [x] array method: find index
+- [x] array method: find
 - [ ] operator: rest
 - [ ] operator: spread
 
 **Features (text)**
 - [x] template literals 
 - [x] variable declarations
-- [ ] arrow functions 
-- [ ] string method: repeat
-- [ ] string method: includes
-- [ ] string method: startsWith
-- [ ] string method: endsWith
-- [ ] array method: find index
-- [ ] array method: find
+- [x] arrow functions 
+- [x] polyfills
 - [ ] operator: rest
 - [ ] operator: spread
 
