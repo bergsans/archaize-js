@@ -38,6 +38,10 @@ function replaceVariableDeclarations(node) {
     polyfill = 'POLYFILL_ENDSWITH';
   } else if (isMethodES6(node, 'repeat')) {
     polyfill = 'POLYFILL_REPEAT';
+  } else if (isMethodES6(node, 'find')) {
+    polyfill = 'POLYFILL_FIND';
+  } else if (isMethodES6(node, 'findIndex')) {
+    polyfill = 'POLYFILL_FIND_INDEX';
   } 
 
   if (polyfill) {

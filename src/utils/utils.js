@@ -48,6 +48,16 @@ function transpile(expression) {
           let parsed = JSON.parse(includesES6AST)
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
+       } else if (tempNode[1] === 'POLYFILL_FIND') {
+          let includesES6AST = JSON.stringify(findAST)
+          let parsed = JSON.parse(includesES6AST)
+          ast.body = [parsed, ...ast.body];
+          return tempNode[0]; 
+       } else if (tempNode[1] === 'POLYFILL_FIND_INDEX') {
+          let includesES6AST = JSON.stringify(findIndexAST)
+          let parsed = JSON.parse(includesES6AST)
+          ast.body = [parsed, ...ast.body];
+          return tempNode[0]; 
        } else {
           return tempNode;
         }
