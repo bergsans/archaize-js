@@ -3,18 +3,13 @@
 ## On CLI's
 
 CLI is an acronym for Command-line Interface. A CLI can include
-aspects of GUI, a Graphical User Interface, but is anyhow centered
-around a text, not graphical elements such as buttons and menus. In a
+aspects of a GUI, a Graphical User Interface, but is anyhow centered
+around text, not graphical elements such as buttons and 'window:ed' menus. In a
 GUI we navigate by using the mouse or with some kind of keyboard shorthand.
 
-Most people seem to think this *always* means progress. But I don't agree. The 
-benefits of a CLI can be quite large, especially in the BASH of Linux. How would you
-create or rename 100 files quickly using a GUI? Most likely you wouldn't.
-
-In this case, though I've chosen a CL(U)I to be able to focus on the main 
-task, namely to write parts of a transpiler. I could - of course - use this
-together with a CLI. And this touches upon another important thing about
-the command-line; it's built to let applications inter-connect. In the Linux
+In the case of Archaize JS, I've chosen to use a CL(U)I to be able to focus on the main 
+task, to write parts of a transpiler. The main advantage, according to me, with the
+the command-line is that it's built to let applications inter-connect. In the Linux
 environment, this is called piping.
 
 I or someone else would include Archaize JS (well, that would have to be a 
@@ -37,4 +32,5 @@ time want to focus on the 'logic', the problem your application wants to solve.
 My contention is that there are good reasons to honor the tradition of the Unix 
 Philosophy when writing these kind of application. *Do one thing and do it 
 well.* If you see to it that the application is 'linkable', that other 
-applications can 'pipe' it, you've created a small part of a larger eco-system. 
+applications can 'pipe' it, you've created a small part of a larger eco-system.
+

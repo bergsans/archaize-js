@@ -4,10 +4,11 @@
 ## Background
 
 JavaScript has data types of the same kind as most other programming 
-languages: `boolean`, `null`, `undefined`, `strings`, `numbers` and as of ES6 also `symbols`. 
-A contrast though to for instance C or Rust, is that JavaScript is loosely 
-typed. You are not locked to the data type of your variable declaration; something that 
-can be equally dynamic and useful as problematic and confusing.
+languages: `boolean`, `null`, `undefined`, `strings`, `numbers` and as of ES6 
+also `symbols`. A contrast against for instance C or Rust, is that JavaScript 
+is a loosely typed language. You are not locked to the data type of your 
+variable declaration; something that can be equally dynamic and useful as 
+problematic and confusing.
 
 With ES6 it's possible to use `let` and `const`, as well as the pre-ES6 `var` to 
 declare values. The difference resides in what scope the variable and its inherent 
@@ -16,8 +17,8 @@ of) constant in most cases.
 
 
 ### Problem
-*The question relevant to us, is if the scoping matter in the case of a transpiler? And the 
-short answer is no, or kind of.*
+The question relevant to us, is if the scoping matter in the case of a transpiler? And the 
+short answer is no, or perhaps kind of.
 
 The most simple way to investigate this - as a proof of 
 concept - is to look at some code examples, firstly explaining the difference and then 
@@ -70,7 +71,7 @@ that, there *is* a existing, previously declared value named 'a' doesn't matter,
 `let` and `const` have another scope than `var`, or rather can have.
 This means that the blocks above would not be the same - or rather, that their 'meaning'
 would be another. In the example below the `var` would actually be `available` for
-and identifying and can thus be assigned a parameter and unproblematically log: ed.
+and identifying and can thus be assigned a parameter and unproblematically log:ed.
 
 
 ```
@@ -178,7 +179,7 @@ actually would acknowledge this.
 -------------------------------------------------------------------------------------
 1) Immutability can also - in modern JavaScript - be accomplished with 
    the `freeze` method of Object. It is, however, possible to the same in ES5 by
-   use of the `defineProperty` in Object. Setting the change-is-possible-flags to
+   use of the `defineProperty` in Object.prototype. Setting the change-is-possible-flags to
    false, would include more of a ceremony though. 
 
 
