@@ -61,9 +61,15 @@ function printAST(ast) {
  * colors used in Dandy-UI TODO: FIX BETTER SYSTEM!
  */
 function returnColor(n) {
-  const colors = ["black", "white", "purple", "white", "blue", "cyan", "purple", "white"];
-  let c = n % 3 <= 7? n % 3 : 7;
-  return colors[c];
+  const colors = ["black", "purple", "blue", "cyan", "purple", "green", "red"];
+  let table = [];
+  for(let i = 0; i < 10; i++) {
+    for(let j = 0; j < 6; j++) {
+      table = [...table, colors[j]];  
+    }
+  }
+  let c = (n - 1) >= 0? n - 1 : 0;
+  return table[c];
 }
 
 /*

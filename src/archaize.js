@@ -3,7 +3,7 @@
 const fs = require('fs');
 const program = require('commander');
 const { 
-  boxify, 
+  boxify
 } = require('dandy-ui');
 const { 
   createContent, 
@@ -41,12 +41,12 @@ const {
   } else if(program.input && program.ast) {
     let filecontents = readJSFile(program.input);
     let outputFilename = program.output;
-    program.output? 
+    program.output?
       writeToFile(outputFilename, makeAST(filecontents))
       :
-      printAST(makeAST(filecontents)); 
-    process.exit(0);
+      printAST(makeAST(filecontents));
+      process.exit(0);
   }
+  
   program.help();
 }
-
