@@ -1,3 +1,5 @@
+
+ 
 const isVariableDeclaration = (node) => (node.type === 'VariableDeclaration');
 
 let namesIds = [];
@@ -15,11 +17,27 @@ function replaceVariableDeclarations(node) {
   node.declarations[0].init.type = node.declarations[0].init.type === 'ArrowFunctionExpression'? 
         'FunctionExpression'
         : 
-        node.declarations[0].init.type
+        node.declarations[0].init.type;
 
-  return { ...node, 
-    kind: 'var' 
-  };
+  let polyfill = undefined;
+
+  if(node.declarations[0] 
+     && node.declarations[0].init 
+     && node.declarations[0].init.callee 
+     && node.declarations[0].init.callee.property 
+     && node.declarations[0].init.callee.property.name) {
+    polyfill = 'POLYFILL_INCLUDES' 
+  }
+
+  if(polyfill) {
+    return [{ ...node, 
+      kind: 'var' 
+    },polyfill];
+  } else {
+    return { ...node, 
+      kind: 'var' 
+    };
+  }
 }
 module.exports = { isVariableDeclaration, replaceVariableDeclarations };
 
