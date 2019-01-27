@@ -27,6 +27,8 @@ Examples:
 
 node archaize -i someCode.js -o code-analysis -m (will save AST as 'code-analysis.ast') 
 
+node archaize -i someCode.js -m (displays colorized AST in terminal)
+
 -*-*-*-*-*
 
 not supported yet:
@@ -79,7 +81,9 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [ ] operator: rest
 - [ ] operator: spread
 - [ ] strict/type equality (===)
-
+- [ ] default parameter
+- [ ] property shorthand
+ 
 **Features (text)**
 - [x] template literals 
 - [x] variable declarations
@@ -87,9 +91,15 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] polyfills
 - [ ] operator: rest
 - [ ] operator: spread
+- [ ] operator: rest
+- [ ] operator: spread
+- [ ] strict/type equality (===)
+- [ ] default parameter
+- [ ] property shorthand
 
+**Better tests**
+- [ ] verify program correctness with complicated code examples
 
 **Finishing step**
-
 - [ ] Research how to Use npm link, add bin to package.json and write a new README with usage, installation and small documentation.
 
