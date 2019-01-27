@@ -1,5 +1,15 @@
 # Purpose, or why transpilers matter
 
+Even though a scientific essay should be objective, the motivation for writing 
+an essay is not, neither is the importance of the subject itself. Much of the 
+last centuries debate in the philosophy and the social sciences revolved around 
+questions on the value of a certain pursuit. The general consensus, I think, was 
+that there are better reasons to the relativize these matters and relate them to 
+social norms than to ignore these matters. Your scientific pursuit might be pure
+(although it's likely not, or at least partly not), but the consequences of 
+the same pursuit might lead to things you did not wish for. Sometimes the pale 
+cast of thought - to contradict Shakespeares Hamlet - is quite good.
+
 In the year 2019, transpilers are more important than ever. And why? 
 Because we need and want the Web to be inclusive, and in the context of
 the Web and Web development this is spelled backward compatibility. This
@@ -41,8 +51,7 @@ would even say that you don't know what you're doing === theory matters) as
 well as do the required programming.
 
 My transpiler, named Archaize JS, will neither be the best or even good, nor support
-full functionality for transpiling. But it will (hopefully) include all necessary 
+full functionality for transpiling ES6 to ES5. But it will (hopefully) include all necessary 
 parts of a fully functional transpiler, even though most language features will 
 be missing out.
-
 
