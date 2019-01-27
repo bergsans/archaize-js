@@ -1,18 +1,14 @@
 # Arrow Functions
 
 
-## Background
-When people speak about the advantages of fat arrows, arrow functions 
-because of the `=>`, they tend to emphasize a) it's not as lengthy as a normal 
-function and b) it's binding of (lexical) this. My personal opinion is that they're overused 
-today. If you can't make the function really short and if it
-doesn't handle `this` in any way, there's no need for arrow functions. 
+## Background. What's an arrow function?
+The advantage of fat arrows, arrow functions because of the `=>`, resides 
+in a) it's not as lengthy as a normal function and b) it's binding of (lexical) this. 
 
-As you know they can also be expressed in different ways. Beneath you'll find some 
-examples on how you can write an arrow function, and according to be me `injectThisDate` 
-should have been written as a 'normal' function, mainly because i believe it would have 
-been more readable, as I see it. These examples constitute a selection of different cases 
-of arrow functions and differences in how you can write them.
+An arrow function can be expressed in quite a few ways. Beneath you'll find some 
+examples on how you can write an arrow function. These examples constitute a 
+selection of different use cases of arrow functions and differences in how 
+you can write them. 
 
 
 #### Type A (an example). The shorthand part.
@@ -78,13 +74,12 @@ The main difficulty handling arrow functions in the context of a transpiler,
 is that the arrow function can be used in more than one context. This 
 differentiates it from for instance a variable declaration. An arrow 
 function can be anonymous, a parameter of another function and 
-will, therefore, have another place in the hierarchy of the AST; it will be housed 
-at another 'location'. Either (though) it's part of a variable declaration 
-since all arrow function are binded to variables. 
+will, therefore, can have lots of diffent locations in the hierarchy 
+of the AST.
 
 In actual code, this makes no difference. A 'normal' function also have a name
-(if it's not anonymous an only gets called in a certain context, as a part of 
-a specific functionality) and transforms a value or values. But it will
+(if it's not anonymous and only gets called in a certain context, as a part of 
+a specific functionality) and transforms a value or many values. But it will
 nevertheless be sorted as a part of the variable declaration, rather than the 
 function declaration. The arrow function declaration gets its name in the 
 context of variable declaration.
@@ -96,14 +91,7 @@ is used we can conclude that if we regard the functionality in which the
 the parent. Therefore we must append a variable declaration to the parent node. 
 Because it's easier and more efficient to traverse the 'tree' from top to 
 bottom, we will look for any parent containing a child with an arrow function 
-making use of `this`. If so is the case, we'll inject a variable declaration 
+making use of `this`. If this is the case, we'll inject a variable declaration 
 named 'self' that contains the (lexical) `this` so that 'self' would have 
 this context stored before the program enters the child node. 
-
-
-
-
-
-
-
 

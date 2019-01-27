@@ -23,7 +23,6 @@ Ravi Sethi & Jeffrey D. Ullman.
 For now, don't bother much about the terminology to the left. Concentrate on
 code and how it gets transformed. I believe the example to be quite self-explanatory.
 
-
 ```
 +----------------------------------+-----------------------------------+
 |           ABSTRACTION            |              EXAMPLE              |
