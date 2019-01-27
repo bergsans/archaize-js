@@ -8,7 +8,8 @@ const {
 const { 
   createContent, 
   readJSFile, 
-  writeToFile 
+  writeToFile,
+  printAST
 } = require('./helpers/helpers');
 const { 
   makeAST, 
@@ -43,7 +44,7 @@ const {
     program.output? 
       writeToFile(outputFilename, makeAST(filecontents))
       :
-      console.log(makeAST(filecontents)); 
+      printAST(makeAST(filecontents)); 
     process.exit(0);
   }
   program.help();

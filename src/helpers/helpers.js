@@ -1,5 +1,5 @@
 const logo = require('./logo');
-const { redTxt, greenTxt } = require('dandy-ui'); 
+const { redTxt, greenTxt, whiteTxt } = require('dandy-ui'); 
 const fs = require('fs');
 
 /*
@@ -38,9 +38,50 @@ function writeToFile(filename, contents) {
   }
 }
 
+/*
+ * prints colorized AST
+ */
+function printAST(ast) {
+  const raw = JSON.stringify(ast, null, 2);
+  let arrOfS = raw.split('\n');
+  arrOfS.forEach((s) => {
+    let strings = s.split('');
+    let count = countWhiteSpace(strings);
+    let color = returnColor(count);
+    let terminalWidth = process.stdout.columns;
+    let strLen = s.length;
+    let remainder = terminalWidth - strLen;
+    let whiteSpaceToEndOfLine = " ".repeat(remainder);
+    let strToPrint = `${s}${whiteSpaceToEndOfLine}`
+    whiteTxt(strToPrint, color);
+  });
+}
+
+/*
+ * colors used in Dandy-UI TODO: FIX BETTER SYSTEM!
+ */
+function returnColor(n) {
+  const colors = ["black", "white", "purple", "white", "blue", "cyan", "purple", "white"];
+  let c = n % 3 <= 7? n % 3 : 7;
+  return colors[c];
+}
+
+/*
+ * returns white space
+ */
+function countWhiteSpace(strOfArr) {
+  let color = 0;
+  for(let i = 0; i < strOfArr.length; i++) {
+    if(strOfArr[i] === ' ') { color++ }
+    else { break }
+  }
+  return color;
+}
+
 module.exports = { 
   createContent,
   readJSFile,
-  writeToFile
+  writeToFile,
+  printAST
 };
 

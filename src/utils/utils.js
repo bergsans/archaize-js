@@ -86,8 +86,9 @@ writeToFile("arr_includes", someCode);
 /*
 let c = readJSFile('../random_js_code.js');
 let someCode = transpile(c);
-//writeToFile("arr_inc", makeAST(c))//someCode);
-console.log(someCode);
+writeToFile("equal", makeAST(c))//someCode);
 */
+//console.log(someCode);
+
 module.exports = { makeAST, transpile };
 
