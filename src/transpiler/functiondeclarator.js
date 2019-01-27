@@ -9,7 +9,9 @@ function replaceFunctionDeclaration(node) {
     if(callExpressionsInBody) {
       let temp = [];
       callExpressionsInBody.forEach(expr => temp = [...temp, expr.expression.arguments]); 
-      let matches = temp.find((el) => el[0].type === 'ThisExpression');
+      let exprArr = temp.flat();
+ 
+      let matches = exprArr.some((el) => el.type === 'ThisExpression');
       
       if(matches) {
         let thisDeclared = {
