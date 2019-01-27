@@ -1,33 +1,29 @@
 # Purpose and method
 
-The main purpose of this project is not scientific; the project merely
-tries to replicate a small part of the inner workings of a transpiler - that
-is, something we already know exists and works just fine. If I am able to 
-reproduce a transpiler according to the same (or similar, but not by original means in 
-any sense) principles as others, it can't be said to be a scientific pursuit, at least not
-of the higher order. If someone would make an essay trying to verify the
-truthiness of gravity in physics, it would neither be a scientific pursuit (on the
-other hand, if someone would falsify it or correct the most basic formulation, it
-would be a scientific revolution). As of my knowledge, the growth of knowledge is usually
-included in the definition of a scientific essay - and I do nothing to contribute to the
-scientific body of knowledge on transpilers with this essay. On the other hand, my 
-intention is to contribute to the development community by explaining how a transpiler 
-works and what kind of problems a transpiler always face.
+This essay tries to answer the question of how one could build a 
+transpiler, using modern JavaScript. The question is answered using a twofold 
+strategy: by use of natural language (description, analysis, reflection) and 
+by code, programming language (JavaScript).
 
-Because of this, I feel no need to follow the patterns of scientific explication. With
-that said, I will still try to be precise, make references when necessary and sometimes
-use vocabulary from scientific discourse, namely computer science. Although I won't write
-a scientific essay, I will put a large focus on explaining the problems I've faced and a
-bit on how I've solved them. I will write less on my solutions than on the problems to be
-solved, since I am hopeful that the code will be quite self-explanatory. My intention when
-writing about these matters is to be reflective and analytical.
+My project will produce an ES6 to ES5 transpiler and will have similarities 
+with projects like Babel.js. In the context of Computer Science, this essay holds 
+no value; neither does the code project, a transpiler named Archaize JS. Archaize JS 
+is to be thought of as a demonstration, a proof of concept. The text describes 
+this demonstrations using programming language terminology and also reflect
+ on how a transpiler actually works.
 
-*With this project I aim to develop a transpiler that manages to re-phrase, so to speak,
-a few of the ECMAScript 2015 (more commonly known as ES6) features with the syntax of ES5.*
-The user will input JavaScript code, stored in a file, to a command-line interface (CLI)
-and get it translated - if everything works out properly - to less modern, 'archaized' (hence
-the name, Archaize JS, of my transpiler) JavaScript to another file, specified by the 
-user. This project will not cover all features of ES6, and any few subroutines.
+Is it a scientific essay? Yes and no. It is scientific in the sense that it's 
+descriptive, analytical and uses some vocabulary from Computer Science. This essay 
+doesn't intend to contribute to the scientific body of knowledge on transpilers. In 
+a way, it can still have scientic value. It indirectly helps out spreading knowledge 
+on transpiler. And the fact it is less advanced and quite flawed might even be 
+turned to an advantage in a didactic context.
+
+The user will input JavaScript code, stored in a file, to a command-line 
+interface (CLI) and get it translated - if everything works out properly - to 
+less modern, 'archaized' (hence the name, Archaize JS, of my transpiler) JavaScript 
+to another file, specified by the user. This project will not cover all features of 
+ES6, and any few subroutines.
 
 
 ## Method
@@ -67,6 +63,7 @@ finish these features:
 * string method: startsWith
 * string method: endsWith
 * array method: find index
+* array method: find
 * operator: rest
 * operator: spread
 
