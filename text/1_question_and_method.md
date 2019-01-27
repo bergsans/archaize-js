@@ -1,4 +1,4 @@
-# Purpose and method
+# Question
 
 This essay tries to answer the question of how one could build a 
 transpiler, using modern JavaScript. The question is answered using a twofold 
@@ -48,7 +48,6 @@ but I think that the metaphor is more accurate in this case than in many others,
 don't take it literally.
 
 
-
 ## Project Scope
 
 The Website [es6-features.org](es6-features.org) lists all features of ES6. Archaize.js
@@ -82,5 +81,4 @@ As far as my knowledge goes, there are few, if any, in-depth texts Online writte
 the context of JavaScript on how a transpiler is configured, combining concrete code
 examples with 'theory'. There are quite a few texts on Babel, but none of them really 
 deals with examples and only in very general terms explain the meaning of compilers.
-
 
