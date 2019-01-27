@@ -10,14 +10,18 @@ form of another code; for instance an executable file, or at least a code
 that's closer to the ones and zeros of the metal. The compiler is able
 to make this happens by a translation based on rules, a grammar. 
 
-We can now give some kind of answer to the question stated above. If a compiler
+We can now give some kind of answer to the question stated above. A compiler
 translates one code to code in another language (it may be executable, but
 it can also be some other kind of code); a transpiler translates (or rather
 transforms) code from one language to another, with the implicit distinction that
 on some level 'code' stops being a language fit for communication (fit for use) and 
-therefore viewed more as part of the machine, being 'metal'. Anyhow, let's for the 
-time being equate compiler and transpiler and continue with an exposition on what 
-a compiler is by comparing programming languages with natural languages.
+therefore viewed more as part of the machine, being 'metal'. A transpiler can 
+also, something which is true for the transpiler of the project, translate
+'within' the *same* language.
+
+Let's for the time being equate compiler and transpiler and continue with an
+exposition on what a compiler is by comparing programming languages 
+with natural languages.
 
 In contrary to grammars of natural languages, the grammar of a compiler
 is exactly as precise as it is 'intended'. In fact, otherwise it would
@@ -87,7 +91,8 @@ the roots of a subject matter that interest me and totally ignore some things
 that (perhaps) *should* interest me. 
 
 It's my belief, still to be proved to myself, that insight into how
-a compiler works will deepen your understanding of how to use programming languages in general. 
+a compiler works will deepen your understanding of how to use programming languages 
+in general. 
 
 
 / Claes-Magnus Bernson
