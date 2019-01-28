@@ -1,6 +1,47 @@
-const isFunctionDeclaration = (node) => (node.type === 'FunctionExpression');
+const isFunctionDeclaration = (node) => (node.type === 'FunctionExpression') || (node.type === 'FunctionDeclaration');
 
 function replaceFunctionDeclaration(node) {
+
+  if(node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
+  
+      let newParams = node.params.filter((param) => param.type !== 'RestElement');
+      node.params = newParams;
+
+      let funcArguments = {
+        type: "VariableDeclaration",
+        declarations: [{
+          type: "VariableDeclarator",
+          id: {
+            type: "Identifier",
+            name: "args"
+          },
+          init: {
+            type: "CallExpression",
+            callee: {
+              type: "MemberExpression",
+              computed: false,
+              object: {
+                type: "Identifier",
+                name: "Object"
+              },
+              property: {
+                type: "Identifier",
+                name: "values"
+              }
+            },
+            arguments: [{
+              type: "Identifier",
+              name: "arguments"
+            }]
+          }
+        }],
+        kind: "var"
+      }
+  
+    let oldBody = [...node.body.body];
+    node.body.body = [funcArguments, ...oldBody]
+
+  }
 
   if(node.body.body) {
     const body = [...node.body.body];

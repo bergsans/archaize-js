@@ -76,19 +76,22 @@ function transpile(expression) {
       }
     }
   }); 
+
+  
   return generate(ast);
 }
-/*
-let c = readJSFile('../transpiler/polyfills/arr_includes.js');
-let someCode = makeAST(c);
-writeToFile("arr_includes", someCode);
-*/
+
+//let c = readJSFile('../random_js_code.js');
+//let someCode = makeAST(c);
+//writeToFile("func", someCode);
+
 /*
 let c = readJSFile('../random_js_code.js');
 let someCode = transpile(c);
-writeToFile("equal", makeAST(c))//someCode);
+// writeToFile("equal", makeAST(c))//someCode);
+console.log(someCode);
 */
-//console.log(someCode);
+
 
 module.exports = { makeAST, transpile };
 
