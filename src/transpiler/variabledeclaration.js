@@ -13,10 +13,10 @@ function returnType(name, ast) {
   let type = undefined;
   traverse(ast, {
     enter: (node) => {
-      if(node.type === 'VariableDeclaration') {
+      if(node.type === 'VariableDeclaration') { 
         if(node.declarations[0].id.name === name) {
           type = node.declarations[0].init.type;
-        }
+        } 
       }
     }
   });
@@ -30,6 +30,58 @@ function replaceVariableDeclarations(node, ast) {
   let polyfill = undefined;
 
   node.declarations.forEach((d, i) => {
+
+    if(d.init && d.init && d.init.type === 'ArrayExpression' && d.init.elements 
+         && d.init.elements.find((el) => el.type === 'SpreadElement')) {
+  
+      let newEls = d.init.elements.filter((el) => el.type !== 'SpreadElement');
+      let spread = d.init.elements.filter((el) => el.type === 'SpreadElement');
+
+      let newNode =  {
+        type: "VariableDeclaration",
+          declarations: [
+            {
+              type: "VariableDeclarator",
+              id: {
+                type: "Identifier",
+                name: d.id.name,
+           
+              },
+              init: {
+                type: "CallExpression",
+                 callee: {
+                  type: "MemberExpression",
+                  computed: false,
+                  object: {
+                    type: "ArrayExpression",
+                    elements: [],
+            
+                  },
+                  property: {
+                    type: "Identifier",
+                    name: "concat",
+           
+                  }
+                },
+                arguments: [
+                  {
+                    type: "Identifier",
+                    name: spread[0].argument.name
+                  },
+                  {
+                    type: "ArrayExpression",
+                    elements: newEls 
+                  }
+                ]
+              }
+            }
+          ],
+          kind: "var"
+        };
+        node = newNode; 
+          
+    } 
+
     let idName = d.id.name;
     namesIds = [...namesIds, idName];
 
