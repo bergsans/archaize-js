@@ -78,8 +78,9 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] array method: find
 - [x] array method: includes
 - [x] implement polyfills in AST   
-- [ ] operator: rest (FunctionDeclaration: done, IF ... NOT))
-- [ ] operator: spread
+- [x] operator: rest 
+- [x] operator: spread (array)
+- [ ] operator: spread (obj)
 - [ ] strict/type equality (===)
 - [ ] default parameter
 - [ ] property shorthand
