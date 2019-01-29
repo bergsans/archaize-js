@@ -69,7 +69,7 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 **Features (code)**
 - [x] template literals 
 - [x] variable declarations
-- [x] arrow functions **BUG FOUND**
+- [x] arrow functions
 - [x] string method: repeat
 - [x] string method: includes
 - [x] string method: startsWith
@@ -82,8 +82,8 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] operator: spread (array)
 - [ ] operator: spread (obj)
 - [ ] strict/type equality (===)
-- [ ] default parameter
-- [ ] property shorthand
+- [x] default parameter
+- [x] property shorthand
  
 **Features (text)**
 - [x] template literals 
