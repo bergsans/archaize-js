@@ -95,6 +95,8 @@ function replaceVariableDeclarations(node, ast) {
           : 
           d.init.type;
 
+    d.init.type === 'ObjectExpression'? d.init.properties.forEach((props) => props.shorthand = false) : null;
+
     if (isMethodES6(node, 'includes', i)) {
       let name = d.init.callee.object.name;
       let type = returnType(name, ast);

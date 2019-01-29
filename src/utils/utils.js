@@ -87,7 +87,7 @@ function transpile(expression) {
 
 //let c = readJSFile('../random_js_code.js');
 //let someCode = transpile(c);
-//writeToFile("spread2", makeAST(c))//someCode);
+//writeToFile("spread_obj2", makeAST(c))//someCode);
 //console.log(someCode);
 
 
