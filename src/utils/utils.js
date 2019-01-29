@@ -68,26 +68,24 @@ function transpile(expression) {
           return tempNode;
         }
       } else if (isCallExpression(node)) {
-        let tempNode = replaceCallExpression(node);
-        return tempNode; 
+          let tempNode = replaceCallExpression(node);
+          return tempNode; 
       } else if (isFunctionDeclaration(node)) {
-        let tempNode = replaceFunctionDeclaration(node);
-        return tempNode;
+          let tempNode = replaceFunctionDeclaration(node, ast);
+          return tempNode;
+        
       }
     }
   }); 
-
-  
   return generate(ast);
 }
-
 //let c = readJSFile('../random_js_code.js');
 //let someCode = makeAST(c);
 //writeToFile("func", someCode);
 
 //let c = readJSFile('../random_js_code.js');
 //let someCode = transpile(c);
-//writeToFile("spread_obj2", makeAST(c))//someCode);
+//writeToFile("default_parameter2", makeAST(c))//someCode);
 //console.log(someCode);
 
 

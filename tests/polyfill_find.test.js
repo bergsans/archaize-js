@@ -30,7 +30,9 @@ function test() {
         4,
         5
     ];
-    var ifNumFiveInArr = arr.find(el => el === 5);
+    var ifNumFiveInArr = arr.find(function (el) {
+        return el === 5;
+    });
 }`;
 
   expect(archaizedCode).toEqual(transpiledCode)

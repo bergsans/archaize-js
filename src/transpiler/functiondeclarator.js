@@ -1,8 +1,46 @@
 const isFunctionDeclaration = (node) => (node.type === 'FunctionExpression') || (node.type === 'FunctionDeclaration');
 
-function replaceFunctionDeclaration(node) {
+function replaceFunctionDeclaration(node, ast) {
 
-  if(node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
+  if(node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'AssignmentPattern')) {
+
+    node.params.forEach((param, i) => {
+      if(param.type === 'AssignmentPattern') {
+       
+        node.params[i] = { type: 'Identifier', name: param.left.name };
+       
+        let newVarInBody = {
+          type: "VariableDeclaration",
+          declarations: [
+            {
+              type: "VariableDeclarator",
+              id: {
+                type: "Identifier",
+                name: param.left.name
+              },
+              init: {
+                type: "LogicalExpression",
+                operator: "||",
+                left: {
+                  type: "Identifier",
+                  name: param.left.name
+                },  
+                right: {
+                  type: "Literal",
+                  value: param.right.value,
+                  raw: param.right.raw
+                }
+              }
+            }
+          ],
+          kind: "var"
+        };
+        let oldBody = [...node.body.body];
+        node.body.body = [newVarInBody, ...oldBody]
+      }
+    });
+
+  } else if(node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
   
       let newParams = node.params.filter((param) => param.type !== 'RestElement');
       node.params = newParams;
@@ -81,6 +119,6 @@ function replaceFunctionDeclaration(node) {
   }
   node.type = 'FunctionExpression';
   return node;
-}
+  }
 module.exports = { isFunctionDeclaration, replaceFunctionDeclaration };
 

@@ -31,7 +31,9 @@ function test() {
         4,
         5
     ];
-    var i = arr.findIndex(el => el === 5);
+    var i = arr.findIndex(function (el) {
+        return el === 5;
+    });
 }`;
 
   expect(archaizedCode).toEqual(transpiledCode)
