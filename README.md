@@ -81,9 +81,10 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] operator: rest 
 - [x] operator: spread (array)
 - [ ] operator: spread (obj)
-- [ ] strict/type equality (===)
+- [x] strict/type equality (===)
 - [x] default parameter
 - [x] property shorthand
+- [ ] class definition
  
 **Features (text)**
 - [x] template literals 
