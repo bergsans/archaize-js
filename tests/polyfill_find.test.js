@@ -31,7 +31,7 @@ function test() {
         5
     ];
     var ifNumFiveInArr = arr.find(function (el) {
-        return el === 5;
+        return el == 5;
     });
 }`;
 

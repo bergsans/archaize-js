@@ -32,7 +32,7 @@ function test() {
         5
     ];
     var i = arr.findIndex(function (el) {
-        return el === 5;
+        return el == 5;
     });
 }`;
 

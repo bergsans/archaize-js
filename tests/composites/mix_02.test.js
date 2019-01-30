@@ -34,7 +34,7 @@ function thisOrThatFunc(name, age) {
         return '_' + el + '';
     });
     var isElaInArr = arr3.find(function (el) {
-        return el === 'a';
+        return el == 'a';
     });
 }`;
 
