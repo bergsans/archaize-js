@@ -8,6 +8,8 @@ const { isTemplateLiterals, replaceTemplateLiterals } = require('../transpiler/t
 const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclaration.js');
 const { isCallExpression, replaceCallExpression } = require('../transpiler/callexpression.js');
 const { isFunctionDeclaration, replaceFunctionDeclaration } = require('../transpiler/functiondeclarator.js');
+const { isIfStatement, replaceIfStatement } = require('../transpiler/ifstatement.js'); 
+const { isReturnStatement, replaceReturnStatement } = require('../transpiler/returnstatement.js');
 const { includesAST } = require('../transpiler/polyfills/AST/_ast_includes.js');
 const { startsWithAST } = require('../transpiler/polyfills/AST/_ast_startsWith.js');
 const { endsWithAST } = require('../transpiler/polyfills/AST/_ast_endsWith.js');
@@ -64,7 +66,7 @@ function transpile(expression) {
           let parsed = JSON.parse(arr_includesES6AST)
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
-       }else {
+       } else {
           return tempNode;
         }
       } else if (isCallExpression(node)) {
@@ -73,7 +75,12 @@ function transpile(expression) {
       } else if (isFunctionDeclaration(node)) {
           let tempNode = replaceFunctionDeclaration(node, ast);
           return tempNode;
-        
+      } else if (isIfStatement(node)) {
+        let tempNode = replaceIfStatement(node);
+        return tempNode;
+      } else if (isReturnStatement(node)) {
+        let tempNode = replaceReturnStatement(node);
+        return tempNode;
       }
     }
   }); 
@@ -81,7 +88,7 @@ function transpile(expression) {
 }
 //let c = readJSFile('../random_js_code.js');
 //let someCode = makeAST(c);
-//writeToFile("func", someCode);
+//writeToFile("equality", someCode);
 
 //let c = readJSFile('../random_js_code.js');
 //let someCode = transpile(c);

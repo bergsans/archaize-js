@@ -29,9 +29,11 @@ function replaceCallExpression(node) {
   } 
 
   node.arguments.forEach((arg, i) => {
-    if(arg.type.includes("ThisExpression")) {
+    if(arg.type === 'ThisExpression') {
       node.arguments[i].type = 'Identifier';
       node.arguments[i].name = 'self';
+    } else if(arg.type === 'BinaryExpression') {
+      node.arguments[i].operator = '==';
     }
   });
   

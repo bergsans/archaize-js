@@ -30,8 +30,9 @@ function replaceVariableDeclarations(node, ast) {
   let polyfill = undefined;
 
   node.declarations.forEach((d, i) => {
-
-    if(d.init && d.init && d.init.type === 'ArrayExpression' && d.init.elements 
+    if(d.init && d.init.type === 'BinaryExpression' && d.init.operator === '===') {
+      d.init.operator = '==';
+    } else if(d.init && d.init && d.init.type === 'ArrayExpression' && d.init.elements 
          && d.init.elements.find((el) => el.type === 'SpreadElement')) {
   
       let newEls = d.init.elements.filter((el) => el.type !== 'SpreadElement');
