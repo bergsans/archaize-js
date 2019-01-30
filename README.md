@@ -80,7 +80,6 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] implement polyfills in AST   
 - [x] operator: rest 
 - [x] operator: spread (array)
-- [ ] operator: spread (obj)
 - [x] strict/type equality (===)
 - [x] default parameter
 - [x] property shorthand
