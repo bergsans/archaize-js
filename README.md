@@ -1,5 +1,7 @@
 ![logo](assets/logo.png)
 
+## Presentation
+
 ## Installation
 
 ```
@@ -8,6 +10,12 @@ npm install
 npm test
 
 ```
+
+## Issues
+
+Currently Archaize JS requires Node.js v 11.x.
+
+**FIX**: Replace method .flat with some other solution, or use a poly-fill solution.
 
 ## Usage
 
@@ -23,9 +31,9 @@ Options:
   -t, --transpile          Transpile ES6 -> ES5
   -h, --help               output usage information
 
-Examples: 
+Examples:
 
-node archaize -i someCode.js -o code-analysis -m (will save AST as 'code-analysis.ast') 
+node archaize -i someCode.js -o code-analysis -m (will save AST as 'code-analysis.ast')
 
 node archaize -i someCode.js -m (displays colorized AST in terminal)
 
@@ -33,7 +41,7 @@ node archaize -i someCode.js -m (displays colorized AST in terminal)
 
 not supported yet:
 
-node archaize -i someES6Code.js -o someES5Code.js -t 
+node archaize -i someES6Code.js -o someES5Code.js -t
 
 -*-*-*-*-*
 ```
@@ -42,12 +50,12 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 
 - /assets (images)
 - /examples (transpiled code snippets - before/after)
-- /src **>>> /helpers, /utils, /transpiler <<<** 
+- /src **>>> /helpers, /utils, /transpiler <<<**
 - /tests (Jest - main functionality)
 - /text (essay on transpilers)
 
 ## TASKS
- 
+
 
 **General (code)**
 - [x] Add basic functionality to CLI
@@ -60,14 +68,14 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] The purpose of transpilers, or why transpiler matters
 - [ ] How a compiler works in general terms (25% done)  
 - [x] Abstract Syntax Tree
-- [ ] Transformation 
+- [ ] Transformation
 - [ ] Summary
 - [ ] General reflections. Difficulties, the future (...)
 - [ ] Appendix
 
 
 **Features (code)**
-- [x] template literals 
+- [x] template literals
 - [x] variable declarations
 - [x] arrow functions
 - [x] string method: repeat
@@ -78,17 +86,18 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] array method: find
 - [x] array method: includes
 - [x] implement polyfills in AST   
-- [x] operator: rest 
+- [x] operator: rest
 - [x] operator: spread (array)
 - [x] strict/type equality (===)
 - [x] default parameter
 - [x] property shorthand
 - [ ] class definition
- 
+- [ ] Conditional (ternary) operator
+
 **Features (text)**
-- [x] template literals 
+- [x] template literals
 - [x] variable declarations
-- [x] arrow functions 
+- [x] arrow functions
 - [x] polyfills
 - [ ] operator: rest
 - [ ] operator: spread
@@ -97,10 +106,8 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [ ] strict/type equality (===)
 - [ ] default parameter
 - [ ] property shorthand
-
-**Better tests**
-- [ ] verify program correctness with complicated code examples
+- [ ] class definition
+- [ ] Conditional (ternary) operator
 
 **Finishing step**
 - [ ] Research how to Use npm link, add bin to package.json and write a new README with usage, installation and small documentation.
-
