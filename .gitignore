@@ -1,4 +1,5 @@
 node_modules
 *.ast
 src/random_js_code.js
-
+.DS_Store
+web/www/bundle.js
