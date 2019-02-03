@@ -1,9 +1,9 @@
 const { traverse } = require('estraverse');
 
-const isMethodES6 = (node, mName, i) => (node.declarations[i] 
-     && node.declarations[i].init 
-     && node.declarations[i].init.callee 
-     && node.declarations[i].init.callee.property 
+const isMethodES6 = (node, mName, i) => (node.declarations[i]
+     && node.declarations[i].init
+     && node.declarations[i].init.callee
+     && node.declarations[i].init.callee.property
      && node.declarations[i].init.callee.property.name
      && node.declarations[i].init.callee.property.name === mName);
 
@@ -13,10 +13,10 @@ function returnType(name, ast) {
   let type = undefined;
   traverse(ast, {
     enter: (node) => {
-      if(node.type === 'VariableDeclaration') { 
+      if(node.type === 'VariableDeclaration') {
         if(node.declarations[0].id.name === name) {
           type = node.declarations[0].init.type;
-        } 
+        }
       }
     }
   });
@@ -32,9 +32,9 @@ function replaceVariableDeclarations(node, ast) {
   node.declarations.forEach((d, i) => {
     if(d.init && d.init.type === 'BinaryExpression' && d.init.operator === '===') {
       d.init.operator = '==';
-    } else if(d.init && d.init && d.init.type === 'ArrayExpression' && d.init.elements 
+    } else if(d.init && d.init && d.init.type === 'ArrayExpression' && d.init.elements
          && d.init.elements.find((el) => el.type === 'SpreadElement')) {
-  
+
       let newEls = d.init.elements.filter((el) => el.type !== 'SpreadElement');
       let spread = d.init.elements.filter((el) => el.type === 'SpreadElement');
 
@@ -46,7 +46,7 @@ function replaceVariableDeclarations(node, ast) {
               id: {
                 type: "Identifier",
                 name: d.id.name,
-           
+
               },
               init: {
                 type: "CallExpression",
@@ -56,12 +56,12 @@ function replaceVariableDeclarations(node, ast) {
                   object: {
                     type: "ArrayExpression",
                     elements: [],
-            
+
                   },
                   property: {
                     type: "Identifier",
                     name: "concat",
-           
+
                   }
                 },
                 arguments: [
@@ -71,7 +71,7 @@ function replaceVariableDeclarations(node, ast) {
                   },
                   {
                     type: "ArrayExpression",
-                    elements: newEls 
+                    elements: newEls
                   }
                 ]
               }
@@ -79,21 +79,23 @@ function replaceVariableDeclarations(node, ast) {
           ],
           kind: "var"
         };
-        node = newNode; 
-          
-    } 
+        node = newNode;
+
+    }
+
+
 
     let idName = d.id.name;
     namesIds = [...namesIds, idName];
-
-    if (namesIds.filter((elIdName) => elIdName === idName).length > 1) {
+   
+    if (namesIds.filter((elIdName) => elIdName === idName && returnType(elIdName) === 'VariableDeclaration').length > 1) {
       const count = namesIds.filter((elIdName) => elIdName === idName).length;
       d.id.name = `${idName}${count}`;
-    }  
+    }
 
-    d.init.type = d.init.type === 'ArrowFunctionExpression'? 
+    d.init.type = d.init.type === 'ArrowFunctionExpression'?
           'FunctionExpression'
-          : 
+          :
           d.init.type;
 
     d.init.type === 'ObjectExpression'? d.init.properties.forEach((props) => props.shorthand = false) : null;
@@ -116,17 +118,16 @@ function replaceVariableDeclarations(node, ast) {
       polyfill = 'POLYFILL_FIND';
     } else if (isMethodES6(node, 'findIndex',i)) {
       polyfill = 'POLYFILL_FIND_INDEX';
-    } 
+    }
   });
   if (polyfill) {
-    return [{ ...node, 
-      kind: 'var' 
+    return [{ ...node,
+      kind: 'var'
     }, polyfill];
   } else {
-    return { ...node, 
-      kind: 'var' 
+    return { ...node,
+      kind: 'var'
     };
   }
 }
 module.exports = { isVariableDeclaration, replaceVariableDeclarations };
-

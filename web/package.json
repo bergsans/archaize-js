@@ -1,0 +1,37 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "description": "ArchaizeJS",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "express": "^4.16.3",
+    "prism-react-renderer": "0.1.3",
+    "prismjs": "^1.15.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-json-tree": "^0.11.2",
+    "react-router-dom": "^4.3.1",
+    "react-simple-code-editor": "^0.8.0",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "styled-components": "3.4.5",
+    "webpack": "^4.16.3",
+    "webpack-dev-middleware": "^3.1.3"
+  },
+  "devDependencies": {},
+  "author": "Claes-Magnus Bernson <cmnbernson@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claes-magnus/archaize-js/issues"
+  },
+  "homepage": "https://github.com/claes-magnus/archaize-js#readme"
+}

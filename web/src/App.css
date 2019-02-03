@@ -1,0 +1,186 @@
+@media only screen and (min-width: 1024px) {
+  .container {
+    color: #eaeaea;
+    font-family: pixelFont;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -325px 0 0 -475px;
+    width: 950px;
+    height: 675px;
+  }
+
+  .container__header {
+    width: 100%;
+    height: 125px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  .container__header__logo {
+    color: #37d800;
+    font-size: 17px;
+    line-height: 16px;
+  }
+
+  .container-desktop__nav {
+    width: 125px;
+    height: 550px;
+    margin: 0;
+    padding: 0;
+    float: right;
+    transform: scale(1);
+  }
+
+  .container-desktop__nav__menu {
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    width: 125px;
+  }
+
+  .container-desktop__nav__menu__item {
+    margin-top: 20px;
+  }
+
+  .container-desktop__nav__menu__item:hover {
+    opacity: 0.4;
+  }
+
+  .container-desktop__nav-menu__link {
+    color: #eaeaea;
+    font-family: pixelFont;
+    text-decoration: none;
+    font-size: 26px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container-desktop__nav__menu__link__img {
+    width: 100px;
+  }
+
+  .container__main {
+    width: 825px;
+    min-height: 550px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    transform: scale(1);
+  }
+
+
+
+
+  .container-mobile__nav {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .App__desktop__nav {
+    display: none;
+  }
+
+  .App {
+    color: #eaeaea;
+    font-family: pixelFont;
+    width: 100%;
+    height: 100%;
+  }
+
+  .App__header {
+    margin: 0;
+    padding: 0;
+  }
+
+  .App__title {
+    display: none;
+  }
+
+  .App__responsive__nav {
+    display: contents;
+  }
+
+  .App__responsive__nav img {
+  }
+
+  .App__main-content {
+  }
+
+  .App__responsive__nav-modal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+  .App__responsive__nav-modal-content {
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    color: #eaeaea;
+  }
+
+  .App__responsive__nav-modal-content a {
+    text-decoration: none;
+  }
+
+  .App__responsive__nav-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .App__responsive__nav-close:hover,
+  .App__responsive__nav-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .App__responsive__nav-menu {
+    display: none;
+  }
+
+  .App__responsive__nav {
+    display: none;
+  }
+
+  a,
+  a:active,
+  a:visited {
+    color: #eaeaea;
+    font-family: pixelFont;
+  }
+
+  h3 {
+    color: #37d800;
+    font-family: pixelFont;
+    margin: 0;
+    padding: 0;
+    line-height: 1rem;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  h2 {
+    color: #37d800;
+    font-family: pixelFont;
+    text-align: center;
+    margin: 0;
+    margin-top: 7px;
+    margin-bottom: 60px;
+    padding: 0;
+    line-height: 1rem;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  /* Styles */
+}

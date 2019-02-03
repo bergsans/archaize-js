@@ -6,6 +6,11 @@
   "scripts": {
     "test": "jest"
   },
+  "jest": {
+    "testPathIgnorePatterns": [
+    "<rootDir>/web/", "web/", "/archaize-js/web/"
+  ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/claes-magnus/archaize-js.git"
@@ -20,8 +25,10 @@
     "jest": "^23.6.0"
   },
   "dependencies": {
+    "array.prototype.flat": "^1.2.1",
     "commander": "^2.19.0",
     "dandy-ui": "^1.5.0",
+    "escodegen": "^1.11.0",
     "esprima": "^4.0.1",
     "estraverse": "^4.2.0"
   }

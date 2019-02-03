@@ -1,0 +1,10 @@
+@font-face {
+  font-family: pixelFont;
+  src: url(arcadefont.ttf);
+}
+
+body {
+  background-color: #001B33;
+  margin:0;
+  padding:0;
+}

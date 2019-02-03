@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+
+.essay__paragraph {
+  margin: auto;
+  margin-top: 20px;
+  width: 600px;
+  text-align: justify;
+  font-family: "Roboto", sans-serif;
+  line-height: 30px;
+}
+
+.essay__paragraph__link,
+.essay__paragraph__link:visited,
+.essay__paragraph__link:active {
+  color: #76905b;
+  font-family: "Raleway", sans-serif;
+}
+
+.essay__paragraph__link:hover {
+  color: #37d800;
+}
+
+.essay h3 {
+  width: 600px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: left;
+}
+
+.essay__ordered-list {
+  margin: auto;
+  width: 600px;
+  margin-top: 20px;
+  width: 600px;
+  list-style-type: upper-roman;
+  font-family: "Raleway", sans-serif;
+}
+
+.essay__ordered-list__item {
+  color: #76905b !important;
+  padding: 3px;
+}
+
+.footer {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.footer__hr {
+  border: 1px solid #37d800;
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
