@@ -55,6 +55,121 @@ textarea {
   }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .code__container__box-mobile {
+    display: none;
+  }
+
+  .code__container {
+    width: 700px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    margin-top: -200px;
+    left: 50%;
+    margin-left: -350px;
+  }
+
+  .code__container__header {
+    color: #37d800;
+    margin: 10px 0 0 0;
+    text-align: center;
+  }
+
+  .code__container__box-desktop {
+    margin: 0;
+    font-family: Courier;
+    font-size: 14px;
+  }
+
+  .code__container__editor {
+    height: 274px;
+    width: 323px;
+    word-break: break-all;
+    overflow-y: scroll;
+    margin: 1.67em 0;
+    position: relative;
+    top: -316px;
+    left: 15px;
+  }
+
+  .code__container__transpiled-code {
+    height: 274px;
+    width: 323px;
+    word-break: break-all;
+    overflow-y: scroll;
+    margin: 1.67em 0;
+    position: relative;
+    top: -616px;
+    left: 360px;
+  }
+
+  .code__container__menu {
+    position: relative;
+    top: -638px;
+    left: 2px;
+    width: 738px;
+  }
+
+  .code__container__menu__button-img {
+    height: 28px;
+    padding-right: 2px;
+    padding-top: 5px;
+  }
+
+  .code__container__menu__button-link {
+    text-decoration: none;
+    color: #eaeaea;
+    font-size: 24px;
+    padding-right: 17px;
+  }
+
+  .code__container__menu__button-link:hover {
+    opacity: 0.4;
+  }
+
+  .code__container__modal__ast-viewer {
+    position: absolute !important;
+    width: 100%;
+    height: 500px;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    overflow: auto;
+    background-color: black;
+    opacity: 0.9;
+  }
+
+  .code__container__modal__ast-viewer__content-ast {
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    color: #37d800;
+    font-family: "Raleway", sans-serif;
+    font-size: 12px;
+  }
+
+  .code__container__modal__ast-viewer__content-ast a {
+    text-decoration: none;
+  }
+
+  .code__container__modal__ast-viewer__content-ast-close {
+    position: fixed;
+    right: 40px;
+    top: 20px;
+    color: #aaaaaa;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  .code__container__modal__ast-viewer__content-ast-close:hover,
+  .code__container__modal__ast-viewer__content-ast-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .code__container__box-mobile {
     display: none;
@@ -82,8 +197,6 @@ textarea {
     position: relative;
     top: -355px;
     left: 15px;
-    outline: none;
-    focus: none;
   }
 
   .code__container__transpiled-code {
