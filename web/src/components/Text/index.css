@@ -168,6 +168,12 @@
 }
 
 @media only screen and (min-width: 1024px) {
+  .essay__container__header {
+    color: #37d800;
+    margin: 30px 0 0 0;
+    text-align: center;
+  }
+
 .essay__paragraph {
   margin: auto;
   margin-top: 20px;
@@ -188,12 +194,7 @@
   color: #37d800;
 }
 
-.essay h3 {
-  width: 600px;
-  margin: auto;
-  margin-top: 50px;
-  text-align: left;
-}
+
 
 .essay__ordered-list {
   margin: auto;

@@ -26,28 +26,31 @@ textarea {
     margin-top: -250px;
     left: 50%;
     margin-left: -152px;
+
   }
 
   .code__container__editor {
     height: 178px;
-    width: 275px;
+    width: 270px;
     word-break: break-all;
     overflow-y: scroll;
     margin: 1.67em 0;
     position: relative;
     top: -447px;
     left: 15px;
+    overflow-x: hidden;
   }
 
   .code__container__transpiled-code {
     height: 178px;
-    width: 275px;
+    width: 270px;
     word-break: break-all;
     overflow-y: scroll;
     margin: 1.67em 0;
     position: relative;
     top: -424px;
     left: 15px;
+    overflow-x: hidden;
   }
 
   .code__container__menu {
