@@ -17,6 +17,9 @@ Currently Archaize JS requires Node.js v 11.x.
 
 **FIX**: Replace method .flat with some other solution, or use a poly-fill solution.
 
+**POSSIBLE PROBLEM**: although everything looks fine on my screens, this
+CSS could cause major problems on other screens.
+
 ## Usage
 
 ```
