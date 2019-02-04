@@ -4,6 +4,57 @@ textarea {
   outline: none;
 }
 
+
+@media only screen and (max-width: 767px) {
+  .code__container__box-desktop {
+    display: none;
+  }
+  .code__container__header {
+    display:none;
+  }
+
+  .code__container__box-mobile {
+    display: contents;
+    font-size: 16px;
+  }
+
+  .code__container {
+    width: 306px;
+    height: 500px;
+    position: fixed;
+    top: 50%;
+    margin-top: -250px;
+    left: 50%;
+    margin-left: -152px;
+  }
+
+  .code__container__editor {
+    height: 178px;
+    width: 275px;
+    word-break: break-all;
+    overflow-y: scroll;
+    margin: 1.67em 0;
+    position: relative;
+    top: -447px;
+    left: 15px;
+  }
+
+  .code__container__transpiled-code {
+    height: 178px;
+    width: 275px;
+    word-break: break-all;
+    overflow-y: scroll;
+    margin: 1.67em 0;
+    position: relative;
+    top: -424px;
+    left: 15px;
+  }
+
+  .code__container__menu {
+    display: none;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .code__container__box-mobile {
     display: none;
@@ -112,43 +163,8 @@ textarea {
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .desktop {
-    display: none;
-  }
-  .code-area {
-    width: 100vw;
-  }
-  .code-area .mobile {
-    display: contents;
-  }
-  .container_editor_area {
-    display: none;
-  }
-  .code-area__transpiled-code {
-    display: none;
-  }
-  .App__main-container {
-    margin: 0;
-    padding: 0;
-  }
-  .header {
-    display: none;
-  }
-  .code-area__nav__buttons {
-    display: none;
-  }
 
-  .mobile {
-    display: contents;
-  }
-  .mobile pre {
-    margin: 0;
 
-    font-family: Courier;
-    font-size: 1rem;
-  }
-}
 
 /**
  * Darcula theme

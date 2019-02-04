@@ -20,9 +20,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="container">
           <header className="container__header">
-            <h3 className="container__header__logo">
-              <pre>{logo}</pre>
-            </h3>
+              <pre className="container__header__logo">{logo}</pre>
           </header>
 
           <nav className="container-desktop__nav">
@@ -58,9 +56,8 @@ class App extends Component {
           </nav>
 
           <nav className="container-mobile__nav">
-            <div onClick={this.openMenu}>
-              MENU{" "}
-              <img alt="" src="menu.png" className="App__responsive__nav-img" />
+            <div onClick={this.openMenu} className="container-mobile__nav__container">
+              <img alt="" src="menu.png" className="container-mobile__nav-img" />
             </div>
           </nav>
 
@@ -74,22 +71,22 @@ class App extends Component {
           </main>
 
           {this.state.menuOpen ? (
-            <div className="App__responsive__nav-modal">
-              <div className="App__responsive__nav-modal-content">
+            <div className="container-mobile__menu-modal">
+              <div className="container-mobile__menu-modal-content">
                 <span
-                  className="App__responsive__nav-close"
+                  className="container-mobile__menu-modal-close"
                   onClick={this.closeMenu}
                 >
                   &times;
                 </span>
                 <p>
-                  <a href="#">HOME</a>
+                  <Link to="/" className="container-mobile__menu-modal-content__link">ARCHAIZE JS</Link>
                 </p>
                 <p>
-                  <a href="#">ARCHIVE</a>
+                  <Link to="/explain" className="container-mobile__menu-modal-content__link">EXPLAIN</Link>
                 </p>
                 <p>
-                  <a href="#">ABOUT</a>
+                  <Link to="/about" className="container-mobile__menu-modal-content__link">ABOUT</Link>
                 </p>
               </div>
             </div>
