@@ -3,8 +3,8 @@ import React from "react";
 import "./index.css";
 
 const Text = () => (
-  <div className="essay">
-    <h2 className="about__container__header">ESSAY ON TRANSPILERS</h2>
+  <div className="essay__container">
+    <h2 className="essay__container__header">ESSAY ON TRANSPILERS</h2>
 
     <p className="essay__paragraph">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod

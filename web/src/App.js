@@ -83,7 +83,7 @@ class App extends Component {
                   <Link to="/" className="container-mobile__menu-modal-content__link">ARCHAIZE JS</Link>
                 </p>
                 <p>
-                  <Link to="/explain" className="container-mobile__menu-modal-content__link">EXPLAIN</Link>
+                  <Link to="/text" className="container-mobile__menu-modal-content__link">EXPLAIN</Link>
                 </p>
                 <p>
                   <Link to="/about" className="container-mobile__menu-modal-content__link">ABOUT</Link>

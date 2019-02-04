@@ -29,7 +29,6 @@
     margin: 0;
     padding: 0;
     transform: scale(1);
-    overflow: hidden;
   }
 
   .container-mobile__nav {
@@ -74,7 +73,7 @@
 
   .container-mobile__menu-modal-close {
     color: #aaaaaa;
-    float: right;
+    margin-left: 230px;
     font-size: 40px;
     font-weight: bold;
   }
@@ -86,6 +85,19 @@
 
 
 @media only screen and (min-width: 1024px) {
+  .container__main {
+    width: 825px;
+    min-height: 550px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    transform: scale(1);
+  }
+
+  .container-mobile__nav {
+    display: none;
+  }
+
   .container {
     color: #eaeaea;
     font-family: pixelFont;
@@ -149,18 +161,5 @@
 
   .container-desktop__nav__menu__link__img {
     width: 100px;
-  }
-
-  .container__main {
-    width: 825px;
-    min-height: 550px;
-    margin: 0;
-    padding: 0;
-    float: left;
-    transform: scale(1);
-  }
-
-  .container-mobile__nav {
-    display: none;
   }
 }
