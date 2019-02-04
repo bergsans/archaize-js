@@ -189,30 +189,30 @@ textarea {
   }
 
   .code__container__editor {
-    height: 313px;
+    height: 285px;
     width: 372px;
     word-break: break-all;
     overflow-y: scroll;
     margin: 1.67em 0;
     position: relative;
-    top: -355px;
+    top: -330px;
     left: 15px;
   }
 
   .code__container__transpiled-code {
-    height: 313px;
+    height: 285px;
     width: 372px;
     word-break: break-all;
     overflow-y: scroll;
     margin: 1.67em 0;
     position: relative;
-    top: -694px;
+    top: -642px;
     left: 409px;
   }
 
   .code__container__menu {
     position: relative;
-    top: -715px;
+    top: -662px;
     left: 2px;
     width: 738px;
   }
