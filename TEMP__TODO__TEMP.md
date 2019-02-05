@@ -3,8 +3,6 @@
 ```
 ------------------     MVP     ------------------
 
-- fix test problem
-
 - add lint
 
 - add EVIL tests (break the code!) Mental note: as of now, I think that
