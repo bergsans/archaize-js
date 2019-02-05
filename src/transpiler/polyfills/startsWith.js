@@ -29,6 +29,6 @@ String.prototype.startsWith = function(searchStr, position) {
   } else {
     return false;
   }
-}
+};
 module.exports = { String };
 

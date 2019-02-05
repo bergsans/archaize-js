@@ -12,7 +12,7 @@ String.prototype.includes = function(searchStr, position) {
   position = position || 0;
   var charsInString = str.split('');
   var len = charsInString.length;
-  var searchStrLen = searchStr.length
+  var searchStrLen = searchStr.length;
 
   for (var i = position; i < len; i++) {
     var tempString = '';
@@ -29,6 +29,6 @@ String.prototype.includes = function(searchStr, position) {
     }
   }
   return false;
-}
+};
 module.exports = { String };
 

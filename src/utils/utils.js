@@ -1,9 +1,6 @@
-const { debugMsg, redTxt } = require('dandy-ui');
-
 const { generate } = require('escodegen');
 const { parseScript } = require('esprima');
 const { replace } = require('estraverse');
-const { readJSFile, writeToFile } = require('../helpers/helpers.js');
 const { isTemplateLiterals, replaceTemplateLiterals } = require('../transpiler/templateliteral.js');
 const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclaration.js');
 const { isCallExpression, replaceCallExpression } = require('../transpiler/callexpression.js');
@@ -32,49 +29,49 @@ function transpile(expression) {
       } else if (isVariableDeclaration(node)) {
         let tempNode = replaceVariableDeclarations(node, ast);
         if (tempNode[1] === 'POLYFILL_INCLUDES') {
-          let includesES6AST = JSON.stringify(includesAST)
-          let parsed = JSON.parse(includesES6AST)
+          let includesES6AST = JSON.stringify(includesAST);
+          let parsed = JSON.parse(includesES6AST);
           ast.body = [parsed, ...ast.body];
           return tempNode[0];
         } else if (tempNode[1] === 'POLYFILL_STARTSWITH') {
-          let startsWithES6AST = JSON.stringify(startsWithAST)
-          let parsed = JSON.parse(startsWithES6AST)
+          let startsWithES6AST = JSON.stringify(startsWithAST);
+          let parsed = JSON.parse(startsWithES6AST);
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
-       } else if (tempNode[1] === 'POLYFILL_ENDSWITH') {
-          let endsWithES6AST = JSON.stringify(endsWithAST)
-          let parsed = JSON.parse(endsWithES6AST)
+        } else if (tempNode[1] === 'POLYFILL_ENDSWITH') {
+          let endsWithES6AST = JSON.stringify(endsWithAST);
+          let parsed = JSON.parse(endsWithES6AST);
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
-       } else if (tempNode[1] === 'POLYFILL_REPEAT') {
-          let repeatES6AST = JSON.stringify(repeatAST)
-          let parsed = JSON.parse(repeatES6AST)
+        } else if (tempNode[1] === 'POLYFILL_REPEAT') {
+          let repeatES6AST = JSON.stringify(repeatAST);
+          let parsed = JSON.parse(repeatES6AST);
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
-       } else if (tempNode[1] === 'POLYFILL_FIND') {
-          let findES6AST = JSON.stringify(findAST)
-          let parsed = JSON.parse(findES6AST)
+        } else if (tempNode[1] === 'POLYFILL_FIND') {
+          let findES6AST = JSON.stringify(findAST);
+          let parsed = JSON.parse(findES6AST);
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
-       } else if (tempNode[1] === 'POLYFILL_FIND_INDEX') {
-          let findIndexES6AST = JSON.stringify(findIndexAST)
-          let parsed = JSON.parse(findIndexES6AST)
+        } else if (tempNode[1] === 'POLYFILL_FIND_INDEX') {
+          let findIndexES6AST = JSON.stringify(findIndexAST);
+          let parsed = JSON.parse(findIndexES6AST);
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
-       } else if (tempNode[1] === 'POLYFILL_ARR_INCLUDES') {
-          let arr_includesES6AST = JSON.stringify(arr_includesAST)
-          let parsed = JSON.parse(arr_includesES6AST)
+        } else if (tempNode[1] === 'POLYFILL_ARR_INCLUDES') {
+          let arr_includesES6AST = JSON.stringify(arr_includesAST);
+          let parsed = JSON.parse(arr_includesES6AST);
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
-       } else {
+        } else {
           return tempNode;
         }
       } else if (isCallExpression(node)) {
-          let tempNode = replaceCallExpression(node);
-          return tempNode; 
+        let tempNode = replaceCallExpression(node);
+        return tempNode; 
       } else if (isFunctionDeclaration(node)) {
-          let tempNode = replaceFunctionDeclaration(node, ast);
-          return tempNode;
+        let tempNode = replaceFunctionDeclaration(node, ast);
+        return tempNode;
       } else if (isIfStatement(node)) {
         let tempNode = replaceIfStatement(node);
         return tempNode;

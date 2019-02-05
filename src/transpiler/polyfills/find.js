@@ -19,6 +19,6 @@ Array.prototype.find = function(f, thisArg) {
     }
   }
   return undefined;
-}
+};
 module.exports = { Array };
 

@@ -51,8 +51,8 @@ function printAST(ast) {
     let terminalWidth = process.stdout.columns;
     let strLen = s.length;
     let remainder = terminalWidth - strLen;
-    let whiteSpaceToEndOfLine = " ".repeat(remainder);
-    let strToPrint = `${s}${whiteSpaceToEndOfLine}`
+    let whiteSpaceToEndOfLine = ' '.repeat(remainder);
+    let strToPrint = `${s}${whiteSpaceToEndOfLine}`;
     whiteTxt(strToPrint, color);
   });
 }
@@ -61,7 +61,7 @@ function printAST(ast) {
  * colors used in Dandy-UI TODO: FIX BETTER SYSTEM!
  */
 function returnColor(n) {
-  const colors = ["black", "purple", "blue", "cyan", "purple", "green", "red"];
+  const colors = ['black', 'purple', 'blue', 'cyan', 'purple', 'green', 'red'];
   let table = [];
   for(let i = 0; i < 10; i++) {
     for(let j = 0; j < 6; j++) {
@@ -78,8 +78,8 @@ function returnColor(n) {
 function countWhiteSpace(strOfArr) {
   let color = 0;
   for(let i = 0; i < strOfArr.length; i++) {
-    if(strOfArr[i] === ' ') { color++ }
-    else { break }
+    if(strOfArr[i] === ' ') { color++; }
+    else { break; }
   }
   return color;
 }

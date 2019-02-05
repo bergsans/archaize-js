@@ -18,7 +18,7 @@ Array.prototype.includes = function(searchStr, fromIndex) {
     }
   }
   return false;
-}
+};
 module.exports = { Array };
 
 

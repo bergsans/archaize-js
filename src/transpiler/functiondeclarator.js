@@ -1,6 +1,6 @@
 const isFunctionDeclaration = (node) => (node.type === 'FunctionExpression') || (node.type === 'FunctionDeclaration');
 
-function replaceFunctionDeclaration(node, ast) {
+function replaceFunctionDeclaration(node) {
 
   if(node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'AssignmentPattern')) {
 
@@ -10,74 +10,74 @@ function replaceFunctionDeclaration(node, ast) {
         node.params[i] = { type: 'Identifier', name: param.left.name };
 
         let newVarInBody = {
-          type: "VariableDeclaration",
+          type: 'VariableDeclaration',
           declarations: [
             {
-              type: "VariableDeclarator",
+              type: 'VariableDeclarator',
               id: {
-                type: "Identifier",
+                type: 'Identifier',
                 name: param.left.name
               },
               init: {
-                type: "LogicalExpression",
-                operator: "||",
+                type: 'LogicalExpression',
+                operator: '||',
                 left: {
-                  type: "Identifier",
+                  type: 'Identifier',
                   name: param.left.name
                 },
                 right: {
-                  type: "Literal",
+                  type: 'Literal',
                   value: param.right.value,
                   raw: param.right.raw
                 }
               }
             }
           ],
-          kind: "var"
+          kind: 'var'
         };
         let oldBody = [...node.body.body];
-        node.body.body = [newVarInBody, ...oldBody]
+        node.body.body = [newVarInBody, ...oldBody];
       }
     });
 
   } else if(node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
 
-      let newParams = node.params.filter((param) => param.type !== 'RestElement');
-      node.params = newParams;
+    let newParams = node.params.filter((param) => param.type !== 'RestElement');
+    node.params = newParams;
 
-      let funcArguments = {
-        type: "VariableDeclaration",
-        declarations: [{
-          type: "VariableDeclarator",
-          id: {
-            type: "Identifier",
-            name: "args"
-          },
-          init: {
-            type: "CallExpression",
-            callee: {
-              type: "MemberExpression",
-              computed: false,
-              object: {
-                type: "Identifier",
-                name: "Object"
-              },
-              property: {
-                type: "Identifier",
-                name: "values"
-              }
+    let funcArguments = {
+      type: 'VariableDeclaration',
+      declarations: [{
+        type: 'VariableDeclarator',
+        id: {
+          type: 'Identifier',
+          name: 'args'
+        },
+        init: {
+          type: 'CallExpression',
+          callee: {
+            type: 'MemberExpression',
+            computed: false,
+            object: {
+              type: 'Identifier',
+              name: 'Object'
             },
-            arguments: [{
-              type: "Identifier",
-              name: "arguments"
-            }]
-          }
-        }],
-        kind: "var"
-      }
+            property: {
+              type: 'Identifier',
+              name: 'values'
+            }
+          },
+          arguments: [{
+            type: 'Identifier',
+            name: 'arguments'
+          }]
+        }
+      }],
+      kind: 'var'
+    };
 
     let oldBody = [...node.body.body];
-    node.body.body = [funcArguments, ...oldBody]
+    node.body.body = [funcArguments, ...oldBody];
 
   }
 
@@ -96,8 +96,8 @@ function replaceFunctionDeclaration(node, ast) {
         let thisDeclared = {
           type: 'VariableDeclaration',
           declarations: [
-						{
-					    type: 'VariableDeclarator',
+            {
+              type: 'VariableDeclarator',
               id: {
                 type: 'Identifier',
                 name: 'self'
@@ -119,5 +119,5 @@ function replaceFunctionDeclaration(node, ast) {
   }
   node.type = 'FunctionExpression';
   return node;
-  }
+}
 module.exports = { isFunctionDeclaration, replaceFunctionDeclaration };

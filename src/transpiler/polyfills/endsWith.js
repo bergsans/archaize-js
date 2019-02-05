@@ -8,7 +8,7 @@ String.prototype.endsWith = function(searchStr, endPosition) {
   var searchLength = searchStr.length;
 
   if(typeof searchStr != 'string') { 
-    throw new TypeError("Type error: search term parameter must be of type string");
+    throw new TypeError('Type error: search term parameter must be of type string');
   } 
 
   var compareString = string.slice((endPosition - searchLength), endPosition);
@@ -17,6 +17,6 @@ String.prototype.endsWith = function(searchStr, endPosition) {
   } else {
     return false;
   }
-}
+};
 module.exports = { String };
 

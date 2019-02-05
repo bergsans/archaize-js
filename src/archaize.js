@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
 const program = require('commander');
 const {
   boxify,
-  greenTxt
+  greenTxt,
+  redTxt
 } = require('dandy-ui');
 const {
   createContent,
@@ -42,13 +42,13 @@ const {
     try {
       const transpiledCode = transpile(fileContents);
       program.output?
-        writeToFile(outputFilename, transpiledCode);
+        writeToFile(outputFilename, transpiledCode)
         :
         greenTxt(transpiledCode);
     }
     catch(e) {
       boxify(['Erronous code. Unable to transpile'], 'red', 'white');
-      console.log(e);
+      redTxt(e);
     }
     
     process.exit(0);
@@ -59,7 +59,7 @@ const {
       writeToFile(outputFilename, makeAST(filecontents))
       :
       printAST(makeAST(filecontents));
-      process.exit(0);
+    process.exit(0);
   }
 
   program.help();

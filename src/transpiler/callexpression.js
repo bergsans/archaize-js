@@ -22,9 +22,9 @@ function replaceCallExpression(node) {
       } else {
         node.arguments[i].body.type = 'BlockStatement';
       }  
-    node.arguments[i].type = 'FunctionExpression';
+      node.arguments[i].type = 'FunctionExpression';
 
-  });
+    });
 
   } 
 

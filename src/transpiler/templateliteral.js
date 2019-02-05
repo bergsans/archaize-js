@@ -1,11 +1,9 @@
-const { debugMsg } = require('dandy-ui');
-
 const isTemplateLiterals = (node) => (node.type === 'TemplateLiteral');
 
 function replaceTemplateLiterals(node) {
 
   node.quasis = node.quasis.map((quasi) => ({
-    type: "Literal",
+    type: 'Literal',
     value: quasi.value.raw,
     raw: `\"${quasi.value.raw}\"`,
     loc: quasi.loc
@@ -15,8 +13,8 @@ function replaceTemplateLiterals(node) {
     .sort((a, b) => (a.loc.start.line - b.loc.start.line) || (a.loc.start.column - b.loc.start.column));
 
   const translatedToES5 = attributes.reduce((a, b) => ({ 
-    type: "BinaryExpression",
-    operator: "+",
+    type: 'BinaryExpression',
+    operator: '+',
     left: a,
     right: b
   })); 

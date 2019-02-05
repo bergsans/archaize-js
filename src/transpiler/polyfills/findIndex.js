@@ -19,6 +19,6 @@ Array.prototype.findIndex = function(f, thisArg) {
     }
   }
   return -1;
-}
+};
 module.exports = { Array };
 

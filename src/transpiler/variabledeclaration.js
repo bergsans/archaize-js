@@ -39,47 +39,47 @@ function replaceVariableDeclarations(node, ast) {
       let spread = d.init.elements.filter((el) => el.type === 'SpreadElement');
 
       let newNode =  {
-        type: "VariableDeclaration",
-          declarations: [
-            {
-              type: "VariableDeclarator",
-              id: {
-                type: "Identifier",
-                name: d.id.name,
+        type: 'VariableDeclaration',
+        declarations: [
+          {
+            type: 'VariableDeclarator',
+            id: {
+              type: 'Identifier',
+              name: d.id.name,
 
-              },
-              init: {
-                type: "CallExpression",
-                 callee: {
-                  type: "MemberExpression",
-                  computed: false,
-                  object: {
-                    type: "ArrayExpression",
-                    elements: [],
+            },
+            init: {
+              type: 'CallExpression',
+              callee: {
+                type: 'MemberExpression',
+                computed: false,
+                object: {
+                  type: 'ArrayExpression',
+                  elements: [],
 
-                  },
-                  property: {
-                    type: "Identifier",
-                    name: "concat",
-
-                  }
                 },
-                arguments: [
-                  {
-                    type: "Identifier",
-                    name: spread[0].argument.name
-                  },
-                  {
-                    type: "ArrayExpression",
-                    elements: newEls
-                  }
-                ]
-              }
+                property: {
+                  type: 'Identifier',
+                  name: 'concat',
+
+                }
+              },
+              arguments: [
+                {
+                  type: 'Identifier',
+                  name: spread[0].argument.name
+                },
+                {
+                  type: 'ArrayExpression',
+                  elements: newEls
+                }
+              ]
             }
-          ],
-          kind: "var"
-        };
-        node = newNode;
+          }
+        ],
+        kind: 'var'
+      };
+      node = newNode;
 
     }
 
@@ -94,9 +94,9 @@ function replaceVariableDeclarations(node, ast) {
     }
 
     d.init.type = d.init.type === 'ArrowFunctionExpression'?
-          'FunctionExpression'
-          :
-          d.init.type;
+      'FunctionExpression'
+      :
+      d.init.type;
 
     d.init.type === 'ObjectExpression'? d.init.properties.forEach((props) => props.shorthand = false) : null;
 
