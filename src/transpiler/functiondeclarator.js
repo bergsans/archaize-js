@@ -1,4 +1,3 @@
-const flat = require('array.prototype.flat');
 const isFunctionDeclaration = (node) => (node.type === 'FunctionExpression') || (node.type === 'FunctionDeclaration');
 
 function replaceFunctionDeclaration(node, ast) {
@@ -87,11 +86,11 @@ function replaceFunctionDeclaration(node, ast) {
     const callExpressionsInBody = body.filter((el) => el.type === 'ExpressionStatement');
 
     if(callExpressionsInBody) {
-      let temp = [];
-      callExpressionsInBody.forEach(expr => temp = [...temp, expr.expression.arguments]);
-      let exprArr = temp.flat();
+      //let temp = [];
+      callExpressionsInBody.forEach(expr => temp = [...temp, ...expr.expression.arguments]);
+      //let exprArr = temp.flat();
 
-      let matches = exprArr.some((el) => el.type === 'ThisExpression');
+      let matches = callExpressionsInBody.some((el) => el.type === 'ThisExpression');
 
       if(matches) {
         let thisDeclared = {
