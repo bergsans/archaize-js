@@ -7,9 +7,7 @@
     "test": "jest"
   },
   "jest": {
-    "testPathIgnorePatterns": [
-    "<rootDir>/web/", "web/", "/archaize-js/web/"
-  ]
+		"verbose": true
   },
   "repository": {
     "type": "git",
