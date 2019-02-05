@@ -2,17 +2,18 @@
 
 const fs = require('fs');
 const program = require('commander');
-const { 
-  boxify
+const {
+  boxify,
+  greenTxt
 } = require('dandy-ui');
-const { 
-  createContent, 
-  readJSFile, 
+const {
+  createContent,
+  readJSFile,
   writeToFile,
   printAST
 } = require('./helpers/helpers');
-const { 
-  makeAST, 
+const {
+  makeAST,
   transpile
 } = require('./utils/utils');
 
@@ -26,8 +27,8 @@ const {
     .option('-a, --about', 'About Archaize JS')
     .option('-i, --input <filename>', 'Specify source code')
     .option('-o, --output <filename>', 'Specify output filename')
-    .option('-m, --ast', 'AST analysis of file') 
-    .option('-t, --transpile', 'Transpile ES6 -> ES5')   
+    .option('-m, --ast', 'AST analysis of file')
+    .option('-t, --transpile', 'Transpile ES6 -> ES5')
     .parse(process.argv);
 
   if(program.about) {
@@ -35,8 +36,21 @@ const {
     boxify(text);
     process.exit(0);
   } else if(program.input && program.transpile) {
+    let outputFilename = program.output;
     let fileContents = readJSFile(program.input);
-    transpile(fileContents);
+
+    try {
+      const transpiledCode = transpile(fileContents);
+      program.output?
+        writeToFile(outputFilename, transpiledCode);
+        :
+        greenTxt(transpiledCode);
+    }
+    catch(e) {
+      boxify(['Erronous code. Unable to transpile'], 'red', 'white');
+      console.log(e);
+    }
+    
     process.exit(0);
   } else if(program.input && program.ast) {
     let filecontents = readJSFile(program.input);
@@ -47,6 +61,6 @@ const {
       printAST(makeAST(filecontents));
       process.exit(0);
   }
-  
+
   program.help();
 }
