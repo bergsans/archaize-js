@@ -3,8 +3,6 @@
 ```
 ------------------     MVP     ------------------
 
-- add lint
-
 - add EVIL tests (break the code!) Mental note: as of now, I think that
   the use of polyfills would produce duplicates? CHECK!!!
 
@@ -15,13 +13,7 @@
 
 - NPM publish
 
-- add COPYRIGHT LICENCE to text folder (because it's a school essay) and make
-  sure to state somewhere the diff against the main LICENCE (that
-  Mozilla Public License Version 2.0 only is effectual for the source code)
-
 - make sure everything works out just fine live
-
-- add index.js for NPM package (export makeAST and transpile)
 
 - WRITE, WRITE, WRITE
 
