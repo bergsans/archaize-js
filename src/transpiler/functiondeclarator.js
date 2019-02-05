@@ -86,18 +86,18 @@ function replaceFunctionDeclaration(node, ast) {
     const callExpressionsInBody = body.filter((el) => el.type === 'ExpressionStatement');
 
     if(callExpressionsInBody) {
-      //let temp = [];
-      callExpressionsInBody.forEach(expr => temp = [...temp, ...expr.expression.arguments]);
-      //let exprArr = temp.flat();
+      let temp = [];
+      callExpressionsInBody.forEach(expr => temp = [...temp, expr.expression.arguments]);
+      let temp2 = [].concat(...temp);
 
-      let matches = callExpressionsInBody.some((el) => el.type === 'ThisExpression');
-
+      //let matches = callExpressionsInBody.some((el) => el.type === 'ThisExpression');
+      let matches = temp2.some((el) => el.type === 'ThisExpression');
       if(matches) {
         let thisDeclared = {
           type: 'VariableDeclaration',
           declarations: [
-            {
-              type: 'VariableDeclarator',
+						{
+					    type: 'VariableDeclarator',
               id: {
                 type: 'Identifier',
                 name: 'self'
