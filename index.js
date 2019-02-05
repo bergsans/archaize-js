@@ -1,4 +1,6 @@
 /*
+ *
+ *
  *   █████╗ ██████╗  ██████╗██╗  ██╗ █████╗ ██╗███████╗███████╗         ██╗███████╗
  *  ██╔══██╗██╔══██╗██╔════╝██║  ██║██╔══██╗██║╚══███╔╝██╔════╝         ██║██╔════╝
  *  ███████║██████╔╝██║     ███████║███████║██║  ███╔╝ █████╗           ██║███████╗
@@ -10,9 +12,9 @@
  *            By Claes-Magnus Bernson
  */
 
-const { makeAST, transpile } = require('/src/utils/utils.js');
+const { makeAST, transpile } = require('./src/utils/utils.js');
 
-module.exports {
+module.exports = {
   makeAST,
 	transpile
 };
