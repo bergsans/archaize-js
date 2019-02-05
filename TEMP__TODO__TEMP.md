@@ -29,22 +29,26 @@
 
 -----------------     EXTRA     -----------------
 
-- add promises
+**GRADING OF IMPORTANCE:** 1-3 (1 === less important, 3 === more important)
 
-- better responsivity (IMPORTANT!)
+- add promises                                         : 2
 
-- clean up web solution
+- better responsivity (IMPORTANT!)                     : 3
 
-- drag and drop in the AST-view (AST EDITOR!!!) OR... form input attached to
+- clean up web solution                                : 2
+
+- drag and drop in the AST-view (AST EDITOR!!!)        : 1
+  OR... form input attached to
   every field (would be a REALLY cool effect)
 
-- better writing
+- better writing                                       : 3
 
-- npm link (archaize cli)
+- npm link (archaize cli)                              : 3
 
-- more features in the transpiler (more than promises)
+- more features in the transpiler                      : 1
+  (more than promises)  
 
-- more sophisticated tests
+- more sophisticated tests                             : 2
 
 -------------------------------------------------
 
