@@ -3,3 +3,4 @@ function test() {
   if("test2".includes("2")) {
   }
 }
+

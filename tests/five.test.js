@@ -49,8 +49,7 @@ const expected_output_of_the_integer_five = JSON.stringify(
 }
 );
 
-
-test('expect \"5\" with makeAST to equal the correct AST tree.', () => { 
+test('Expect \"5\" with makeAST to equal the correct AST tree.', () => { 
   const actualASTForFive = JSON.stringify(makeAST('5'));
   expect(actualASTForFive).toEqual(expected_output_of_the_integer_five)
 });

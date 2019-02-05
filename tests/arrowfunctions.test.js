@@ -1,7 +1,7 @@
 const { makeAST, transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
-test('expect arrow functions to be converted to functions', () => {
+test('Expect arrow function to be converted to function', () => {
  
   const contentOfSnippet = readJSFile('tests/snippets/arrowfunctiondeclaration.js');
   const archaizedCode = transpile(contentOfSnippet);

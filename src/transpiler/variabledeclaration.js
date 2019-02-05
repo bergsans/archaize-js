@@ -23,21 +23,19 @@ function returnType(name, ast) {
   return type;
 }
 
-
 let namesIds = [];
 
 function replaceVariableDeclarations(node, ast) {
   let polyfill = undefined;
 
   node.declarations.forEach((d, i) => {
-    if(d.init && d.init.type === 'BinaryExpression' && d.init.operator === '===') {
+    if (d.init && d.init.type === 'BinaryExpression' && d.init.operator === '===') {
       d.init.operator = '==';
-    } else if(d.init && d.init && d.init.type === 'ArrayExpression' && d.init.elements
+    } else if (d.init && d.init && d.init.type === 'ArrayExpression' && d.init.elements
          && d.init.elements.find((el) => el.type === 'SpreadElement')) {
 
       let newEls = d.init.elements.filter((el) => el.type !== 'SpreadElement');
       let spread = d.init.elements.filter((el) => el.type === 'SpreadElement');
-
       let newNode =  {
         type: 'VariableDeclaration',
         declarations: [
@@ -80,19 +78,14 @@ function replaceVariableDeclarations(node, ast) {
         kind: 'var'
       };
       node = newNode;
-
     }
-
-
 
     let idName = d.id.name;
     namesIds = [...namesIds, idName];
-   
     if (namesIds.filter((elIdName) => elIdName === idName && returnType(elIdName) === 'VariableDeclaration').length > 1) {
       const count = namesIds.filter((elIdName) => elIdName === idName).length;
       d.id.name = `${idName}${count}`;
     }
-
     d.init.type = d.init.type === 'ArrowFunctionExpression'?
       'FunctionExpression'
       :
@@ -103,7 +96,7 @@ function replaceVariableDeclarations(node, ast) {
     if (isMethodES6(node, 'includes', i)) {
       let name = d.init.callee.object.name;
       let type = returnType(name, ast);
-      if(type === 'ArrayExpression') {
+      if (type === 'ArrayExpression') {
         polyfill = 'POLYFILL_ARR_INCLUDES';
       } else {
         polyfill = 'POLYFILL_INCLUDES';
@@ -131,3 +124,4 @@ function replaceVariableDeclarations(node, ast) {
   }
 }
 module.exports = { isVariableDeclaration, replaceVariableDeclarations };
+

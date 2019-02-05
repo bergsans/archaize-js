@@ -13,3 +13,4 @@ test('Is \"World\" included in \"Hello, World!\"?', () => {
 test('Invalid parameter. Parameter is not of type string', () => {
   expect(() => { "Hello World".includes(5) }).toThrow('Parameter must be string');
 });
+

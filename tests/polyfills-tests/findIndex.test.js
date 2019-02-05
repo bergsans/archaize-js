@@ -9,3 +9,4 @@ test('Find index of element in arry', () => {
 test('Throw Error. Invalid parameter (not a function)', () => {
   expect(() => { [1, 2, 3, 4].findIndex('Hello there, Error!')}).toThrow('Not a function');
 });
+

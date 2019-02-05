@@ -1,7 +1,7 @@
 const { makeAST, transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
-test('expect default parameter to be converted', () => {
+test('Expect default parameter to be converted ||', () => {
 
   const contentOfSnippet = readJSFile('tests/snippets/default_param.js');
   const archaizedCode = transpile(contentOfSnippet);
@@ -13,3 +13,4 @@ test('expect default parameter to be converted', () => {
 
   expect(archaizedCode).toEqual(transpiledCode)
 });
+

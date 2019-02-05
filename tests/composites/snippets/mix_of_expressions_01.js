@@ -7,3 +7,4 @@ const someE6Function = (arr, string) => {
   let newStr = `This a template literal: ${string}...`;
     
 };
+

@@ -1,7 +1,7 @@
 const { makeAST, transpile } = require('../../src/utils/utils.js');
 const { readJSFile } = require('../../src/helpers/helpers.js');
 
-test('expect endsWith method, used with variable declaration, to generate polyfill', () => {
+test('Expect code #2 to be transpiled', () => {
 
   const contentOfSnippet = readJSFile('tests/composites/snippets/mix_of_expressions_01.js');
   const archaizedCode = transpile(contentOfSnippet);
@@ -21,3 +21,4 @@ var someE6Function = function (arr, string) {
 
   expect(archaizedCode).toEqual(transpiledCode)
 });
+

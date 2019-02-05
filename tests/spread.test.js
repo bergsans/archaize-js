@@ -1,7 +1,7 @@
 const { transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
-test('Remove rest operator in function declaration, replace param with argument object', () => {
+test('Remove spread operator and use alt approach', () => {
 
   const contentOfSnippet = readJSFile('tests/snippets/arr_spread.js');
   const archaizedCode = transpile(contentOfSnippet);
@@ -21,3 +21,4 @@ var arr2 = [].concat(arr, [
 ]);`
   expect(archaizedCode).toEqual(transpiledCode)
 });
+

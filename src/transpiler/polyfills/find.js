@@ -5,16 +5,16 @@
 Array.prototype.find = function(f, thisArg) {
   var arr = this;
   
-  if(typeof f != 'function') {
+  if (typeof f != 'function') {
     throw new TypeError('Not a function');
   }
  
-  if(thisArg) {
+  if (thisArg) {
     arr = thisArg;
   } 
 
-  for(var i = 0; i < arr.length; i++) {
-    if(f(arr[i])) { // i, obj?
+  for (var i = 0; i < arr.length; i++) {
+    if (f(arr[i])) { // i, obj?
       return arr[i];
     }
   }

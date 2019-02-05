@@ -26,3 +26,4 @@ String.prototype.repeat = function(count) {
   return undefined;
 };
 module.exports = { String };
+

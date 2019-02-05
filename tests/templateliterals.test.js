@@ -1,7 +1,7 @@
 const { makeAST, transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
-test('expect template literals to be translated to literals', () => {
+test('Expect template literals to be translated to literals', () => {
 
   const contentOfSnippet = readJSFile('tests/snippets/templateliterals.js');
   const archaizedCode = transpile(contentOfSnippet);
@@ -17,3 +17,4 @@ console.log('Text written by by C-M, ' + Date() + '.');`;
 
   expect(archaizedCode).toEqual(transpiledCode)
 });
+

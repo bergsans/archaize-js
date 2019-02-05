@@ -6,7 +6,7 @@
 - add EVIL tests (break the code!) Mental note: as of now, I think that
   the use of polyfills would produce duplicates? CHECK!!!
 
-- add class definition & coditional ternary operator
+- add class definition & conditional ternary operator
 
 - clean up the code (especially in the transpiler === the web solution is
   not that important)

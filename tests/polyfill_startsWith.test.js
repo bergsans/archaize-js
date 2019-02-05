@@ -39,3 +39,4 @@ function test() {
 
   expect(archaizedCode).toEqual(transpiledCode)
 });
+

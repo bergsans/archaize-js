@@ -2,13 +2,10 @@ const isFunctionDeclaration = (node) => (node.type === 'FunctionExpression') || 
 
 function replaceFunctionDeclaration(node) {
 
-  if(node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'AssignmentPattern')) {
-
+  if (node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'AssignmentPattern')) {
     node.params.forEach((param, i) => {
-      if(param.type === 'AssignmentPattern') {
-
+      if (param.type === 'AssignmentPattern') {
         node.params[i] = { type: 'Identifier', name: param.left.name };
-
         let newVarInBody = {
           type: 'VariableDeclaration',
           declarations: [
@@ -39,12 +36,9 @@ function replaceFunctionDeclaration(node) {
         node.body.body = [newVarInBody, ...oldBody];
       }
     });
-
-  } else if(node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
-
+  } else if (node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
     let newParams = node.params.filter((param) => param.type !== 'RestElement');
     node.params = newParams;
-
     let funcArguments = {
       type: 'VariableDeclaration',
       declarations: [{
@@ -75,22 +69,16 @@ function replaceFunctionDeclaration(node) {
       }],
       kind: 'var'
     };
-
     let oldBody = [...node.body.body];
     node.body.body = [funcArguments, ...oldBody];
-
   }
-
-  if(node.body.body) {
+  if (node.body.body) {
     const body = [...node.body.body];
     const callExpressionsInBody = body.filter((el) => el.type === 'ExpressionStatement');
-
-    if(callExpressionsInBody) {
+    if (callExpressionsInBody) {
       let temp = [];
       callExpressionsInBody.forEach(expr => temp = [...temp, expr.expression.arguments]);
       let temp2 = [].concat(...temp);
-
-      //let matches = callExpressionsInBody.some((el) => el.type === 'ThisExpression');
       let matches = temp2.some((el) => el.type === 'ThisExpression');
       if(matches) {
         let thisDeclared = {
@@ -113,11 +101,10 @@ function replaceFunctionDeclaration(node) {
         let declarations = [thisDeclared, ...node.body.body];
         node.body.body = declarations;
       }
-
     }
-
   }
   node.type = 'FunctionExpression';
   return node;
 }
 module.exports = { isFunctionDeclaration, replaceFunctionDeclaration };
+

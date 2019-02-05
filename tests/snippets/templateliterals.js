@@ -9,3 +9,4 @@ const str = `The wise wizard ${wiz.name}, ${wiz.age}, years old and is also call
 console.log(str);
 
 console.log(`Text written by by C-M, ${Date()}.`);
+

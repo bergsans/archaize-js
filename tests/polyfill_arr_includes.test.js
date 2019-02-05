@@ -1,7 +1,7 @@
 const { makeAST, transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
-test('expect array method includes, used with variable declaration, to generate polyfill', () => {
+test('Expect array method includes, used with variable declaration, to generate polyfill', () => {
 
   const contentOfSnippet = readJSFile('tests/snippets/polyfill_arr_includes.js');
   const archaizedCode = transpile(contentOfSnippet);
@@ -33,3 +33,4 @@ function test() {
 
   expect(archaizedCode).toEqual(transpiledCode)
 });
+

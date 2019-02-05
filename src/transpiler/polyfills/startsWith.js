@@ -7,12 +7,12 @@ String.prototype.startsWith = function(searchStr, position) {
   var len = string.length;
   var searchStrLen = searchStr.length;
 
-  if(position) {
+  if (position) {
     if (typeof position == 'number') {
       position = parseInt(position, 10);
-      if(position < 0) {
+      if (position < 0) {
         throw new RangeError('Negative number.');
-      } else if((position + searchStrLen) > len) {
+      } else if ((position + searchStrLen) > len) {
         throw new Error('Start position larger than string length');
       }
     } else {
@@ -24,7 +24,7 @@ String.prototype.startsWith = function(searchStr, position) {
   
   var compareString = string.slice(position, searchStrLen);
 
-  if(compareString == searchStr) {
+  if (compareString == searchStr) {
     return true;
   } else {
     return false;

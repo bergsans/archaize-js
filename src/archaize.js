@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/*
+ * Dependencies
+ * 
+ */
 const program = require('commander');
 const {
   boxify,
@@ -18,7 +22,7 @@ const {
 } = require('./utils/utils');
 
 /*
- * IIFE using commander.js to provide cli functionality
+ * Commander.js provide cli functionality
  *
  */
 {
@@ -50,7 +54,7 @@ const {
       boxify(['Erronous code. Unable to transpile'], 'red', 'white');
       redTxt(e);
     }
-    
+
     process.exit(0);
   } else if(program.input && program.ast) {
     let filecontents = readJSFile(program.input);
@@ -61,6 +65,6 @@ const {
       printAST(makeAST(filecontents));
     process.exit(0);
   }
-
   program.help();
 }
+

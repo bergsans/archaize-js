@@ -1,6 +1,11 @@
+/*
+ * Dependencies
+ *
+ */
 const { generate } = require('escodegen');
 const { parseScript } = require('esprima');
 const { replace } = require('estraverse');
+
 const { isTemplateLiterals, replaceTemplateLiterals } = require('../transpiler/templateliteral.js');
 const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclaration.js');
 const { isCallExpression, replaceCallExpression } = require('../transpiler/callexpression.js');
@@ -15,11 +20,19 @@ const { findAST } = require('../transpiler/polyfills/AST/_ast_find.js');
 const { findIndexAST } = require('../transpiler/polyfills/AST/_ast_findIndex.js');
 const { arr_includesAST } = require('../transpiler/polyfills/AST/_ast_arr_includes.js');
 
+/*
+ * Generates AST
+ */
 const makeAST = (expression) => parseScript(expression, { comment: true, loc: true });
+
+/*
+ * Transpile function
+ *
+ */
 
 function transpile(expression) {
 
-  var ast = makeAST(expression);
+  let ast = makeAST(expression);
 
   replace(ast, {
     enter: (node) => {
@@ -83,16 +96,5 @@ function transpile(expression) {
   }); 
   return generate(ast);
 }
-//let c = readJSFile('../random_js_code.js');
-//let someCode = makeAST(c);
-//writeToFile("equality", someCode);
-
-//let c = readJSFile('../random_js_code.js');
-//let someCode = transpile(c);
-//writeToFile("default_parameter2", makeAST(c))//someCode);
-//console.log(someCode);
-
-
-
 module.exports = { makeAST, transpile };
 

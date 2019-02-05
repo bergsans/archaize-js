@@ -5,10 +5,9 @@
 String.prototype.includes = function(searchStr, position) { 
   var str = this;
 
-  if(typeof searchStr != 'string') {   
+  if (typeof searchStr != 'string') {   
     throw new TypeError('Parameter must be string');
   }
-
   position = position || 0;
   var charsInString = str.split('');
   var len = charsInString.length;

@@ -4,3 +4,4 @@ function thisOrThatFunc() {
   console.log(3 === 3)
   return 4 === 4;
 }
+

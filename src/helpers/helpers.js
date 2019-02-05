@@ -78,7 +78,7 @@ function returnColor(n) {
 function countWhiteSpace(strOfArr) {
   let color = 0;
   for(let i = 0; i < strOfArr.length; i++) {
-    if(strOfArr[i] === ' ') { color++; }
+    if (strOfArr[i] === ' ') { color++; }
     else { break; }
   }
   return color;
