@@ -23,6 +23,8 @@
 
 - make sure everything works out just fine live
 
+- add index.js for NPM package (export makeAST and transpile)
+
 - WRITE, WRITE, WRITE
 
 -------------------------------------------------
