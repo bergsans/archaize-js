@@ -1,6 +1,19 @@
 ![logo](assets/logo.png)
 
-## Presentation
+## About
+
+**This is Archaize JS:**
+
+* ...a ES6 to ES5 transpiler (main part)
+    * Feature list include the core of ES6
+    * Theory. How a transpiler works and why they are important
+* ...a NPM package
+* ...a CLI to transpile JavaScript files
+* ...a Minimalistic Web Solution 
+    * Front-end (React)
+    * Back-end (Node.js, Express & Socket.io)
+
+*Archaize JS is a transpiler and is my web developer exam project (2019).*
 
 ## Installation
 
@@ -11,14 +24,6 @@ npm test
 
 ```
 
-## Issues
-
-Currently Archaize JS requires Node.js v 11.x.
-
-**FIX**: Replace method .flat with some other solution, or use a poly-fill solution.
-
-**POSSIBLE PROBLEM**: although everything looks fine on my screens, this
-CSS could cause major problems on other screens.
 
 ## Usage
 
@@ -40,14 +45,10 @@ node archaize -i someCode.js -o code-analysis -m (will save AST as 'code-analysi
 
 node archaize -i someCode.js -m (displays colorized AST in terminal)
 
--*-*-*-*-*
-
-not supported yet:
-
 node archaize -i someES6Code.js -o someES5Code.js -t
 
--*-*-*-*-*
 ```
+
 
 ## Folder structure
 
@@ -57,13 +58,14 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - /tests (Jest - main functionality)
 - /text (essay on transpilers)
 
+
 ## TASKS
 
 
 **General (code)**
 - [x] Add basic functionality to CLI
 - [x] Create 'only AST' output option
-- [ ] Link transpile option writeToFile
+- [X] Link transpile option writeToFile
 
 **General (text)**
 - [x] State question. About method & project scope
