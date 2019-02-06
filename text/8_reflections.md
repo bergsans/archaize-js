@@ -1,7 +1,14 @@
 # Reflections
 
+As I state in the first chapter, I don't consider this essay being
+'science'. This will be reflected in how I write about my project in
+this chapter. I think of my writings more as of 'documentation' on
+how I've worked, and an attempt to explain to myself (and others) how
+a transpiler works.
+
+
 ## Difficulties
-A transpiler consists of many parts, I imagine being quite hard to 
+A transpiler consists of many parts, I imagine being quite hard Ito 
 program. I've used dependencies in every aspect for the included 
 steps of a transpiler, beside the Abstract Syntax Tree. To me, the AST 
 seems like the most fun part of a transpiler because it's in the 
