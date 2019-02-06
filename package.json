@@ -1,7 +1,16 @@
 {
-  "name": "archaizeJS",
-  "version": "0.0.1",
-  "description": "",
+  "name": "archaize-js",
+  "version": "0.5.0",
+  "description": "Transpiler of JavaScript (ES6 to ES5)",
+	"keywords": [
+	  "transpiler",
+		"ES6",
+		"ES5",
+		"Esprima",
+		"cli",
+		"NPM package",
+	  "web solution"
+	],
   "main": "src/archaize.js",
   "scripts": {
     "test": "jest",
@@ -33,7 +42,6 @@
     "jest": "^23.6.0"
   },
   "dependencies": {
-    "array.prototype.flat": "^1.2.1",
     "commander": "^2.19.0",
     "dandy-ui": "^1.5.0",
     "escodegen": "^1.11.0",
