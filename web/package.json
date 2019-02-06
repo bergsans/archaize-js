@@ -30,7 +30,7 @@
     "webpack-dev-middleware": "^3.1.3"
   },
   "devDependencies": {},
-  "author": "Claes-Magnus Bernson <cmnbernson@gmail.com>",
+  "author": "Claes-Magnus Bernson <cmbernson@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/claes-magnus/archaize-js/issues"
