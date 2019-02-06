@@ -3,6 +3,8 @@
 ```
 ------------------     MVP     ------------------
 
+- add tests for CLI
+
 - add EVIL tests (break the code!) Mental note: as of now, I think that
   the use of polyfills would produce duplicates? CHECK!!!
 
