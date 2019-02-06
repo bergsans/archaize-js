@@ -71,12 +71,12 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] State question. About method & project scope
 - [x] Introduction
 - [x] The purpose of transpilers, or why transpiler matters
-- [ ] How a compiler works in general terms (25% done)  
+- [ ] How a compiler works in general terms (50% done)  
 - [x] Abstract Syntax Tree
 - [ ] Transformation
-- [ ] Summary
-- [ ] General reflections. Difficulties, the future (...)
-- [ ] Appendix
+- [x] Summary
+- [x] General reflections. Difficulties, the future (...)
+- [x] Appendix
 
 
 **Features (code)**
