@@ -1,5 +1,57 @@
 # Reflections
 
+## Difficulties
+A transpiler consists of many parts, I imagine being quite hard to 
+program. I've used dependencies in every aspect for the included 
+steps of a transpiler, beside the Abstract Syntax Tree. To me, the AST 
+seems like the most fun part of a transpiler because it's in the 
+AST 'something happens', it's the locus of **essential** data 
+transformations of a transpiler - at least of a transpiler of modern 
+to less modern JavaScript. However much I would've appreciated being 
+able to handle the process as a whole, I would not have managed what 
+I've done, given the time limit.
+
+It's probable, with some knowledge of various parts of the process, 
+that different parts constitute very distinct challenges. For instance, 
+the lexical analysis of the front-end often relies heavenly upon 
+complicated regular expressions. In the case of the AST, the 
+difficulty is of another nature. Also, the outcome - viewed 
+through the notion of readability - is very different. If you're 
+not very good with advanced regular expressions, it would seem 
+likely that it would be easier to read the transformations of 
+the AST part.
+
+Once you've solved how to transform a certain 'problem', adopt the 
+inner workings to a new set of rules, the outcome is easy 
+to comprehend. However working with complicated data, sometimes 
+nested in a labyrinth fashion (to say the least), is hard. But when 
+you've managed to find the 'path' from A to B in the tree hierarchy 
+and written the code that matches the appropriate set of rules for 
+a certain transformation, you end up with quite readable code. This 
+is at least true if you acknowledge how complicated these 
+kinds of processes can be. 
+
+I believe this fact becomes evident if you would make major 
+changes to the code, having to replace a rule with another and would 
+face the issue of targeting something new and in another manner.
+
+At the same time, I don't wont to stress the difficulties. If you use 
+a dependency like Esprima,  much is free. With hard work, I imagine anyone 
+can make a transpiler! But you'll -just like me - be stuck with 
+data transformations for a while.
+
+
+### On documentation, or lack thereof
+At first, I used the minimalistic library [Acorn JS](https://github.com/acornjs/acorn). 
+It seems great and I always enjoy the writings of the open source developer 
+Marijn Haverbeke, the main developer of the project. But the lack of good 
+documentation and examples made it hard for me, being a junior developer. 
+Otherwise, I much would have enjoyed using Acorn for this project. I see no 
+hinders for using it the same way as I've used Esprima, let the difficulty 
+of using a 'smaller' dependency. There is more material on Esprima, and 
+therefore I believe that a quite unexperienced developer like me 
+would gain much from using it. 
+
 
 ## Concluding remarks
 To learn about (and construct) a transpiler is an adventure. You don't 
