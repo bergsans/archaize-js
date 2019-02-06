@@ -2,7 +2,7 @@
 
 
 ## Concluding remarks
-To learn about and construct a transpiler is an adventure. You don't 
+To learn about (and construct) a transpiler is an adventure. You don't 
 only gain general knowledge on how (in the context of web front-end 
 development) transpilers like TypeScript, Babel.js, ESLint (or CoffeeScript, 
 ClojureScript, Elixir, ReasonML ...) works 'under the hood'; you also 
