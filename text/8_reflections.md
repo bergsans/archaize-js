@@ -7,7 +7,47 @@ how I've worked, and an attempt to explain to myself (and others) how
 a transpiler works.
 
 
+## An anecdote
+
+As a developer, I like to have the latest version of Node.js at hand. 
+During the project, my computer crashed, and I had to resort to another 
+computer at home. I've not used this computer for programming for a 
+long time or had not anyway installed a new version of Node.js (11.x). 
+When I cloned the GitHub repo and ran the tests some of them failed. I 
+could at first not understand why, but later I realized that I had used 
+a new feature of Node.js from the latest ECMA Specification (.flat). 
+This method is not a fancy feature (it flattens multidimensional arrays), 
+but it's a convenient feature that makes your life easier.
+
+Because I worked with a transpiler of my own, I had not included Babel.js 
+in some sort of build process as you'd normally do in a larger project. 
+And this is why my code failed. It also clearly demonstrates a sort of 
+blindness that many web developers face: presuming that because everything 
+works out just fine on your machine (with the latest Node.js, the latest 
+browsers and so on) that the code is unproblematic. But this is often not 
+always the case of the random user. Also, servers don't always have the 
+latest version of Node.js, because earlier dependencies might break.
+
+To me, this anecdote from my project clearly expresses why transpilers 
+matters. As I said earlier in this essay, I think of this in ethical terms. 
+I would go as far as to say that it's an ethical imperative to make us of 
+transpilers if you use new language features. Surely layout is indeed 
+tremendously important. And misaligned elements (fixated with CSS) might 
+cause serious problems. But the errors would more likely be on an 
+aesthetical or interface even (bad enough though). 
+
+On the other hand, if the behavior is invalid even more serious 
+problem can emerge. I'm not saying that some aspect is more important 
+than another; actually, I think there are good reasons to view 
+applications as wholes. All I'm saying that the 'gravity' of a bug, 
+I guess, could have a greater, more negative impact if the behavior 
+would be faulty. And that this, arguably, means that you make use of 
+transpilers. And if you use transpilers, as with all things, there 
+can be gains of knowing the process, so to speak.
+
+
 ## Difficulties
+
 A transpiler consists of many parts, I imagine being quite hard Ito 
 program. I've used dependencies in every aspect for the included 
 steps of a transpiler, beside the Abstract Syntax Tree. To me, the AST 
