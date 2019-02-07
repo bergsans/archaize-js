@@ -45,3 +45,7 @@ not 'binding' in any formal sense. The specification is more of a series of
 suggestions on how to standardize JavaScript features. It suggests 
 *conventions*, just like for instance grammars of natural language.
 
+## Code
+Each polyfill included in this transpiler include a link to the relevant
+section of the ECMAScript specification at the top of the sourecode.
+
