@@ -6,6 +6,7 @@ if(someThing.includes('some')) {} doesn't work
 function testThis(...props) {} works
 but an arrow function declaration doesn't work: const someFunc = (...props) => {}
 
+function someFunc(a,b, ...c)
 
 TODO.
 
