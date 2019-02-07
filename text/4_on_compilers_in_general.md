@@ -134,13 +134,20 @@ is done by a 'context analysis'. It's enough that each program statement is
 accurate in itself, it must also be valid in how it relates to other parts 
 of the architecture.
 
-* Intermediate Code Generator/Code Optimizer 
+* Intermediate Code Generator/Code Optimizer. I guess this part is not mostly included
+in a transpiler. In a compiler this phase adopts the source code to the machine, so 
+to speak. What's readable to us is not that important here; the focus is to make 
+changes that would help the machine to execude the code more efficient. In the context
+of a normal computer, this means that the optimization focus on memory and performance 
+(speed). If the programming language i.e. would include some kind of 
+unneccessary abstraction it would be replaced with more 'concrete' code.
 
-* Code generation
-
-
-
-
-
-
+* Code generation. In a computer, everything is 'code' in some sense. But there is a
+'semantic gap' between what we would normally consider readable and the code **of** the 
+machine. At the childhood of computers, enthusiasts would hardcode these codes to 
+the computer on a pure 'system' level. But the lengthiness of a programming language 
+like Assembler pales in comparison with that kind of codes. It would be still, 
+I guess, be code since it would follow 'rules', namely the rules inherent in 
+the processor. I bet there would be quite a few ones and zeros to express 
+the number five.
 
