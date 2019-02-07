@@ -8,7 +8,8 @@ the context of a transpiler - more specifically, in the context of
 Archaize JS - will have some room. In most cases, I won't describe 
 any solutions or reflect on the problems attached on a deeper level.
 
-Sections will topic each feature:
+Sections will topic each feature, excluding the polyfills that will be 
+gathered, clumped together under one umbrella.
 
 - template literals
 - variable declarations
@@ -20,7 +21,6 @@ Sections will topic each feature:
 - array method: findIndex
 - array method: find
 - array method: includes
-- implement polyfills in AST   
 - operator: rest
 - operator: spread (array)
 - strict/type equality (===)
