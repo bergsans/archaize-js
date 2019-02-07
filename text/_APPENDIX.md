@@ -34,3 +34,10 @@ Philosophy when writing these kind of application. *Do one thing and do it
 well.* If you see to it that the application is 'linkable', that other 
 applications can 'pipe' it, you've created a small part of a larger eco-system.
 
+
+## Trivia
+
+The notions of transpiler is old as one understands from this cover:
+
+![acm-babel.png](acm-babel.png)
+
