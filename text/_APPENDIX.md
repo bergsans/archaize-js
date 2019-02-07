@@ -1,6 +1,28 @@
 # APPENDIX
 
-## On CLI's
+## Archaize JS dependencies
+
+From package.json:
+
+```
+"dependencies": {
+  "commander": "^2.19.0",
+  "dandy-ui": "^1.5.0",
+  "escodegen": "^1.11.0",
+  "esprima": "^4.0.1",
+  "estraverse": "^4.2.0"
+}
+```
+
+- *Commander.js*. CLI-functionality (Node.js).
+- *Dandy UI*. Minimalistic terminal UI library (Node.js).
+- *Esprima*. Provides the Abstract Syntax Tree.
+- *Estraverse*. Library for traversing the JSON-like data.
+- *Estracode*. Transforms a Abstract Syntax Tree to source code.
+**The man dependency is Esprima.**
+
+
+### On CLI's
 
 CLI is an acronym for Command-line Interface. A CLI can include
 aspects of a GUI, a Graphical User Interface, but is anyhow centered
@@ -33,6 +55,12 @@ My contention is that there are good reasons to honor the tradition of the Unix
 Philosophy when writing these kind of application. *Do one thing and do it 
 well.* If you see to it that the application is 'linkable', that other 
 applications can 'pipe' it, you've created a small part of a larger eco-system.
+
+
+## Archaize JS Web solution dependencies
+
+The Web solution uses Node.js, Express and Socket.io on the back-end. As view-layer
+on the front-end, I use React. I've used WebPack/Babel.js in the build process.
 
 
 ## Trivia
