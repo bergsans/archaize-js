@@ -28,11 +28,11 @@ const {
 {
   program
     .version('0.5.0')
-    .option('-a, --about', 'About Archaize JS')
-    .option('-i, --input <filename>', 'Specify source code')
-    .option('-o, --output <filename>', 'Specify output filename')
+    .option('-a, --about', 'about Archaize JS')
+    .option('-i, --input <filename>', 'specify source code')
+    .option('-o, --output <filename>', 'specify output filename')
     .option('-m, --ast', 'AST analysis of file')
-    .option('-t, --transpile', 'Transpile ES6 -> ES5')
+    .option('-t, --transpile', 'transpile ES6 -> ES5')
     .parse(process.argv);
 
   if(program.about) {
