@@ -26,6 +26,5 @@ gathered, clumped together under one umbrella.
 - strict/type equality (===)
 - default parameter
 - property shorthand
-- class definition
-- conditional (ternary) operator
+
 
