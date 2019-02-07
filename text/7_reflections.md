@@ -7,7 +7,7 @@ how I've worked, and an attempt to explain to myself (and others) how
 a transpiler works.
 
 
-## An anecdote
+## An anecdote, and (again) on why transpillers matters
 
 As a developer, I like to have the latest version of Node.js at hand. 
 During the project, my computer crashed, and I had to resort to another 
