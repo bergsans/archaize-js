@@ -1,7 +1,7 @@
 KNOWN BUGS.
 
-if(someThing.includes('some')) {} doesn't work
-...but let a = someThing.includes('some') do work
+HUUUUUUGE ISSUE:
+CSS in Firefox is totally not working!
 
 function testThis(...props) {} works
 but an arrow function declaration doesn't work: const someFunc = (...props) => {}
