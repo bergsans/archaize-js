@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 const app = express();
 
-const { makeAST, transpile } = require('../src/utils/utils.js');
+const { makeAST, transpile } = require('../index.js');
 
 const compiler = webpack(webpackConfig);
 
