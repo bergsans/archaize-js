@@ -47,7 +47,7 @@ class ArchaizeJS extends Component {
     setInterval(() => {
       const { code } = this.state;
       socket.emit("TRANSPILE_CODE", { transpile: code });
-    }, 1000);
+    }, 700);
 
     socket.on("TRANSPILED_CODE", data => {
       const code_transpiled = data.transpiled;
