@@ -8,6 +8,9 @@ reflection) and b) by code (JavaScript).
 My project aims to produce an ES6 to ES5 transpiler. The transpiler will have great 
 similarities with projects like Babel.js. In fact, Babel.js has been the point 
 in the skies I navigate towards, a North star in the realm of JavaScript transpilers. 
+I will concentrate my energy on the Abstract Syntax Tree, to most interesting part
+of a transpiler since it's the 'hub' or 'nave' of the semantics - if you will, the
+'logic' - in the process of transpiling source code.
 
 In the context of Computer Science, this essay holds no value; neither does the 
 code part of the project, a transpiler named Archaize JS. Archaize JS 
