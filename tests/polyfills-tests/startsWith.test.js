@@ -10,6 +10,17 @@ test('Does \"Hello, World!\" start with \"Hello\"?', () => {
   expect(string.startsWith('Hello')).toBeTruthy();
 });
 
+test('startsWith method in an if statement', () => {
+  const searchStr = 'Hello';
+  const string = 'Hello, World';
+	
+  let isSearchStrIncluded = false;
+  if (string.startsWith(searchStr)) {
+	  isSearchStrIncluded = true;
+	}
+  expect(isSearchStrIncluded).toBeTruthy();
+});
+
 test('Invalid range', () => {
   expect(() => { 'Hello, world'.startsWith('Hell', -1) }).toThrow('Negative number.');
 });

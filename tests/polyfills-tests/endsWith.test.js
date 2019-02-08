@@ -5,6 +5,16 @@ test('Does \"Hello, World!\" end with \"Hello\"?', () => {
   expect(string.endsWith('Hello')).toBeFalsy();
 });
 
+test('endsWith method in if statement', () => {
+  const string = 'Hello, World!';
+  const searchStr = 'World!';
+	let isSearchStrIncluded = false;
+	if (string.endsWith(searchStr)) {
+	  isSearchStrIncluded = true;
+	}
+	expect(isSearchStrIncluded).toBeTruthy();			
+});
+
 test('Does \"Hello, World\" end with \"World\"?', () => {
   const string = "Hello, World!";
   expect(string.endsWith('World!')).toBeTruthy();

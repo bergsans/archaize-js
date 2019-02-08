@@ -6,3 +6,21 @@ test('Is the number 1 included in array?', () => {
   expect(findOne).toEqual(1);
 });
 
+test('find used in if statement', () => {
+  const arr = [
+				{
+					 name: 'Gandalf'
+				},
+				{
+					 name: 'Galadriel'
+				},
+				{
+					 name: 'Kimpa'
+				}
+	];
+	isNameInArr = false;			
+	if(arr.find((person) => person.name === 'Gandalf')) {
+	  isNameInArr = true;
+	}
+	expect(isNameInArr).toBeTruthy();
+});
