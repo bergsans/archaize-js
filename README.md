@@ -87,7 +87,7 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] string method: includes
 - [x] string method: startsWith
 - [x] string method: endsWith
-- [x] array method: find index
+- [x] array method: findIndex
 - [x] array method: find
 - [x] array method: includes
 - [x] implement polyfills in AST   
