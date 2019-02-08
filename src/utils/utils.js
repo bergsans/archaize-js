@@ -20,6 +20,13 @@ const { findAST } = require('../transpiler/polyfills/AST/_ast_find.js');
 const { findIndexAST } = require('../transpiler/polyfills/AST/_ast_findIndex.js');
 const { arr_includesAST } = require('../transpiler/polyfills/AST/_ast_arr_includes.js');
 
+// TEMP DEPS........................................
+
+const { readJSFile, writeToFile } = require('../helpers/helpers.js');
+
+// .................................................
+
+
 /*
  * Generates AST
  */
@@ -29,8 +36,17 @@ const makeAST = (expression) => parseScript(expression, { comment: true, loc: tr
  * Transpile function
  *
  */
-
 function transpile(expression) {
+
+  let isPolyfillPresent = {
+    arrIncludes: false,
+    strIncludes: false,
+    repeat: false,
+    find: false,
+    findIndex: false,
+    startsWith: false,
+    endsWith: false
+  };
 
   let ast = makeAST(expression);
 
@@ -42,9 +58,12 @@ function transpile(expression) {
       } else if (isVariableDeclaration(node)) {
         let tempNode = replaceVariableDeclarations(node, ast);
         if (tempNode[1] === 'POLYFILL_INCLUDES') {
-          let includesES6AST = JSON.stringify(includesAST);
-          let parsed = JSON.parse(includesES6AST);
-          ast.body = [parsed, ...ast.body];
+          if (!isPolyfillPresent.strIncludes) {
+            isPolyfillPresent = { ...isPolyfillPresent, strIncludes: true };
+            let includesES6AST = JSON.stringify(includesAST);
+            let parsed = JSON.parse(includesES6AST);
+            ast.body = [parsed, ...ast.body];
+          }
           return tempNode[0];
         } else if (tempNode[1] === 'POLYFILL_STARTSWITH') {
           let startsWithES6AST = JSON.stringify(startsWithAST);
@@ -72,9 +91,12 @@ function transpile(expression) {
           ast.body = [parsed, ...ast.body];
           return tempNode[0]; 
         } else if (tempNode[1] === 'POLYFILL_ARR_INCLUDES') {
-          let arr_includesES6AST = JSON.stringify(arr_includesAST);
-          let parsed = JSON.parse(arr_includesES6AST);
-          ast.body = [parsed, ...ast.body];
+          if (!isPolyfillPresent.arrIncludes) {
+            isPolyfillPresent = { ...isPolyfillPresent, arrIncludes: true };
+            let arr_includesES6AST = JSON.stringify(arr_includesAST);
+            let parsed = JSON.parse(arr_includesES6AST);
+            ast.body = [parsed, ...ast.body];
+          }
           return tempNode[0]; 
         } else {
           return tempNode;
@@ -86,8 +108,26 @@ function transpile(expression) {
         let tempNode = replaceFunctionDeclaration(node, ast);
         return tempNode;
       } else if (isIfStatement(node)) {
-        let tempNode = replaceIfStatement(node);
-        return tempNode;
+        let tempNode = replaceIfStatement(node, ast);
+        if (tempNode[1] === 'POLYFILL_ARR_INCLUDES') {
+          if(!isPolyfillPresent.arrIncludes){
+            isPolyfillPresent = { ...isPolyfillPresent, arrIncludes: true };
+            let arr_includesES6AST = JSON.stringify(arr_includesAST);
+            let parsed = JSON.parse(arr_includesES6AST);
+            ast.body = [parsed, ...ast.body];
+          }
+          return tempNode[0]; 
+        } else if (tempNode[1] === 'POLYFILL_INCLUDES') {
+          if (!isPolyfillPresent.strIncludes) {
+              isPolyfillPresent = { ...isPolyfillPresent, strIncludes: true };
+              let includesES6AST = JSON.stringify(includesAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];
+            }
+            return tempNode[0];
+        } else {
+          return tempNode;
+        }
       } else if (isReturnStatement(node)) {
         let tempNode = replaceReturnStatement(node);
         return tempNode;
@@ -96,5 +136,15 @@ function transpile(expression) {
   }); 
   return generate(ast);
 }
+// temp stuff ....
+
+//const contents = readJSFile('test.js');
+//writeToFile('test', makeAST(contents));
+
+//const code = transpile(contents);
+//console.log(code);
+
+// ...............
+
 module.exports = { makeAST, transpile };
 
