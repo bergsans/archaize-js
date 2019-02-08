@@ -66,30 +66,45 @@ function transpile(expression) {
           }
           return tempNode[0];
         } else if (tempNode[1] === 'POLYFILL_STARTSWITH') {
-          let startsWithES6AST = JSON.stringify(startsWithAST);
-          let parsed = JSON.parse(startsWithES6AST);
-          ast.body = [parsed, ...ast.body];
-          return tempNode[0]; 
+          if (!isPolyfillPresent.startsWith) {
+             isPolyfillPresent = { ...isPolyfillPresent, startsWith: true };
+              let includesES6AST = JSON.stringify(startsWithAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
         } else if (tempNode[1] === 'POLYFILL_ENDSWITH') {
-          let endsWithES6AST = JSON.stringify(endsWithAST);
-          let parsed = JSON.parse(endsWithES6AST);
-          ast.body = [parsed, ...ast.body];
-          return tempNode[0]; 
+          if (!isPolyfillPresent.endsWith) {
+             isPolyfillPresent = { ...isPolyfillPresent, endsWith: true };
+              let includesES6AST = JSON.stringify(endsWithAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
         } else if (tempNode[1] === 'POLYFILL_REPEAT') {
-          let repeatES6AST = JSON.stringify(repeatAST);
-          let parsed = JSON.parse(repeatES6AST);
-          ast.body = [parsed, ...ast.body];
-          return tempNode[0]; 
+          if (!isPolyfillPresent.repeat) {
+             isPolyfillPresent = { ...isPolyfillPresent, repeat: true };
+              let includesES6AST = JSON.stringify(repeatAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
         } else if (tempNode[1] === 'POLYFILL_FIND') {
-          let findES6AST = JSON.stringify(findAST);
-          let parsed = JSON.parse(findES6AST);
-          ast.body = [parsed, ...ast.body];
-          return tempNode[0]; 
+          if (!isPolyfillPresent.find) {
+             isPolyfillPresent = { ...isPolyfillPresent, find: true };
+              let includesES6AST = JSON.stringify(findAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
         } else if (tempNode[1] === 'POLYFILL_FIND_INDEX') {
-          let findIndexES6AST = JSON.stringify(findIndexAST);
-          let parsed = JSON.parse(findIndexES6AST);
-          ast.body = [parsed, ...ast.body];
-          return tempNode[0]; 
+          if (!isPolyfillPresent.findIndex) {
+             isPolyfillPresent = { ...isPolyfillPresent, findIndex: true };
+              let includesES6AST = JSON.stringify(findIndexAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
         } else if (tempNode[1] === 'POLYFILL_ARR_INCLUDES') {
           if (!isPolyfillPresent.arrIncludes) {
             isPolyfillPresent = { ...isPolyfillPresent, arrIncludes: true };
@@ -124,7 +139,47 @@ function transpile(expression) {
               let parsed = JSON.parse(includesES6AST);
               ast.body = [parsed, ...ast.body];
             }
-            return tempNode[0];
+        
+        } else if (tempNode[1] === 'POLYFILL_REPEAT') {
+          if (!isPolyfillPresent.repeat) {
+             isPolyfillPresent = { ...isPolyfillPresent, repeat: true };
+              let includesES6AST = JSON.stringify(repeatAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
+        } else if (tempNode[1] === 'POLYFILL_STARTSWITH') {
+          if (!isPolyfillPresent.startsWith) {
+             isPolyfillPresent = { ...isPolyfillPresent, startsWith: true };
+              let includesES6AST = JSON.stringify(startsWithAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
+        } else if (tempNode[1] === 'POLYFILL_ENDSWITH') {
+          if (!isPolyfillPresent.endsWith) {
+             isPolyfillPresent = { ...isPolyfillPresent, endsWith: true };
+              let includesES6AST = JSON.stringify(endsWithAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
+        } else if (tempNode[1] === 'POLYFILL_FIND') {
+          if (!isPolyfillPresent.find) {
+             isPolyfillPresent = { ...isPolyfillPresent, find: true };
+              let includesES6AST = JSON.stringify(findAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
+        } else if (tempNode[1] === 'POLYFILL_FIND_INDEX') {
+          if (!isPolyfillPresent.findIndex) {
+             isPolyfillPresent = { ...isPolyfillPresent, findIndex: true };
+              let includesES6AST = JSON.stringify(findIndexAST);
+              let parsed = JSON.parse(includesES6AST);
+              ast.body = [parsed, ...ast.body];  
+          }
+          return tempNode[0];
         } else {
           return tempNode;
         }

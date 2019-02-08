@@ -31,6 +31,16 @@ function replaceIfStatement(node, ast) {
     } else {
         polyfill = 'POLYFILL_INCLUDES';
     }
+  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'repeat') {
+    polyfill = 'POLYFILL_REPEAT';
+  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'startsWith') {
+    polyfill = 'POLYFILL_STARTSWITH';
+  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'endsWith') {
+    polyfill = 'POLYFILL_ENDSWITH';
+  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'find') {
+    polyfill = 'POLYFILL_FIND';
+  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'findIndex') {
+    polyfill = 'POLYFILL_FIND_INDEX';
   }
   if (polyfill) {
     return [node, polyfill];
