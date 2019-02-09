@@ -71,7 +71,7 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] State question. About method & project scope
 - [x] Introduction
 - [x] The purpose of transpilers, or why transpiler matters
-- [ ] How a compiler works in general terms (50% done)  
+- [x] How a compiler works in general terms  
 - [x] Abstract Syntax Tree
 - [ ] Transformation
 - [x] Summary
@@ -79,7 +79,7 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] Appendix
 
 
-**Features (code)**
+**Features (code). No that there are bugs.**
 - [x] template literals
 - [x] variable declarations
 - [x] arrow functions
@@ -104,13 +104,13 @@ node archaize -i someES6Code.js -o someES5Code.js -t
 - [x] variable declarations
 - [x] arrow functions
 - [x] polyfills
-- [ ] operator: rest
-- [ ] operator: spread
-- [ ] operator: rest
-- [ ] operator: spread
-- [ ] strict/type equality (===)
-- [ ] default parameter
-- [ ] property shorthand
+- [x] operator: rest
+- [x] operator: spread
+- [x] operator: rest
+- [x] operator: spread
+- [x] strict/type equality (===)
+- [x] default parameter
+- [x] property shorthand
 - [ ] class definition
 - [ ] Conditional (ternary) operator
 
