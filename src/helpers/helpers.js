@@ -26,12 +26,12 @@ function readJSFile(filename) {
  * write content to a file
  *
  */
-function writeToFile(filename, contents) {
-  let output = JSON.stringify(contents, null, 2);
-  let name = `${filename.replace(/\./g, '')}.ast`;
+function writeToFile(filename, contents, fileEnding) {
+  let output = contents; //JSON.stringify(contents, null, 2);
+  let name = `${filename.replace(/\./g, '')}.${fileEnding}`;
   try {
     fs.writeFileSync(name, output);
-    const stdout = `AST saved to ${name}`;
+    const stdout = fileEnding === 'js'? `Transpiled JS saved to ${name}` : `AST saved to ${name}`;
     greenTxt(stdout);
   } catch(error) {
     redTxt(error);

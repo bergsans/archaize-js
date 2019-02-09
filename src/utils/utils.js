@@ -193,7 +193,7 @@ function transpile(expression) {
 }
 // temp stuff ....
 
-//const contents = readJSFile('test.js');
+//const contents = readJSFile('whatever.js');
 //writeToFile('test', makeAST(contents));
 
 //const code = transpile(contents);

@@ -28,14 +28,14 @@ let namesIds = [];
 function replaceVariableDeclarations(node, ast) {
   let polyfill = undefined;
 
-  node.declarations.forEach((d, i) => {
-    if (d.init && d.init.type === 'BinaryExpression' && d.init.operator === '===') {
-      d.init.operator = '==';
-    } else if (d.init && d.init && d.init.type === 'ArrayExpression' && d.init.elements
-         && d.init.elements.find((el) => el.type === 'SpreadElement')) {
+  node.declarations.forEach((declr, i) => {
+    if (declr.init && declr.init.type === 'BinaryExpression' && declr.init.operator === '===') {
+      declr.init.operator = '==';
+    } else if (declr.init && declr.init && declr.init.type === 'ArrayExpression' && declr.init.elements
+         && declr.init.elements.find((el) => el.type === 'SpreadElement')) {
 
-      let newEls = d.init.elements.filter((el) => el.type !== 'SpreadElement');
-      let spread = d.init.elements.filter((el) => el.type === 'SpreadElement');
+      let newEls = declr.init.elements.filter((el) => el.type !== 'SpreadElement');
+      let spread = declr.init.elements.filter((el) => el.type === 'SpreadElement');
       let newNode =  {
         type: 'VariableDeclaration',
         declarations: [
@@ -43,7 +43,7 @@ function replaceVariableDeclarations(node, ast) {
             type: 'VariableDeclarator',
             id: {
               type: 'Identifier',
-              name: d.id.name,
+              name: declr.id.name,
 
             },
             init: {
@@ -80,21 +80,65 @@ function replaceVariableDeclarations(node, ast) {
       node = newNode;
     }
 
-    let idName = d.id.name;
+    let idName = declr.id.name;
     namesIds = [...namesIds, idName];
     if (namesIds.filter((elIdName) => elIdName === idName && returnType(elIdName) === 'VariableDeclaration').length > 1) {
       const count = namesIds.filter((elIdName) => elIdName === idName).length;
-      d.id.name = `${idName}${count}`;
+      declr.id.name = `${idName}${count}`;
     }
-    d.init.type = d.init.type === 'ArrowFunctionExpression'?
-      'FunctionExpression'
-      :
-      d.init.type;
+    if (declr.init.type === 'ArrowFunctionExpression') {
+      declr.init.type = 'FunctionExpression';
 
-    d.init.type === 'ObjectExpression'? d.init.properties.forEach((props) => props.shorthand = false) : null;
+/*
+      if(declr.init.params.some((param) => param.type === 'RestElement')) {
+    let newParams = declr.init.params.filter((param) => param.type !== 'RestElement');
+    declr.init.params = newParams;
+    let funcArguments = {
+      type: 'VariableDeclaration',
+      declarations: [{
+        type: 'VariableDeclarator',
+        id: {
+          type: 'Identifier',
+          name: 'args'
+        },
+        init: {
+          type: 'CallExpression',
+          callee: {
+            type: 'MemberExpression',
+            computed: false,
+            object: {
+              type: 'Identifier',
+              name: 'Object'
+            },
+            property: {
+              type: 'Identifier',
+              name: 'values'
+            }
+          },
+          arguments: [{
+            type: 'Identifier',
+            name: 'arguments'
+          }]
+        }
+      }],
+      kind: 'var'
+    };
+    
+    let oldBody = declr.init.body.length > 0? [...declr.init.body] : null;
+
+    if(oldBody) {
+      declr.init.body.body = [funcArguments, ...oldBody]
+    } else {
+      declr.init.body.body = [funcArguments];
+    }
+    **/
+      
+    } else if (declr.init.type === 'ObjectExpression') {
+      declr.init.properties.forEach((props) => props.shorthand = false);
+    }
 
     if (isMethodES6(node, 'includes', i)) {
-      let name = d.init.callee.object.name;
+      let name = declr.init.callee.object.name;
       let type = returnType(name, ast);
       if (type === 'ArrayExpression') {
         polyfill = 'POLYFILL_ARR_INCLUDES';
