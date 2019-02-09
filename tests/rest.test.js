@@ -23,5 +23,17 @@ test('Remove rest operator in variable arrow function declaration, replace with 
   expect(archaizedCode).toEqual(transpiledCode)
 });
 
+test('Test if more params are possible to include (someVar, ...params)', () => {
+
+  const contentOfSnippet = readJSFile('tests/snippets/rest_with_many_params.js');
+  const archaizedCode = transpile(contentOfSnippet);
+  const transpiledCode = `function someFunc(param) {
+    var args = Object.values(arguments);
+    console.log(args);
+    console.log(param);
+}`;
+
+  expect(archaizedCode).toEqual(transpiledCode);
+});
 
 
