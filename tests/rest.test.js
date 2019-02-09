@@ -36,4 +36,3 @@ test('Test if more params are possible to include (someVar, ...params)', () => {
   expect(archaizedCode).toEqual(transpiledCode);
 });
 
-
