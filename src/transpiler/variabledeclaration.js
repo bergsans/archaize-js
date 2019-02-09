@@ -89,50 +89,50 @@ function replaceVariableDeclarations(node, ast) {
     if (declr.init.type === 'ArrowFunctionExpression') {
       declr.init.type = 'FunctionExpression';
 
-/*
-      if(declr.init.params.some((param) => param.type === 'RestElement')) {
-    let newParams = declr.init.params.filter((param) => param.type !== 'RestElement');
-    declr.init.params = newParams;
-    let funcArguments = {
-      type: 'VariableDeclaration',
-      declarations: [{
-        type: 'VariableDeclarator',
-        id: {
-          type: 'Identifier',
-          name: 'args'
-        },
-        init: {
-          type: 'CallExpression',
-          callee: {
-            type: 'MemberExpression',
-            computed: false,
-            object: {
-              type: 'Identifier',
-              name: 'Object'
-            },
-            property: {
-              type: 'Identifier',
-              name: 'values'
-            }
-          },
-          arguments: [{
-            type: 'Identifier',
-            name: 'arguments'
-          }]
-        }
-      }],
-      kind: 'var'
-    };
-    
-    let oldBody = declr.init.body.length > 0? [...declr.init.body] : null;
 
-    if(oldBody) {
-      declr.init.body.body = [funcArguments, ...oldBody]
-    } else {
-      declr.init.body.body = [funcArguments];
-    }
-    **/
-      
+      if(declr.init.params.some((param) => param.type === 'RestElement')) {
+        let newParams = declr.init.params.filter((param) => param.type !== 'RestElement');
+        declr.init.params = newParams;
+        let funcArguments = {
+          type: 'VariableDeclaration',
+          declarations: [{
+            type: 'VariableDeclarator',
+            id: {
+              type: 'Identifier',
+              name: 'args'
+            },
+            init: {
+              type: 'CallExpression',
+              callee: {
+                type: 'MemberExpression',
+                computed: false,
+                object: {
+                  type: 'Identifier',
+                  name: 'Object'
+                },
+                property: {
+                  type: 'Identifier',
+                  name: 'values'
+                }
+              },
+              arguments: [{
+                type: 'Identifier',
+                name: 'arguments'
+              }]
+            }
+          }],
+          kind: 'var'
+        };
+        
+        let oldBody = declr.init.body.length > 0? [...declr.init.body] : null;
+
+        if(oldBody) {
+          declr.init.body.body = [funcArguments, ...oldBody]
+        } else {
+          declr.init.body.body = [funcArguments];
+        }
+    
+      }
     } else if (declr.init.type === 'ObjectExpression') {
       declr.init.properties.forEach((props) => props.shorthand = false);
     }

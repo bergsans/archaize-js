@@ -39,12 +39,16 @@ function replaceFunctionDeclaration(node) {
     });
   } else if (node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
 
-  let tempName = node.params[0].argument.name;
+  let restElIndex = node.params.findIndex((el) => el.type === 'RestElement')
+  let tempName = node.params[restElIndex].argument.name;
 
   for(let el of node.body.body) {
     if(el.type === 'ExpressionStatement') {
-      // console.log(el.expression.arguments)
-       //el.epxression.arguments.find((el) => )
+      el.expression.arguments.forEach((el) => {
+        if(el.name === tempName) {
+          el.name = 'args';
+        }
+      });
     } else if(el.type === 'ReturnStatement') {
        if(el.argument.callee.object.name === tempName) {
          el.argument.callee.object.name = 'args';

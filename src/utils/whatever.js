@@ -1,3 +1,3 @@
-function someFunc(someval, ...vars) {
+const someFunc = (test, ...vars) => {
 console.log(vars);
 }
