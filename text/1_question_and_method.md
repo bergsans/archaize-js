@@ -1,9 +1,6 @@
 # Question
 
-This essay tries to answer the question on how to build a 
-transpiler, using modern JavaScript. The question is answered using a 
-twofold course of action: a) by use of natural language (description, analysis, 
-reflection) and b) by code (JavaScript).
+This essay tries to answer the question on how to build a transpiler, using modern JavaScript. The question is answered using a twofold course of action: a) by use of natural language (description, analysis, reflection) and b) by code (JavaScript).
 
 My project aims to produce an ES6 to ES5 transpiler. The transpiler will have great 
 similarities with projects like Babel.js. In fact, Babel.js has been the point 
