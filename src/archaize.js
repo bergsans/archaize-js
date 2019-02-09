@@ -46,7 +46,7 @@ const {
     try {
       const transpiledCode = transpile(fileContents);
       program.output?
-        writeToFile(outputFilename, transpiledCode)
+        writeToFile(outputFilename, transpiledCode, 'js')
         :
         greenTxt(transpiledCode);
     }
@@ -60,7 +60,7 @@ const {
     let filecontents = readJSFile(program.input);
     let outputFilename = program.output;
     program.output?
-      writeToFile(outputFilename, makeAST(filecontents))
+      writeToFile(outputFilename, makeAST(filecontents), 'ast')
       :
       printAST(makeAST(filecontents));
     process.exit(0);
