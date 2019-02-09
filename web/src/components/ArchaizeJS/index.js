@@ -5,6 +5,7 @@ import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
 import JSONTree from "react-json-tree";
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import { snippets } from "./snippets";
 import { box } from "./box_desktop";
@@ -70,6 +71,7 @@ class ArchaizeJS extends Component {
         <pre className="code__container__box-mobile">{box_responsive}</pre>
 
         <div className="code__container__editor">
+    <Scrollbars autohide>
           <Editor
             value={code}
             onValueChange={code => this.setState({ code })}
@@ -77,12 +79,14 @@ class ArchaizeJS extends Component {
             padding={10}
             style={{
               fontFamily: '"Fira code", "Fira Mono", monospace',
-              fontSize: 15
+              fontSize: 14
             }}
             className="code-theme"
           />
+</Scrollbars>
         </div>
         <div className="code__container__transpiled-code">
+          <Scrollbars autohide>
           <Editor
             value={code_transpiled}
             onValueChange={() => {}}
@@ -90,10 +94,11 @@ class ArchaizeJS extends Component {
             padding={10}
             style={{
               fontFamily: '"Fira code", "Fira Mono", monospace',
-              fontSize: 15
+              fontSize: 14
             }}
             className="code-theme"
           />
+</Scrollbars>
         </div>
         <div className="code__container__menu">
           <a
@@ -137,7 +142,7 @@ class ArchaizeJS extends Component {
               />
             </div>
           </div>
-        ) : null}
+        ) : null }
       </div>
     );
   }

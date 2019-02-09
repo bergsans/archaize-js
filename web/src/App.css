@@ -175,7 +175,6 @@
     margin: 0;
     padding: 0;
     float: left;
-    transform: scale(1);
   }
 
   .container-mobile__nav {
@@ -223,6 +222,7 @@
     padding: 0;
     text-align: center;
     width: 125px;
+    margin-left: 10px;
 
   }
 

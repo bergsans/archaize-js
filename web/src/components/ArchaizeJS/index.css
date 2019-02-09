@@ -4,7 +4,6 @@ textarea {
   outline: none;
 }
 
-
 @media only screen and (max-width: 767px) {
   .code__container__box-desktop {
     display: none;
@@ -26,7 +25,6 @@ textarea {
     margin-top: -250px;
     left: 50%;
     margin-left: -152px;
-
   }
 
   .code__container__editor {
@@ -59,6 +57,7 @@ textarea {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+
   .code__container__box-mobile {
     display: none;
   }
@@ -80,9 +79,8 @@ textarea {
   }
 
   .code__container__box-desktop {
-    margin: 0;
-    font-family: Courier;
-    font-size: 14px;
+    padding:0;
+    font-size: 16px;
   }
 
   .code__container__editor {
@@ -132,21 +130,27 @@ textarea {
   }
 
   .code__container__modal__ast-viewer {
-    position: fixed !important;
-    width: 100vw;
-    height: 500px;
+    position: static  !important;
+    width: 1000% !important;
+    height: 1000% !important;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 1000;
     overflow: auto;
     background-color: black;
     opacity: 0.9;
   }
 
   .code__container__modal__ast-viewer__content-ast {
+    position: fixed !important;
+top:0;
+left:0;
+    width: 1000% !important;
+    height: 1000px !important;
     margin: auto;
     padding: 20px;
-    width: 80%;
+    width: 100%;
+    
     color: #37d800;
     font-family: "Raleway", sans-serif;
     font-size: 12px;
@@ -159,7 +163,7 @@ textarea {
   .code__container__modal__ast-viewer__content-ast-close {
     position: fixed;
     right: 40px;
-    top: 20px;
+    top: 40px;
     color: #aaaaaa;
     float: right;
     font-size: 40px;
@@ -174,12 +178,13 @@ textarea {
 }
 
 @media only screen and (min-width: 1024px) {
+
   .code__container__box-mobile {
     display: none;
   }
 
-  .code__container {
-  }
+  .code__container {}
+
   .code__container__header {
     color: #37d800;
     margin: 10px 0 0 0;
@@ -188,34 +193,36 @@ textarea {
 
   .code__container__box-desktop {
     margin: 0;
-    font-family: Courier;
+    font-size: 16px;
   }
 
   .code__container__editor {
-    height: 285px;
-    width: 372px;
+ 
+    height: 327px;
+    width: 362px;
     word-break: break-all;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin: 1.67em 0;
     position: relative;
-    top: -330px;
-    left: 15px;
+    top: -380px;
+    left: 20px;
   }
 
   .code__container__transpiled-code {
-    height: 285px;
-    width: 372px;
+
+    height: 327px;
+    width: 362px;
     word-break: break-all;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin: 1.67em 0;
     position: relative;
-    top: -642px;
-    left: 409px;
+    top: -734px;
+    left: 424px;
   }
 
   .code__container__menu {
     position: relative;
-    top: -662px;
+    top: -743px;
     left: 2px;
     width: 738px;
   }
@@ -238,21 +245,21 @@ textarea {
   }
 
   .code__container__modal__ast-viewer {
-    position: absolute !important;
-    width: 100%;
-    height: 500px;
-    right: 0;
+    position: fixed !important;
+    width: 2000px;
+    height: 1000px;
+    left: 0;
     top: 0;
-    z-index: 1;
+    z-index: 1000;
     overflow: auto;
     background-color: black;
     opacity: 0.9;
   }
 
   .code__container__modal__ast-viewer__content-ast {
-    margin: auto;
+    margin: 5% 0 5% 5%;
     padding: 20px;
-    width: 80%;
+    width: 800px;
     color: #37d800;
     font-family: "Raleway", sans-serif;
     font-size: 12px;
