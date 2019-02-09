@@ -12,3 +12,16 @@ test('Remove rest operator in function declaration, replace param with argument 
   expect(archaizedCode).toEqual(transpiledCode)
 });
 
+test('Remove rest operator in variable arrow function declaration, replace with arg obj', () => {
+
+  const contentOfSnippet = readJSFile('tests/snippets/var_declaration_rest.js');
+  const archaizedCode = transpile(contentOfSnippet);
+  const transpiledCode = `var randomFunc = function (a) {
+    var args = Object.values(arguments);
+};`;
+
+  expect(archaizedCode).toEqual(transpiledCode)
+});
+
+
+
