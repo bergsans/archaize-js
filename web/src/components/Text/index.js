@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+
+import Footer from '../Footer';
 
 import "./index.css";
 
@@ -63,14 +65,7 @@ const Text = () => (
       Integer feugiat scelerisque varius morbi enim.
     </p>
 
-    <footer className="footer">
-      <hr className="footer__hr" />
-      Claes-Magnus Bernson{" "}
-      <a href="mailto:cmbernson@gmail.com" className="essay__paragraph__link">
-        &lt;cmbernson@gmail.com&gt;
-      </a>
-      , 2019
-    </footer>
+    <Footer />
   </div>
 );
 export default Text;

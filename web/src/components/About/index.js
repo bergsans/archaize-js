@@ -1,5 +1,7 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import Footer from '../Footer';
 
 import "./index.css";
 
@@ -32,7 +34,7 @@ const About = () => (
     </dl>
     <p className="about__paragraph">
       <em>
-        Archaize JS is a transpiler and is my web developer exam project (2019).
+        Archaize JS is a transpiler and my web developer exam project (2019).
       </em>
       Read my essay on what a transpiler is and how it works @{" "}
       <Link to="/text" className="about__paragraph__link">
@@ -46,7 +48,7 @@ const About = () => (
       >
         /claes-magnus/archaize-js
       </a>
-      . The aesthetics of the this site stems form that the project orginally
+      . The aesthetics of this site, stems form that the project orginally
       was supposed to only be a CLI. I thought it would be kind of cool nice to
       apply the same aesthetics to the Web; in this case the 'branding' is quite
       narrow anyway.
@@ -85,17 +87,10 @@ const About = () => (
       <li className="about__ordered-list__item">operator: spread (array)</li>
       <li className="about__ordered-list__item">strict/type equality (===)</li>
       <li className="about__ordered-list__item">default parameter</li>
-      <li className="about__ordered-list__item">property shorthand</li>
-      <li className="about__ordered-list__item">class definition</li>
     </ol>
-    <footer className="footer">
-      <hr className="footer__hr" />
-      Claes-Magnus Bernson{" "}
-      <a href="mailto:cmbernson@gmail.com" className="about__paragraph__link">
-        &lt;cmbernson@gmail.com&gt;
-      </a>
-      , 2019
-    </footer>
+    <Footer />
+
   </div>
 );
 export default About;
+
