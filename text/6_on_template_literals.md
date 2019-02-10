@@ -2,7 +2,7 @@
 
 
 ## Background
-
+<pre>
 An  Expression represents  the  production of  some sort  of
 'value'.  It can  hold  an 'immediate'  value  (a string,  a
 number or some other data type like a boolean), or represent
@@ -15,19 +15,19 @@ expressions  (for  instance  mathematics)  -  all  kinds  of
 expressions.
 
 Let's begin by exemplifiing how template literals are used:
-
+</pre>
 ```
 const firstName = "Luke";
 const surName = "Skywalker";
 const name = `${firstName} ${surName}`;
 ```
-
+<pre>
 This contrasts with the old,  pre-ES6 way of doing things. A
 transpiler  whose task  is to  'archaize' modern  JavaScript
 must handle this change. With and before ES5, you would have
 to use  a binary  expression (a 'join')  to manage  the same
 kind of problem:
-
+</pre>
 ```
 var firstName = "Luke";
 var surName = "Skywalker";
@@ -35,7 +35,7 @@ var name = firstName + " " + surName;
 ```
 
 ### Problem 
-
+<pre>
 This  means,  that  between *each*  expression  a  'joining'
 procedure would have to be in place. With the terminology of
 ESTree, you'd  call this a 'Binary  Expression'.It could, of
@@ -54,14 +54,14 @@ and convert those into literals, joining the (using a binary
 expression) included literals in a way compatible with ES5.
 
 Now consider this (ES5) code snippet.
-
+</pre>
 ```
 var name = "C-M";
 var str = "As of this date (" + Date() + "), I, " + name + ", (...)";
 ```
-
+<pre>
 ESTree would produce an AST with the following structure:
-
+</pre>
 ```
 {
   "type": "Program",
@@ -397,9 +397,9 @@ ESTree would produce an AST with the following structure:
   "comments": []
 }
 ```
-
+<pre>
 Written with ES6 (same 'meaning', different syntax):
-
+</pre>
 ```
 let name = "C-M"
 let str = `Hello ${name}!`;
@@ -701,7 +701,7 @@ This would produce quite a different AST: (1)
 }
 
 ```
-
+<pre>
 Luckily, you can use applications  diff and sdiff to display
 the differences in a more  lucid manor. This problem took me
 some time to analyze and solve,  but the solution was in the
@@ -710,11 +710,11 @@ relevant parts (the valuesand their location in the chain of
 expressions joined together) and  convert them to the syntax
 of ES5 by traversing and transformaing each included value.
 
--------------------------------------------------------------------------------------
+------------------------------------------------------------
 1) From now  on, I will not include as  lengthy AST's. But I
 thought it was  important, as well as interesting,  to do so
 with the feature described first.
-
+</pre>
 
 
 

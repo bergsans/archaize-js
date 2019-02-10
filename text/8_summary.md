@@ -1,5 +1,5 @@
 # Summary
-
+<pre>
 Archaize JS is  an exploration on how  transpilers work. The
 aim  is  to answer  this  in  theory,  but mainly  by  code.
 Archaize can transpile most of the main functionality of ES6
@@ -12,6 +12,7 @@ that would have a required a longer text, perhaps even book.
 The main  focus of  the Archaize  JS is  to handle  the data
 transformations of  the Abstract  Syntax Tree.  The finished
 product includes these parts:
+</pre>
 * ...a ES6 to ES5 transpiler (main part)
     * Feature list include the core of ES6
     * Theory. How a transpiler works and why they are important 

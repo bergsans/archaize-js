@@ -1,5 +1,6 @@
 # The Abstract Syntax Tree
 
+<pre>
 In this  project, the real  work begins *after* -  or rather
 *with* the Abstract Syntax Tree, AST, since Archaize JS make
 use   of   [Esprima](https://www.npmjs.com/package/esprima).
@@ -10,6 +11,7 @@ characters. The streams of characters constitute the program
 code.
 
 Consider this JavaScript code:
+</pre>
 
 ```
 function addNums(...nums) {
@@ -19,6 +21,7 @@ console.log(`2 + 2 = ${addNums(2, 2)}`);
 // output: 2 + 2 = 4
 ```
 
+<pre>
 Esprima includes both a lexical analyzer (a tokenizer) and a
 syntax  analyzer (another  word for  AST). Somewhere  in its
 inner workings, it  starts out with by  performing a lexical
@@ -70,7 +73,7 @@ These  kind  of abstractions  are  useful  to the  compiler,
 enabling a  way to translate  from one language  to another.
 Esprima,  following ESTree,  would  articulate a  AST for  a
 function with this kind of terminology:
-
+</pre>
 
 ```
 {
@@ -85,10 +88,11 @@ function with this kind of terminology:
 }
 ```
 
+<pre>
 As you can  see, an AST much resembles any  JSON object with
 data. Everything has  a key and value; and a  value can also
 be another key holding other values.
-
+</pre>
 
 
 

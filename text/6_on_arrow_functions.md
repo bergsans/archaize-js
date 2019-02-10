@@ -3,6 +3,7 @@
 
 ## Background. What's an arrow function?
 
+<pre>
 The advantage of fat arrows,  arrow functions because of the
 `=>`, resides in a) it's not as lengthy as a normal function
 and b) it's binding of (lexical) this.
@@ -12,7 +13,7 @@ Beneath you'll  find some examples  on how you can  write an
 arrow  function. These  examples constitute  a selection  of
 different use  cases of  arrow functions and  differences in
 how you can write them.
-
+</pre>
 
 #### Type A (an example). The shorthand part.
 
@@ -72,7 +73,7 @@ function UiComponent2() {
 ```
 
 ### Problem
-
+<pre>
 The main difficulty handling  arrow functions in the context
 of a transpiler,  is that the arrow function can  be used in
 more  than  one context.  This  differentiates  it from  for
@@ -103,7 +104,7 @@ an arrow function making use of `this`. If this is the case,
 we'll  inject  a  variable  declaration  named  'self'  that
 contains the (lexical) `this` so that 'self' would have this
 context stored before the program enters the child node.
-
+</pre>
 
 
 

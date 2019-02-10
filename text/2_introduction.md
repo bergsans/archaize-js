@@ -1,5 +1,6 @@
 # Introduction
 
+<pre>
 This  essay  is my  way  to  substantiate  how my  (or  any)
 transpiler works.  To manage this task,  it seems reasonable
 to first explain what a compiler is.
@@ -93,9 +94,11 @@ matter that  interest me and totally  ignore some thingsthat
 It's my belief,  still to be proved to  myself, that insight
 into how a compiler works  will deepen your understanding of
 how to use programming languages in general.
-
+</pre>
 
 / Claes-Magnus Bernson
+
+
 
 
 

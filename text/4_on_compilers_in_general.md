@@ -1,5 +1,6 @@
 # Overview. How compilers work
 
+<pre>
 A  compiler  consists of  two  parts:  analysis (front  end)
 and  synthesis (back  end).  Analysis of  the code  precedes
 synthesis  in the  compiling process.  Before compiling  the
@@ -29,6 +30,7 @@ Ravi Sethi & Jeffrey D. Ullman.
 For  now, don't  bother much  about the  terminology to  the
 left. Concentrate  on code  and how  it gets  transformed. I
 believe the example to be quite self-explanatory.
+</pre>
 
 ```
 +----------------------------------+-----------------------------------+
@@ -80,6 +82,7 @@ believe the example to be quite self-explanatory.
 +---------------------------------+------------------------------------+
 ```
 
+<pre>
 So, a compiler consists of  front-end and a back-end (not to
 be confused with how the words are used in web development).
 Basically, the front-end handles the 'input' (source code of
@@ -180,7 +183,7 @@ would  be still,  I guess,  be  code since  it would  follow
 'rules', namely the  rules inherent in the  processor. I bet
 there would  be quite a  few ones  and zeros to  express the
 number five.
-
+</pre>
 
 
 

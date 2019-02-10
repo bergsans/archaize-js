@@ -1,14 +1,14 @@
 # Reflections
-
+<pre>
 As I state in the first chapter, I don't consider this essay
 being 'science'. This will be reflected in how I write about
 my project in  this chapter. I think of my  writings more as
 of 'documentation'  on how  I've worked,  and an  attempt to
 explain to myself (and others) how a transpiler works.
-
+</pre>
 
 ## An anecdote, and (again) on why transpillers matters
-
+<pre>
 As a developer, I like to have the latest version of Node.js
 at hand. During the project,  my computer crashed, and I had
 to resort  to another computer  at home. I've not  used this
@@ -52,10 +52,10 @@ more negative  impact if the  behavior would be  faulty. And
 that this, arguably, means that you make use of transpilers.
 And if you use transpilers, as with all things, there can be
 gains of knowing the process, so to speak.
-
+</pre>
 
 ## Difficulties
-
+<pre>
 A transpiler consists  of many parts, I  imagine being quite
 hard to program. I've used  dependencies in every aspect for
 the  included steps  of  a transpiler,  beside the  Abstract
@@ -99,9 +99,10 @@ If you  use a  dependency like Esprima,  much is  free. With
 hard  work, I  imagine  anyone can  make  a transpiler!  But
 you'll -just  like me -  be stuck with  data transformations
 for a while.
-
+</pre>
 
 ### On documentation, or lack thereof
+<pre>
 At   first,  I   used   the   minimalistic  library   [Acorn
 JS](https://github.com/acornjs/acorn). It seems  great and I
 always  enjoy  the writings  of  the  open source  developer
@@ -114,9 +115,10 @@ difficulty of  using a  'smaller' dependency. There  is more
 material on  Esprima, and therefore  I believe that  a quite
 unexperienced developer  like me would gain  much from using
 it.
-
+</pre>
 
 ## Concluding remarks
+<pre>
 To learn about (and construct) a transpiler is an adventure.
 You don't only gain general knowledge on how (in the context
 of web  front-end development) transpilers  like TypeScript,
@@ -165,7 +167,7 @@ so on. Depending on your  project, you could tailor this and
 make  the  'search  and replace'-pattern  specific  to  your
 project. Not bad.
 
-
+</pre>
 
 
 

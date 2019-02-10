@@ -24,7 +24,7 @@ From package.json:
 
 
 ### On CLI's
-
+<pre>
 CLI  is an  acronym for  Command-line Interface.  A CLI  can
 include aspects of a GUI, a Graphical User Interface, but is
 anyhow centered around text,  not graphical elements such as
@@ -44,13 +44,13 @@ and even then  it would not be recommended  at all; Babel.js
 is by lightyears a better option)  in a project there is two
 (actually three,  but I don't  count the child  processes of
 Node.js here) main options:
-
+</pre>
 * By  using the  Archaize JS  NPM package  and by  using the
 functionality of `makeAST` and `transpile`.
 
 * Or by including the CLI in package.json; something I would
 recommend.
-
+<pre>
 Archaize JS uses Commander.js to  handle the CLI part of the
 application.  Commander.js provides  excellent functionality
 for CLI's. Writing your own CLI is more complicated than one
@@ -65,19 +65,19 @@ application. *Do one thing and do it well.* If you see to it
 that the application is  'linkable', that other applications
 can  'pipe' it,  you've created  a  small part  of a  larger
 eco-system.
-
+</pre>
 
 ## Archaize JS Web solution dependencies
-
+<pre>
 The Web solution uses Node.js,  Express and Socket.io on the
 back-end. As view-layer on the  front-end, I use React. I've
 used WebPack/Babel.js in the build process.
-
+</pre>
 ## Trivia
-
+<pre>
 The notions  of transpiler  is old  as one  understands from
 this cover:
-
+</pre>
 ![acm-babel.png](acm-babel.png)
 
 

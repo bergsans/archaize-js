@@ -1,5 +1,6 @@
 # Archaize JS Features
 
+<pre>
 The following chapter will contain a number of sections with
 an identical structure. Each  section will first provide the
 background of a  feature. It will describe  what the feature
@@ -12,6 +13,7 @@ deeper level.
 
 Sections will  topic each  feature, excluding  the polyfills
 that will be gathered, clumped together under one umbrella.
+</pre>
 
 - template literals
 - variable declarations

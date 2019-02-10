@@ -2,7 +2,7 @@
 
 
 ## Background
-
+<pre>
 JavaScript  has  data  types  of   the  same  kind  as  most
 other programming languages: `boolean`, `null`, `undefined`,
 `strings`,  `numbers`  and  as  of  ES6  also  `symbols`.  A
@@ -16,10 +16,10 @@ the pre-ES6 `var` to  declare values. The difference resides
 in  what scope  the variable  and its  inherent value  have.
 Also,  there  is a  difference  between  `let` and  `const`,
 `const` being (sort of) constant in most cases.
-
+</pre>
 
 ### Problem
-
+<pre>
 The question relevant to us, is if the scoping matter in the
 case of a transpiler? And the short answer is no, or perhaps
 kind of.
@@ -36,7 +36,7 @@ and later on why they're not that important in this specific
 context. What  I write  about blocks  and scopes  is heavily
 incluenced by  the section Static Scope  and Block Structure
 in the Dragon-book (p. 28 - 33).
-
+</pre>
 
 ```
 {                                             start > | *BLOCK 1* |
@@ -51,7 +51,7 @@ in the Dragon-book (p. 28 - 33).
 }                                               end < | *BLOCK 1* |
 // output: "inside scope, a: 1", "outside scope, a: 0".
 ```
-
+<pre>
 At first,  a value  named 'a' is  declared and  assigned the
 value of  1. This declaration  takes place inside  a lexical
 scope.  The  next  declaration  of the  'a'-value,  a  value
@@ -60,7 +60,7 @@ other 'a'-value, takes place  in another scope. Therefore no
 conflict arises.
 
 On the other hand, this code would produce an error:
-
+</pre>
 ```
 {
   let a = 0;
@@ -72,7 +72,7 @@ On the other hand, this code would produce an error:
   console.log("outside scope a:", a);
 }
 ```
-
+<pre>
 This  code attempts  to  output something  that  is not  yet
 declared. The  fact that, there *is*  a existing, previously
 declared value  named 'a'  doesn't matter,  since 'a'  is in
@@ -84,7 +84,7 @@ same - or rather, that  their 'meaning' would be another. In
 the example  below the  `var` would actually  be `available`
 for and identifying and can thus be assigned a parameter and
 unproblematically log:ed.
-
+</pre>
 
 ```
 {
@@ -94,7 +94,7 @@ unproblematically log:ed.
     }
 }
 ```
-
+<pre>
 Too me it seems that even  though the blocks in this example
 are visually  marked and  indicate bounds,  they could  - at
 least here - be ignored when 'interpreting' the code.
@@ -124,6 +124,7 @@ parameters explicitly  with an  asterisk. If you  don't take
 special precautions when copying an  Object, you will end up
 with  the  scenario  presented here,  since  the  assignment
 implicitly will occur by reference:
+</pre>
 
 ```
 let a = { value: 0 };
@@ -132,10 +133,10 @@ b.value = 1;
 console.log(`a: ${a.value}`)
 // output: "a: 1"
 ```
-
+<pre>
 To make  a reference by  value with modern  JavaScript, thus
 making a deep copy you can write:
-
+</pre>
 ```
 let a = { value: 0 };
 let b = a;
@@ -147,8 +148,8 @@ c.value = 2;
 console.log(`a: ${a.value}`);
 // output: "a: 1" (still...)
 ```
-
-*  But nothing  of this  really changes  everything*, partly
+<pre>
+*But nothing  of this  really changes  everything*, partly
 because JavaScript is a loosely typed language. In all cases
 described  above, we  could replace  `let` and  `const` with
 `var`. The purpose with `let`  and `const` would (of course)
@@ -173,7 +174,7 @@ strategy  (if  a  name  conflict  arises,  then  rename  the
 variable...).
 
 This is how Babel.js seems to solve the problem stated above:
-
+</pre>
 ```
 {
   var a = 0;
@@ -185,6 +186,7 @@ This is how Babel.js seems to solve the problem stated above:
   console.log("outside scope a:", a);
 }
 ```
+<pre>
 (The    solution    is    from    the    Babel.js    [Online
 transpiler](https://babeljs.io/) as of 2019-01-22.)
 
@@ -208,7 +210,7 @@ is,  however,  possible  to  the  same  in  ES5  by  use  of
 the  `defineProperty`   in  Object.prototype.   Setting  the
 change-is-possible-flags to  false, would include more  of a
 ceremony though.
-
+</pre>
 
 
 

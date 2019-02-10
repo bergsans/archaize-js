@@ -1,7 +1,7 @@
 # ES5 polyfills
 
 ## Background
-
+<pre>
 Archaize JS includes ES6 subroutine features. In the case of
 a subroutine,  the problem is  not to transform  an existing
 Abstract Syntax  Tree, adapt  it to match  a changed  set of
@@ -51,15 +51,15 @@ Specification  is not  'binding'  in any  formal sense.  The
 specification is more  of a series of suggestions  on how to
 standardize JavaScript features.  It suggests *conventions*,
 just like for instance grammars of natural language.
-
+</pre>
 
 
 ## Code
-
+<pre>
 Each polyfill included in this  transpiler include a link to
 the relevant section of  the ECMAScript specification at the
 top of the sourecode.
-
+</pre>
 
 
 
