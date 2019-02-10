@@ -1,5 +1,6 @@
 # Question
 
+<pre>
 This  essay tries  to answer  the question  on how  to build
 a  transpiler,  using  modern JavaScript.  The  question  is
 answered  using a  twofold course  of action:  a) by  use of
@@ -29,11 +30,12 @@ value.  It  indirectly  helps  out  spreading  knowledge  on
 transpilers.  And the  fact it  is less  advanced and  quite
 flawed might  even be turned  to an advantage in  a didactic
 context.
-
+</pre>
 
 
 ## Method
 
+<pre>
 In a  sort, a compiler  is an advanced data  transformer and
 the main  difficulty of writing a  compiler/transpiler is to
 transform data according to specific rules.
@@ -54,7 +56,7 @@ with a problem, I've formulated some code covering a certain
 problem. Then  I've compared the  syntax trees of  both code
 snippets using  the BASH  applications diff and  sdiff. I've
 also used Vims -d flag (`$vim -d file1.ast file2.asti`).
-
+</pre>
 
 ### Outline of Strategy
 
@@ -68,20 +70,23 @@ identical output.
 
 #### Limitations
 
+<pre>
 A transpiler  consists of many  parts (more on  this later),
 and  I have  limited  myself to  working  with the  Abstract
 Syntax Tree using the Esprima library.
-
+</pre>
 
 
 ## Project Scope (features)
 
+<pre>
 The  Website [es6-features.org](es6-features.org)  lists all
 features of  ES6. Archaize.js won't  be able to  handle more
 than a handful of the present features. My goal is to finish
 the features stated below. These features, I think, could be
 regarded as core features of  ES6, and therefore have higher
 priority than lesser known and used features.
+</pre>
  
 - template literals
 - variable declarations
@@ -114,6 +119,7 @@ important
 
 ## In a nutshell
 
+<pre>
 In short,  the purpose  of this essay  is not  of scientific
 nature;  it's more  a proof  of concept  (and even  then you
 would  have to  be  quite liberal).  It's  also possible  to
@@ -131,7 +137,7 @@ transpiler is  configured, combining concrete  code examples
 with 'theory'.  There are  quite a few  texts on  Babel, but
 none of  them really  deals with examples  and only  in very
 general terms explain the meaning of compilers.
-
+</pre>
 
 
 
