@@ -33,7 +33,7 @@ context.
 </pre>
 
 
-## Method
+### Method
 
 <pre>
 In a  sort, a compiler  is an advanced data  transformer and
@@ -58,17 +58,18 @@ snippets using  the BASH  applications diff and  sdiff. I've
 also used Vims -d flag (`$vim -d file1.ast file2.asti`).
 </pre>
 
-### Outline of Strategy
+#### Outline of Strategy
 
+<pre>
 * Write code covering a feature of ES6 not included in ES5
 * Compare differences in the syntax tree
 * Establish  rules that would be  necessary for transforming
 differences in way  that would produce the  same end result,
 identical output.
 * Write code rules for transformation -> transform!
+</pre>
 
-
-#### Limitations
+##### Limitations
 
 <pre>
 A transpiler  consists of many  parts (more on  this later),
@@ -86,8 +87,7 @@ than a handful of the present features. My goal is to finish
 the features stated below. These features, I think, could be
 regarded as core features of  ES6, and therefore have higher
 priority than lesser known and used features.
-</pre>
- 
+
 - template literals
 - variable declarations
 - arrow functions
@@ -102,9 +102,10 @@ priority than lesser known and used features.
 - operator: spread (array)
 - strict/type equality (===)
 - default parameter
+</pre>
 
 ## Finished Product
-
+<pre>
 * ...a ES6 to ES5 transpiler (main part)
     * Feature list include the core of ES6
     *  Theory.  How a  transpiler  works  and why  they  are
@@ -114,7 +115,7 @@ important
 * ...a Minimalistic Web Solution 
     * Front-end (React)
     * Back-end (Node.js, Express & Socket.io)
-
+</pre>
 
 
 ## In a nutshell
@@ -138,6 +139,7 @@ with 'theory'.  There are  quite a few  texts on  Babel, but
 none of  them really  deals with examples  and only  in very
 general terms explain the meaning of compilers.
 </pre>
+
 
 
 
