@@ -3,12 +3,16 @@
 
 ## Background
 
-An Expression represents the production of some sort of 'value'. It can hold an 'immediate' 
-value (a string, a number or some other data type like a boolean), or represent a value by 
-a reference to a variable, a function or for instance a mathematical formula. 
+An  Expression represents  the  production of  some sort  of
+'value'.  It can  hold  an 'immediate'  value  (a string,  a
+number or some other data type like a boolean), or represent
+a value  by a  reference to  a variable,  a function  or for
+instance a mathematical formula.
 
-A template literal in ES6 admits embedded expressions in strings. You can embed variables, 
-functions or general expressions (for instance mathematics) - all kinds of expressions.
+A  template literal  in ES6  admits embedded  expressions in
+strings.  You  can  embed variables,  functions  or  general
+expressions  (for  instance  mathematics)  -  all  kinds  of
+expressions.
 
 Let's begin by exemplifiing how template literals are used:
 
@@ -18,9 +22,11 @@ const surName = "Skywalker";
 const name = `${firstName} ${surName}`;
 ```
 
-This contrasts with the old, pre-ES6 way of doing things. A transpiler whose task is to 'archaize' 
-modern JavaScript must handle this change. With and before ES5, you would have to use a 
-binary expression (a 'join') to manage the same kind of problem:
+This contrasts with the old,  pre-ES6 way of doing things. A
+transpiler  whose task  is to  'archaize' modern  JavaScript
+must handle this change. With and before ES5, you would have
+to use  a binary  expression (a 'join')  to manage  the same
+kind of problem:
 
 ```
 var firstName = "Luke";
@@ -29,19 +35,23 @@ var name = firstName + " " + surName;
 ```
 
 ### Problem 
-This means, that between *each* expression a 'joining' procedure would have to
-be in place. With the terminology of ESTree, you'd call this a 'Binary Expression'.
-It could, of course, be some other kind of binary expression, if you handle non-strings
-(3 - 2 and so on).
 
-The syntax tree for template literals is a bit different from that of ordinary literals, 
-that (if more than one) must be 'joined' by some kind of binary expression, 
-usually with an additive logic. 
+This  means,  that  between *each*  expression  a  'joining'
+procedure would have to be in place. With the terminology of
+ESTree, you'd  call this a 'Binary  Expression'.It could, of
+course,  be some  other kind  of binary  expression, if  you
+handle non-strings(3 - 2 and so on).
 
-The problem at hand, therefore, is that if you want to write a polyfill for template 
-literals you must gather necessary 'facts' from the part of the AST that uses template 
-literals and convert those into literals, joining the (using a binary expression) 
-included literals in a way compatible with ES5. 
+The syntax  tree for  template literals  is a  bit different
+from that of ordinary literals, that (if more than one) must
+be 'joined' by some kind  of binary expression, usually with
+an additive logic.
+
+The problem at hand, therefore, is that if you want to write
+a polyfill  for template literals you  must gather necessary
+'facts' from the part of the AST that uses template literals
+and convert those into literals, joining the (using a binary
+expression) included literals in a way compatible with ES5.
 
 Now consider this (ES5) code snippet.
 
@@ -692,13 +702,20 @@ This would produce quite a different AST: (1)
 
 ```
 
-Luckily, you can use applications diff and sdiff to display the differences in a more
-lucid manor. This problem took me some time to analyze and solve, but the solution was
-in the end quite simple. To handle the problem you save the relevant parts (the values
-and their location in the chain of expressions joined together) and convert them to the 
-syntax of ES5 by traversing and transformaing each included value.
+Luckily, you can use applications  diff and sdiff to display
+the differences in a more  lucid manor. This problem took me
+some time to analyze and solve,  but the solution was in the
+end  quite  simple.  To  handle the  problem  you  save  the
+relevant parts (the valuesand their location in the chain of
+expressions joined together) and  convert them to the syntax
+of ES5 by traversing and transformaing each included value.
 
 -------------------------------------------------------------------------------------
-1) From now on, I will not include as lengthy AST's. But I thought it was important,
-   as well as interesting, to do so with the feature described first.
+1) From now  on, I will not include as  lengthy AST's. But I
+thought it was  important, as well as interesting,  to do so
+with the feature described first.
+
+
+
+
 

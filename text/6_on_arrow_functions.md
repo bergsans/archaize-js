@@ -2,13 +2,16 @@
 
 
 ## Background. What's an arrow function?
-The advantage of fat arrows, arrow functions because of the `=>`, resides 
-in a) it's not as lengthy as a normal function and b) it's binding of (lexical) this. 
 
-An arrow function can be expressed in quite a few ways. Beneath you'll find some 
-examples on how you can write an arrow function. These examples constitute a 
-selection of different use cases of arrow functions and differences in how 
-you can write them. 
+The advantage of fat arrows,  arrow functions because of the
+`=>`, resides in a) it's not as lengthy as a normal function
+and b) it's binding of (lexical) this.
+
+An  arrow function  can be  expressed in  quite a  few ways.
+Beneath you'll  find some examples  on how you can  write an
+arrow  function. These  examples constitute  a selection  of
+different use  cases of  arrow functions and  differences in
+how you can write them.
 
 
 #### Type A (an example). The shorthand part.
@@ -70,28 +73,38 @@ function UiComponent2() {
 
 ### Problem
 
-The main difficulty handling arrow functions in the context of a transpiler, 
-is that the arrow function can be used in more than one context. This 
-differentiates it from for instance a variable declaration. An arrow 
-function can be anonymous, a parameter of another function and 
-will, therefore, can have lots of diffent locations in the hierarchy 
-of the AST.
+The main difficulty handling  arrow functions in the context
+of a transpiler,  is that the arrow function can  be used in
+more  than  one context.  This  differentiates  it from  for
+instance  a  variable  declaration. An  arrow  function  can
+be  anonymous, a  parameter  of another  function and  will,
+therefore,  can  have  lots  of  diffent  locations  in  the
+hierarchy of the AST.
 
-In actual code, this makes no difference. A 'normal' function also have a name
-(if it's not anonymous and only gets called in a certain context, as a part of 
-a specific functionality) and transforms a value or many values. But it will
-nevertheless be sorted as a part of the variable declaration, rather than the 
-function declaration. The arrow function declaration gets its name in the 
-context of variable declaration.
+In  actual  code,  this  makes  no  difference.  A  'normal'
+function also  have a name  (if it's not anonymous  and only
+gets called  in a certain context,  as a part of  a specific
+functionality) and transforms a value or many values. But it
+will  nevertheless  be sorted  as  a  part of  the  variable
+declaration, rather than the function declaration. The arrow
+function  declaration  gets  its  name  in  the  context  of
+variable declaration.
 
-Also, we must handle the `this` part. We must inject a variable (and it'll 
-follow tradition and be named 'self') into the AST. If we look at how a `this` 
-is used we can conclude that if we regard the functionality in which the 
-`this` is used a child node, the variable named 'self' should belong to 
-the parent. Therefore we must append a variable declaration to the parent node. 
-Because it's easier and more efficient to traverse the 'tree' from top to 
-bottom, we will look for any parent containing a child with an arrow function 
-making use of `this`. If this is the case, we'll inject a variable declaration 
-named 'self' that contains the (lexical) `this` so that 'self' would have 
-this context stored before the program enters the child node. 
+Also,  we must  handle the  `this`  part. We  must inject  a
+variable (and  it'll follow  tradition and be  named 'self')
+into the  AST. If  we look at  how a `this`  is used  we can
+conclude that  if we regard  the functionality in  which the
+`this`  is used  a  child node,  the  variable named  'self'
+should  belong to  the parent.  Therefore we  must append  a
+variable declaration to the parent node. Because it's easier
+and  more  efficient to  traverse  the  'tree' from  top  to
+bottom, we will look for  any parent containing a child with
+an arrow function making use of `this`. If this is the case,
+we'll  inject  a  variable  declaration  named  'self'  that
+contains the (lexical) `this` so that 'self' would have this
+context stored before the program enters the child node.
+
+
+
+
 
