@@ -9,7 +9,10 @@
 		"Esprima",
 		"cli",
 		"NPM package",
-	  "web solution"
+	  "web solution",
+		"Abstract Syntax Tree",
+		"AST",
+		"codemod"
 	],
   "main": "src/archaize.js",
   "scripts": {
