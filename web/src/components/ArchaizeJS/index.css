@@ -177,7 +177,8 @@ left:0;
     display: none;
   }
 
-  .code__container {}
+  .code__container {
+}
 
   .code__container__header {
     color: #37d800;
@@ -245,7 +246,7 @@ left:0;
     left: 0;
     top: 0;
     z-index: 1000;
-    overflow: auto;
+    overflow: hidden;
     background-color: black;
     opacity: 0.9;
   }
@@ -257,6 +258,7 @@ left:0;
     color: #37d800;
     font-family: "Raleway", sans-serif;
     font-size: 12px;
+    overflow: hidden;
   }
 
   .code__container__modal__ast-viewer__content-ast a {

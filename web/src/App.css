@@ -84,7 +84,8 @@
     height: 400px;
     margin: 0;
     padding: 0;
-    float: left;
+    float: left;  
+
   }
 
   .container-mobile__nav {
