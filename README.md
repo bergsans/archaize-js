@@ -1,7 +1,7 @@
 ![logo](assets/logo.png)
 
 ## About
-
+```
 **This is Archaize JS:**
 
 * ...a ES6 to ES5 transpiler (main part)
@@ -17,7 +17,7 @@ important
 *Archaize JS  is a transpiler  and is my web  developer exam
 project (2019).*
 
-
+```
 
 ## Installation
 
