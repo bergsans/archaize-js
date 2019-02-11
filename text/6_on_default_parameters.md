@@ -24,6 +24,11 @@ I  can't see  any major  problem attached  to this  feature.
 What's important is  to inject the default value  at the top
 of the function body,  otherwise, problems (of course) could
 arise when using it.
+
+
+
+
+
 </pre>
 
 

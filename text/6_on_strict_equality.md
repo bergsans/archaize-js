@@ -50,6 +50,11 @@ strategy  would  have to  more  complicated  than you  might
 think  at first.  My 'solution'  is no  real solution,  I've
 merely replaced each occurrence  of strict equality with its
 unstrict counterpart.
+
+
+
+
+
 </pre>
 
 

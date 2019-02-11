@@ -94,11 +94,11 @@ matter that  interest me and totally  ignore some thingsthat
 It's my belief,  still to be proved to  myself, that insight
 into how a compiler works  will deepen your understanding of
 how to use programming languages in general.
-</pre>
+
 
 / Claes-Magnus Bernson
 
 
 
 
-
+</pre>

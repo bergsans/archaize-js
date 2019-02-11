@@ -148,6 +148,7 @@ c.value = 2;
 console.log(`a: ${a.value}`);
 // output: "a: 1" (still...)
 ```
+
 <pre>
 *But nothing  of this  really changes  everything*, partly
 because JavaScript is a loosely typed language. In all cases
@@ -210,6 +211,11 @@ is,  however,  possible  to  the  same  in  ES5  by  use  of
 the  `defineProperty`   in  Object.prototype.   Setting  the
 change-is-possible-flags to  false, would include more  of a
 ceremony though.
+
+
+
+
+
 </pre>
 
 

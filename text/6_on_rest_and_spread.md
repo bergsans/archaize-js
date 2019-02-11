@@ -75,6 +75,12 @@ In that case  you need to exclude those  from arguments when
 using  the object  arguments  array,  otherwise, they'll  be
 duplicated.  The arguments  object contains  all parameters,
 including (in the example above) param1 and param2.
+
+
+
+
+
+
 </pre>
 
 

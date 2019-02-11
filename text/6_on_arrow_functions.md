@@ -104,6 +104,12 @@ an arrow function making use of `this`. If this is the case,
 we'll  inject  a  variable  declaration  named  'self'  that
 contains the (lexical) `this` so that 'self' would have this
 context stored before the program enters the child node.
+
+
+
+
+
+
 </pre>
 
 

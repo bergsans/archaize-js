@@ -167,6 +167,11 @@ so on. Depending on your  project, you could tailor this and
 make  the  'search  and replace'-pattern  specific  to  your
 project. Not bad.
 
+
+
+
+
+
 </pre>
 
 

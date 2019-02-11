@@ -13,7 +13,7 @@ deeper level.
 
 Sections will  topic each  feature, excluding  the polyfills
 that will be gathered, clumped together under one umbrella.
-</pre>
+
 
 - template literals
 - variable declarations
@@ -35,3 +35,4 @@ that will be gathered, clumped together under one umbrella.
 
 
 
+</pre>
