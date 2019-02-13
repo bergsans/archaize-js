@@ -1,28 +1,29 @@
-import React, { Component } from "react";
-import socketIOClient from "socket.io-client";
-import Editor from "react-simple-code-editor";
-import { highlight, languages } from "prismjs/components/prism-core";
-import "prismjs/components/prism-clike";
-import "prismjs/components/prism-javascript";
-import JSONTree from "react-json-tree";
+import React, { Component } from 'react';
+import socketIOClient from 'socket.io-client';
+import Editor from 'react-simple-code-editor';
+import { highlight, languages } from 'prismjs/components/prism-core';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-javascript';
+
 import { Scrollbars } from 'react-custom-scrollbars';
 
-import { snippets } from "./snippets";
-import { box } from "./box_desktop";
-import { box_responsive } from "./box_mobile";
-import { theme } from "./BASE16_monokai_code_color_scheme";
+import { snippets } from './snippets';
+import { box } from './box_desktop';
+import { box_responsive } from './box_mobile';
 
-import "prismjs/themes/prism-twilight.css";
-import "./index.css";
+import ViewerAST from '../ViewerAST';
+
+import 'prismjs/themes/prism-twilight.css';
+import './index.css';
 
 class ArchaizeJS extends Component {
   state = {
     response: false,
-    endpoint: "http://localhost:3000",
+    endpoint: 'http://localhost:3000',
     code: snippets[0],
-    code_transpiled: "",
+    code_transpiled: '',
     code_transpiled_ast: {},
-    astEditor: false
+    astViewer: false
   };
 
   randomizeSnippet = () => {
@@ -35,22 +36,22 @@ class ArchaizeJS extends Component {
     this.setState({ code: snippets[randomNum] });
   };
 
-  changeASTOpen = () => this.setState({ astEditor: true });
-  changeASTClose = () => this.setState({ astEditor: false });
+  changeASTOpen = () => this.setState({ astViewer: true });
+  changeASTClose = () => this.setState({ astViewer: false });
 
   setNewCode(code_transpiled, code_transpiled_ast) {
     this.setState({ code_transpiled, code_transpiled_ast });
   }
 
   componentDidMount() {
-    const socket = socketIOClient("http://localhost:3000");
+    const socket = socketIOClient('http://localhost:3000');
 
     setInterval(() => {
       const { code } = this.state;
-      socket.emit("TRANSPILE_CODE", { transpile: code });
+      socket.emit('TRANSPILE_CODE', { transpile: code });
     }, 700);
 
-    socket.on("TRANSPILED_CODE", data => {
+    socket.on('TRANSPILED_CODE', data => {
       const code_transpiled = data.transpiled;
       const code_transpiled_ast = data.ast;
       this.setNewCode(code_transpiled, code_transpiled_ast);
@@ -63,15 +64,15 @@ class ArchaizeJS extends Component {
     const { code_transpiled_ast } = this.state;
 
     return (
-      <div className="code__container">
-        <h2 className="code__container__header">
+      <div className='code__container'>
+        <h2 className='code__container__header'>
           Stay Young, appear old, be wise
         </h2>
-        <pre className="code__container__box-desktop">{box}</pre>
-        <pre className="code__container__box-mobile">{box_responsive}</pre>
+        <pre className='code__container__box-desktop'>{box}</pre>
+        <pre className='code__container__box-mobile'>{box_responsive}</pre>
 
-        <div className="code__container__editor">
-    <Scrollbars autohide>
+        <div className='code__container__editor'>
+    <Scrollbars autohide='true'>
           <Editor
             value={code}
             onValueChange={code => this.setState({ code })}
@@ -81,12 +82,12 @@ class ArchaizeJS extends Component {
               fontFamily: '"Fira code", "Fira Mono", monospace',
               fontSize: 14
             }}
-            className="code-theme"
+            className='code-theme'
           />
 </Scrollbars>
         </div>
-        <div className="code__container__transpiled-code">
-          <Scrollbars autohide>
+        <div className='code__container__transpiled-code'>
+          <Scrollbars autohide='true'>
           <Editor
             value={code_transpiled}
             onValueChange={() => {}}
@@ -96,53 +97,37 @@ class ArchaizeJS extends Component {
               fontFamily: '"Fira code", "Fira Mono", monospace',
               fontSize: 14
             }}
-            className="code-theme"
+            className='code-theme'
           />
 </Scrollbars>
         </div>
-        <div className="code__container__menu">
+        <div className='code__container__menu'>
           <a
-            href="#"
+            href='#'
             onClick={this.randomizeSnippet}
-            className="code__container__menu__button-link"
+            className='code__container__menu__button-link'
           >
             <img
-              src="change.png"
-              alt=""
-              className="code__container__menu__button-img"
-            />{" "}
+              src='change.png'
+              alt=''
+              className='code__container__menu__button-img'
+            />{' '}
             ANOTHER SNIPPET
           </a>
           <a
-            href="#"
+            href='#'
             onClick={this.changeASTOpen}
-            className="code__container__menu__button-link"
+            className='code__container__menu__button-link'
           >
             <img
-              src="view.png"
-              alt=""
-              className="code__container__menu__button-img"
-            />{" "}
+              src='view.png'
+              alt=''
+              className='code__container__menu__button-img'
+            />{' '}
             VIEW AST
           </a>
         </div>
-        {this.state.astEditor ? (
-          <div className="code__container__modal__ast-viewer">
-            <div className="code__container__modal__ast-viewer__content-ast">
-              <span
-                className="code__container__modal__ast-viewer__content-ast-close"
-                onClick={this.changeASTClose}
-              >
-                &times;
-              </span>
-              <JSONTree
-                data={code_transpiled_ast}
-                theme={theme}
-                invertTheme={false}
-              />
-            </div>
-          </div>
-        ) : null }
+        { this.state.astViewer ? <ViewerAST ast={this.state.code_transpiled_ast} changeASTClose={this.changeASTClose} /> : null }
       </div>
     );
   }
