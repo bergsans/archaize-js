@@ -1,3 +1,5 @@
-const someFunc = (test, ...vars) => {
-console.log(vars);
-}
+console.log('hell');
+
+let hell = "hell is other";
+
+if(hell.includes("hell")) {}

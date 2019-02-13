@@ -158,9 +158,12 @@ function replaceVariableDeclarations(node, ast) {
     }
   });
   if (polyfill) {
-    return [{ ...node,
-      kind: 'var'
-    }, polyfill];
+    return [{
+      ...node,
+      kind: 'var' }, 
+      {
+      polyfillType: polyfill }
+    ];
   } else {
     return { ...node,
       kind: 'var'

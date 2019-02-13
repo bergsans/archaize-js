@@ -43,7 +43,13 @@ function replaceIfStatement(node, ast) {
     polyfill = 'POLYFILL_FIND_INDEX';
   }
   if (polyfill) {
-    return [node, polyfill];
+    return [
+      {
+      ...node 
+      },{ 
+      polyfillType: polyfill
+     }
+    ];
   } else {
     return node;
   }

@@ -39,159 +39,71 @@ const makeAST = (expression) => parseScript(expression, { comment: true, loc: tr
 function transpile(expression) {
 
   let isPolyfillPresent = {
-    arrIncludes: false,
-    strIncludes: false,
-    repeat: false,
-    find: false,
-    findIndex: false,
-    startsWith: false,
-    endsWith: false
+    'POLYFILL_ARR_INCLUDES': false,
+    'POLYFILL_INCLUDES': false,
+    'POLYFILL_REPEAT': false,
+    'POLYFILL_FIND': false,
+    'POLYFILL_FIND_INDEX': false,
+    'POLYFILL_STARTSWITH': false,
+    'POLYFILL_ENDSWITH': false
   };
+  
+  const mappingsOfPolyfillAST = {
+    'POLYFILL_ARR_INCLUDES': arr_includesAST,
+    'POLYFILL_INCLUDES': includesAST,
+    'POLYFILL_REPEAT': repeatAST,
+    'POLYFILL_FIND': findAST,
+    'POLYFILL_FIND_INDEX': findIndexAST,
+    'POLYFILL_STARTSWITH': startsWithAST,
+    'POLYFILL_ENDSWITH': endsWithAST
+  };
+
 
   let ast = makeAST(expression);
 
   replace(ast, {
     enter: (node) => {
-      if (isTemplateLiterals(node)) {
-        let tempNode = replaceTemplateLiterals(node);      
-        return tempNode;
-      } else if (isVariableDeclaration(node)) {
-        let tempNode = replaceVariableDeclarations(node, ast);
-        if (tempNode[1] === 'POLYFILL_INCLUDES') {
-          if (!isPolyfillPresent.strIncludes) {
-            isPolyfillPresent = { ...isPolyfillPresent, strIncludes: true };
-            let includesES6AST = JSON.stringify(includesAST);
-            let parsed = JSON.parse(includesES6AST);
-            ast.body = [parsed, ...ast.body];
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_STARTSWITH') {
-          if (!isPolyfillPresent.startsWith) {
-             isPolyfillPresent = { ...isPolyfillPresent, startsWith: true };
-              let includesES6AST = JSON.stringify(startsWithAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_ENDSWITH') {
-          if (!isPolyfillPresent.endsWith) {
-             isPolyfillPresent = { ...isPolyfillPresent, endsWith: true };
-              let includesES6AST = JSON.stringify(endsWithAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_REPEAT') {
-          if (!isPolyfillPresent.repeat) {
-             isPolyfillPresent = { ...isPolyfillPresent, repeat: true };
-              let includesES6AST = JSON.stringify(repeatAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_FIND') {
-          if (!isPolyfillPresent.find) {
-             isPolyfillPresent = { ...isPolyfillPresent, find: true };
-              let includesES6AST = JSON.stringify(findAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_FIND_INDEX') {
-          if (!isPolyfillPresent.findIndex) {
-             isPolyfillPresent = { ...isPolyfillPresent, findIndex: true };
-              let includesES6AST = JSON.stringify(findIndexAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_ARR_INCLUDES') {
-          if (!isPolyfillPresent.arrIncludes) {
-            isPolyfillPresent = { ...isPolyfillPresent, arrIncludes: true };
-            let arr_includesES6AST = JSON.stringify(arr_includesAST);
-            let parsed = JSON.parse(arr_includesES6AST);
-            ast.body = [parsed, ...ast.body];
-          }
-          return tempNode[0]; 
-        } else {
-          return tempNode;
+      let tempNode = workWithNode(node, ast);    
+
+      if(Array.isArray(tempNode)) {
+
+        let  polyfill  = tempNode[1].polyfillType;
+
+        if(!isPolyfillPresent[polyfill]) {
+          isPolyfillPresent = { ...isPolyfillPresent, [polyfill]: true };
+          const polyfillAST = mappingsOfPolyfillAST[polyfill];
+          let includesES6AST = JSON.stringify(polyfillAST);
+          let parsed = JSON.parse(includesES6AST);
+          ast.body = [parsed, ...ast.body];  
         }
-      } else if (isCallExpression(node)) {
-        let tempNode = replaceCallExpression(node);
-        return tempNode; 
-      } else if (isFunctionDeclaration(node)) {
-        let tempNode = replaceFunctionDeclaration(node, ast);
-        return tempNode;
-      } else if (isIfStatement(node)) {
-        let tempNode = replaceIfStatement(node, ast);
-        if (tempNode[1] === 'POLYFILL_ARR_INCLUDES') {
-          if(!isPolyfillPresent.arrIncludes){
-            isPolyfillPresent = { ...isPolyfillPresent, arrIncludes: true };
-            let arr_includesES6AST = JSON.stringify(arr_includesAST);
-            let parsed = JSON.parse(arr_includesES6AST);
-            ast.body = [parsed, ...ast.body];
-          }
           return tempNode[0]; 
-        } else if (tempNode[1] === 'POLYFILL_INCLUDES') {
-          if (!isPolyfillPresent.strIncludes) {
-              isPolyfillPresent = { ...isPolyfillPresent, strIncludes: true };
-              let includesES6AST = JSON.stringify(includesAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];
-            }
-        
-        } else if (tempNode[1] === 'POLYFILL_REPEAT') {
-          if (!isPolyfillPresent.repeat) {
-             isPolyfillPresent = { ...isPolyfillPresent, repeat: true };
-              let includesES6AST = JSON.stringify(repeatAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_STARTSWITH') {
-          if (!isPolyfillPresent.startsWith) {
-             isPolyfillPresent = { ...isPolyfillPresent, startsWith: true };
-              let includesES6AST = JSON.stringify(startsWithAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_ENDSWITH') {
-          if (!isPolyfillPresent.endsWith) {
-             isPolyfillPresent = { ...isPolyfillPresent, endsWith: true };
-              let includesES6AST = JSON.stringify(endsWithAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_FIND') {
-          if (!isPolyfillPresent.find) {
-             isPolyfillPresent = { ...isPolyfillPresent, find: true };
-              let includesES6AST = JSON.stringify(findAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else if (tempNode[1] === 'POLYFILL_FIND_INDEX') {
-          if (!isPolyfillPresent.findIndex) {
-             isPolyfillPresent = { ...isPolyfillPresent, findIndex: true };
-              let includesES6AST = JSON.stringify(findIndexAST);
-              let parsed = JSON.parse(includesES6AST);
-              ast.body = [parsed, ...ast.body];  
-          }
-          return tempNode[0];
-        } else {
-          return tempNode;
-        }
-      } else if (isReturnStatement(node)) {
-        let tempNode = replaceReturnStatement(node);
+      } else {
         return tempNode;
       }
+    
     }
   }); 
   return generate(ast);
 }
-// temp stuff ....
+
+
+function workWithNode(node, ast) {
+
+   const { type } = node;
+
+   const nodeTypes = {
+    VariableDeclaration: () => replaceDeclaration(node),
+    CallExpression: () => replaceCallExpression(node),
+    FunctionExpression: () => replaceFunctionDeclaration(node),
+    FunctionDeclaration: () => replaceFunctionDeclaration(node),
+    IfStatement: () => replaceIfStatement(node, ast),
+    ReturnStatement: () => replaceReturnStatement(node),
+    TemplateLiteral: () => replaceTemplateLiterals(node),
+    VariableDeclaration: () => replaceVariableDeclarations(node, ast)
+  };
+  return (nodeTypes[type]? nodeTypes[type]() : node);
+}
+//temp stuff ....
 
 //const contents = readJSFile('whatever.js');
 //writeToFile('test', makeAST(contents));
