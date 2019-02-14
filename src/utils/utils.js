@@ -96,7 +96,7 @@ function workWithNode(node, ast) {
   const { type } = node;
 
   const nodeTypes = {
-    VariableDeclaration: () => replaceDeclaration(node),
+    VariableDeclaration: () => replaceVariableDeclarations(node),
     CallExpression: () => replaceCallExpression(node),
     FunctionExpression: () => replaceFunctionDeclaration(node),
     FunctionDeclaration: () => replaceFunctionDeclaration(node),
