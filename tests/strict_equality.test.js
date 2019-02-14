@@ -1,4 +1,4 @@
-const { makeAST, transpile } = require('../src/utils/utils.js');
+const { transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
 test('Replace strict equality (===) with un-strict (==)', () => {

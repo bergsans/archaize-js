@@ -1,4 +1,4 @@
-const { makeAST, transpile } = require('../src/utils/utils.js');
+const { transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
 test('Expect string method includes, used with variable declaration, to generate polyfill', () => {

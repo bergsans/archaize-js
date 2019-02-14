@@ -1,4 +1,4 @@
-const { makeAST, transpile } = require('../src/utils/utils.js');
+const { transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
 test('Expect find method, used with variable declaration, to generate polyfill', () => {
@@ -6,7 +6,6 @@ test('Expect find method, used with variable declaration, to generate polyfill',
   const contentOfSnippet = readJSFile('tests/snippets/polyfill_find.js');
   const archaizedCode = transpile(contentOfSnippet);
   
-  // NOTE: fix ===
   const transpiledCode = `Array.prototype.find = function (f, thisArg) {
     var arr = this;
     if (typeof f != 'function') {
@@ -38,3 +37,11 @@ function test() {
   expect(archaizedCode).toEqual(transpiledCode);
 });
 
+test('Use of second parameter in find method', () => {
+ 
+  const contentOfSnippet = readJSFile('tests/snippets/polyfill_find2.js');
+  const archaizedCode = transpile(contentOfSnippet);
+  const transpiledCode = ``;
+  expect(archaizedCode).toEqual(transpiledCode);
+
+});

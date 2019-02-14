@@ -1,4 +1,4 @@
-const { makeAST, transpile } = require('../src/utils/utils.js');
+const { transpile } = require('../src/utils/utils.js');
 const { readJSFile } = require('../src/helpers/helpers.js');
 
 test('Check that the use of a pollyfilled method does not duplicate (injects the polyfill twice)', () => {
