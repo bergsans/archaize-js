@@ -33,7 +33,7 @@ npm test
 
 
 #### CLI
-
+<pre>
 Usage: archaize [options]
 
 Options:
@@ -47,8 +47,9 @@ Options:
 
 Examples:
 
-
+</pre>
 Saves Abstract Syntax Tree (AST) to file:
+
 ```
 ./archaize.js -i someCode.js -o code-analysis --ast
 ```
