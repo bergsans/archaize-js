@@ -116,6 +116,10 @@ visit localhost:3000
 - [x] property shorthand
 
 
+## Issues
 
+1) Check `npm test`
+
+2) Check 'issues'
 
 
