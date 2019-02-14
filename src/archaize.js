@@ -27,7 +27,7 @@ const {
  */
 {
   program
-    .version('0.5.0')
+    .version('0.7.0')
     .option('-a, --about', 'about Archaize JS')
     .option('-i, --input <filename>', 'specify source code')
     .option('-o, --output <filename>', 'specify output filename')
