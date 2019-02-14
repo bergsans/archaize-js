@@ -7,8 +7,6 @@ const isMethodES6 = (node, mName, i) => (node.declarations[i]
      && node.declarations[i].init.callee.property.name
      && node.declarations[i].init.callee.property.name === mName);
 
-const isVariableDeclaration = (node) => (node.type === 'VariableDeclaration');
-
 function returnType(name, ast) {
   let type = undefined;
   traverse(ast, {
@@ -127,7 +125,7 @@ function replaceVariableDeclarations(node, ast) {
         let oldBody = declr.init.body.length > 0? [...declr.init.body] : null;
 
         if(oldBody) {
-          declr.init.body.body = [funcArguments, ...oldBody]
+          declr.init.body.body = [funcArguments, ...oldBody];
         } else {
           declr.init.body.body = [funcArguments];
         }
@@ -161,7 +159,7 @@ function replaceVariableDeclarations(node, ast) {
     return [{
       ...node,
       kind: 'var' }, 
-      {
+    {
       polyfillType: polyfill }
     ];
   } else {
@@ -170,5 +168,5 @@ function replaceVariableDeclarations(node, ast) {
     };
   }
 }
-module.exports = { isVariableDeclaration, replaceVariableDeclarations };
+module.exports = { replaceVariableDeclarations };
 

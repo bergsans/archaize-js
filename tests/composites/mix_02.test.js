@@ -38,6 +38,6 @@ function thisOrThatFunc(name, age) {
     });
 }`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

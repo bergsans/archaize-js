@@ -9,7 +9,7 @@ test('Remove rest operator in function declaration, replace param with argument 
     var args = Object.values(arguments);
 }`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 
 test('Remove rest operator in variable arrow function declaration, replace with arg obj', () => {
@@ -20,7 +20,7 @@ test('Remove rest operator in variable arrow function declaration, replace with 
     var args = Object.values(arguments);
 };`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 
 test('Test if more params are possible to include (someVar, ...params)', () => {

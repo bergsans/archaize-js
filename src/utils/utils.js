@@ -2,16 +2,19 @@
  * Dependencies
  *
  */
+
+// External dependencies
 const { generate } = require('escodegen');
 const { parseScript } = require('esprima');
 const { replace } = require('estraverse');
 
-const { isTemplateLiterals, replaceTemplateLiterals } = require('../transpiler/templateliteral.js');
-const { isVariableDeclaration, replaceVariableDeclarations } = require('../transpiler/variabledeclaration.js');
-const { isCallExpression, replaceCallExpression } = require('../transpiler/callexpression.js');
-const { isFunctionDeclaration, replaceFunctionDeclaration } = require('../transpiler/functiondeclarator.js');
-const { isIfStatement, replaceIfStatement } = require('../transpiler/ifstatement.js'); 
-const { isReturnStatement, replaceReturnStatement } = require('../transpiler/returnstatement.js');
+// Internal dependencies
+const { replaceTemplateLiterals } = require('../transpiler/templateliteral.js');
+const { replaceVariableDeclarations } = require('../transpiler/variabledeclaration.js');
+const { replaceCallExpression } = require('../transpiler/callexpression.js');
+const { replaceFunctionDeclaration } = require('../transpiler/functiondeclarator.js');
+const { replaceIfStatement } = require('../transpiler/ifstatement.js'); 
+const { replaceReturnStatement } = require('../transpiler/returnstatement.js');
 const { includesAST } = require('../transpiler/polyfills/AST/_ast_includes.js');
 const { startsWithAST } = require('../transpiler/polyfills/AST/_ast_startsWith.js');
 const { endsWithAST } = require('../transpiler/polyfills/AST/_ast_endsWith.js');
@@ -20,20 +23,14 @@ const { findAST } = require('../transpiler/polyfills/AST/_ast_find.js');
 const { findIndexAST } = require('../transpiler/polyfills/AST/_ast_findIndex.js');
 const { arr_includesAST } = require('../transpiler/polyfills/AST/_ast_arr_includes.js');
 
-// TEMP DEPS........................................
-
-const { readJSFile, writeToFile } = require('../helpers/helpers.js');
-
-// .................................................
-
 
 /*
- * Generates AST
+ * Generate AST (including comments and locations)
  */
 const makeAST = (expression) => parseScript(expression, { comment: true, loc: true });
 
 /*
- * Transpile function
+ * Transpile AST to Code
  *
  */
 function transpile(expression) {
@@ -76,7 +73,7 @@ function transpile(expression) {
           let parsed = JSON.parse(includesES6AST);
           ast.body = [parsed, ...ast.body];  
         }
-          return tempNode[0]; 
+        return tempNode[0]; 
       } else {
         return tempNode;
       }
@@ -87,11 +84,18 @@ function transpile(expression) {
 }
 
 
+/*
+ * Helper method for conditions 
+ * 
+ * 
+ * The sole purpose is to avoid a massive block
+ * of if-else statements
+ */
 function workWithNode(node, ast) {
 
-   const { type } = node;
+  const { type } = node;
 
-   const nodeTypes = {
+  const nodeTypes = {
     VariableDeclaration: () => replaceDeclaration(node),
     CallExpression: () => replaceCallExpression(node),
     FunctionExpression: () => replaceFunctionDeclaration(node),
@@ -103,15 +107,7 @@ function workWithNode(node, ast) {
   };
   return (nodeTypes[type]? nodeTypes[type]() : node);
 }
-//temp stuff ....
 
-//const contents = readJSFile('whatever.js');
-//writeToFile('test', makeAST(contents));
-
-//const code = transpile(contents);
-//console.log(code);
-
-// ...............
-
+// Export functions to NPM package (<root>/index.js)
 module.exports = { makeAST, transpile };
 

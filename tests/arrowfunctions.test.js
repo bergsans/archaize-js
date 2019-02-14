@@ -12,6 +12,6 @@ test('Expect arrow function to be converted to function', () => {
     console.log(self, bar);
 };`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

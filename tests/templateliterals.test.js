@@ -15,6 +15,6 @@ var str = 'The wise wizard ' + wiz.name + ', ' + wiz.age + ', years old and is a
 console.log(str);
 console.log('Text written by by C-M, ' + Date() + '.');`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

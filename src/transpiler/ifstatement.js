@@ -1,7 +1,11 @@
 const { traverse } = require('estraverse');
 
-const isIfStatement = (node) => node.type === 'IfStatement';
-
+/* 
+ * Returns type of Node. This function is not optimal.
+ * It reproduces the traverse logic from start; it should
+ * be possible to narrow this down to relevant scoping in the future.
+ * 
+ */
 function returnType(name, ast) {
   let type = undefined;
   traverse(ast, {
@@ -27,9 +31,9 @@ function replaceIfStatement(node, ast) {
     let name = node.test.callee.object.name;
     let type = returnType(name, ast);
     if (type === 'ArrayExpression') {
-        polyfill = 'POLYFILL_ARR_INCLUDES';
+      polyfill = 'POLYFILL_ARR_INCLUDES';
     } else {
-        polyfill = 'POLYFILL_INCLUDES';
+      polyfill = 'POLYFILL_INCLUDES';
     }
   } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'repeat') {
     polyfill = 'POLYFILL_REPEAT';
@@ -45,14 +49,14 @@ function replaceIfStatement(node, ast) {
   if (polyfill) {
     return [
       {
-      ...node 
+        ...node 
       },{ 
-      polyfillType: polyfill
-     }
+        polyfillType: polyfill
+      }
     ];
   } else {
     return node;
   }
 }
-module.exports = { isIfStatement, replaceIfStatement };
+module.exports = { replaceIfStatement };
 

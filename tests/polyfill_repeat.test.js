@@ -32,6 +32,6 @@ function test() {
     var whatever = 'test'.repeat(10);
 }`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

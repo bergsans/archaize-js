@@ -1,4 +1,4 @@
 const someArrowFunc = (...restParams) => {
-console.log(restParams);
+  console.log(restParams);
 };
 

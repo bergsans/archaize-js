@@ -14,6 +14,6 @@ test('Replace strict equality (===) with un-strict (==)', () => {
     return 4 == 4;
 }`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

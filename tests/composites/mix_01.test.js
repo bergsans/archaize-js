@@ -19,6 +19,6 @@ var someE6Function = function (arr, string) {
     var newStr = 'This a template literal: ' + string + '...';
 };`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

@@ -39,6 +39,6 @@ test('expect composite code #2 to be transpiled', () => {
     var completeList = [].concat(list, anotherListOfWizards);
     console.log(completeList);`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

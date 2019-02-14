@@ -1,5 +1,3 @@
-const isCallExpression = (node) => (node.type === 'CallExpression');
-
 function replaceCallExpression(node) {
    
   if (node.arguments.find((el) => el.type === 'ArrowFunctionExpression')) {
@@ -33,5 +31,5 @@ function replaceCallExpression(node) {
   }); 
   return node;
 }
-module.exports = { isCallExpression, replaceCallExpression };
+module.exports = { replaceCallExpression };
 

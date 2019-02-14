@@ -8,19 +8,19 @@ test('Is the number 1 included in array?', () => {
 
 test('find used in if statement', () => {
   const arr = [
-				{
+    {
 					 name: 'Gandalf'
-				},
-				{
+    },
+    {
 					 name: 'Galadriel'
-				},
-				{
+    },
+    {
 					 name: 'Kimpa'
-				}
-	];
-	isNameInArr = false;			
-	if(arr.find((person) => person.name === 'Gandalf')) {
+    }
+  ];
+  isNameInArr = false;			
+  if(arr.find((person) => person.name === 'Gandalf')) {
 	  isNameInArr = true;
-	}
-	expect(isNameInArr).toBeTruthy();
+  }
+  expect(isNameInArr).toBeTruthy();
 });

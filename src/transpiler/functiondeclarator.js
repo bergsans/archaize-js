@@ -1,5 +1,3 @@
-const isFunctionDeclaration = (node) => (node.type === 'FunctionExpression') || (node.type === 'FunctionDeclaration');
-
 function replaceFunctionDeclaration(node) {
 
   if (node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'AssignmentPattern')) {
@@ -39,22 +37,22 @@ function replaceFunctionDeclaration(node) {
     });
   } else if (node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
 
-  let restElIndex = node.params.findIndex((el) => el.type === 'RestElement')
-  let tempName = node.params[restElIndex].argument.name;
+    let restElIndex = node.params.findIndex((el) => el.type === 'RestElement');
+    let tempName = node.params[restElIndex].argument.name;
 
-  for(let el of node.body.body) {
-    if(el.type === 'ExpressionStatement') {
-      el.expression.arguments.forEach((el) => {
-        if(el.name === tempName) {
-          el.name = 'args';
+    for(let el of node.body.body) {
+      if(el.type === 'ExpressionStatement') {
+        el.expression.arguments.forEach((el) => {
+          if(el.name === tempName) {
+            el.name = 'args';
+          }
+        });
+      } else if(el.type === 'ReturnStatement') {
+        if(el.argument.callee.object.name === tempName) {
+          el.argument.callee.object.name = 'args';
         }
-      });
-    } else if(el.type === 'ReturnStatement') {
-       if(el.argument.callee.object.name === tempName) {
-         el.argument.callee.object.name = 'args';
-       }
+      }
     }
-  }
 
     let newParams = node.params.filter((param) => param.type !== 'RestElement');
     node.params = newParams;
@@ -125,5 +123,5 @@ function replaceFunctionDeclaration(node) {
   node.type = 'FunctionExpression';
   return node;
 }
-module.exports = { isFunctionDeclaration, replaceFunctionDeclaration };
+module.exports = { replaceFunctionDeclaration };
 

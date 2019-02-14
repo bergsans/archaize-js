@@ -26,6 +26,6 @@ function test() {
     }
 }`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

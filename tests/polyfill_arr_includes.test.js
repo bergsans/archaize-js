@@ -31,6 +31,6 @@ function test() {
     var i = arr.includes('a');
 }`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

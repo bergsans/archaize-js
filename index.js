@@ -13,6 +13,6 @@ const { makeAST, transpile } = require('./src/utils/utils.js');
 
 module.exports = {
   makeAST,
-	transpile
+  transpile
 };
 

@@ -18,8 +18,8 @@ var arr2 = [].concat(arr, [
     7,
     8,
     9
-]);`
-  expect(archaizedCode).toEqual(transpiledCode)
+]);`;
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 
 

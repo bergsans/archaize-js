@@ -35,6 +35,6 @@ let arr2 = [
 if (arr.includes(2)) {
 }`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

@@ -11,6 +11,6 @@ test('Expect default parameter to be converted ||', () => {
     console.log('Greet message: ' + greeting + ' ' + name + '!');
 }`;
 
-  expect(archaizedCode).toEqual(transpiledCode)
+  expect(archaizedCode).toEqual(transpiledCode);
 });
 

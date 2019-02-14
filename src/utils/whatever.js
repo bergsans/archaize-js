@@ -1,5 +1,5 @@
 console.log('hell');
 
-let hell = "hell is other";
+let hell = 'hell is other';
 
-if(hell.includes("hell")) {}
+if(hell.includes('hell')) {}

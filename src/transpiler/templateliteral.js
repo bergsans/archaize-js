@@ -1,5 +1,3 @@
-const isTemplateLiterals = (node) => (node.type === 'TemplateLiteral');
-
 function replaceTemplateLiterals(node) {
   node.quasis = node.quasis.map((quasi) => ({
     type: 'Literal',
@@ -17,5 +15,5 @@ function replaceTemplateLiterals(node) {
   }));
   return translatedToES5;
 }
-module.exports = { isTemplateLiterals, replaceTemplateLiterals };
+module.exports = { replaceTemplateLiterals };
 
