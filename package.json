@@ -1,6 +1,6 @@
 {
   "name": "archaize-js",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "description": "Transpiler of JavaScript (ES6 to ES5)",
 	"keywords": [
 	  "transpiler",
