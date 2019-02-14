@@ -36,7 +36,7 @@ const {
     .parse(process.argv);
 
   if(program.about) {
-    const text = createContent('V. 0.5.0', 'Claes-Magnus Bernson, 2019');
+    const text = createContent('V. 0.7.0', 'Claes-Magnus Bernson, 2019');
     boxify(text);
     process.exit(0);
   } else if(program.input && program.transpile) {
