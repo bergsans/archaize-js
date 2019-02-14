@@ -68,20 +68,6 @@
     color: #76905b !important;
     padding: 3px;
   }
-
-  .footer {
-    text-align: center;
-    margin-bottom: 50px;
-    font-family: "Raleway", sans-serif;
-  }
-
-  .footer__hr {
-    border: 1px solid #37d800;
-    width: 250px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -109,17 +95,6 @@
     text-align: justify;
     font-family: "Raleway", sans-serif;
     line-height: 25px;
-  }
-
-  .about__paragraph__link,
-  .about__paragraph__link:visited,
-  .about__paragraph__link:active {
-    color: #76905b;
-    font-family: "Raleway", sans-serif;
-  }
-
-  .about__paragraph__link:hover {
-    color: #37d800;
   }
 
   .about__list {
@@ -152,20 +127,6 @@
     color: #76905b !important;
     padding: 3px;
   }
-
-  .footer {
-    text-align: center;
-    margin-bottom: 50px;
-    font-family: "Raleway", sans-serif;
-  }
-
-  .footer__hr {
-    border: 1px solid #37d800;
-    width: 250px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -192,17 +153,6 @@
     text-align: justify;
     font-family: "Raleway", sans-serif;
     line-height: 30px;
-  }
-
-  .about__paragraph__link,
-  .about__paragraph__link:visited,
-  .about__paragraph__link:active {
-    color: #76905b;
-    font-family: "Raleway", sans-serif;
-  }
-
-  .about__paragraph__link:hover {
-    color: #37d800;
   }
 
   .about__list {
@@ -239,17 +189,4 @@
     width: 600px;
   }
 
-  .footer {
-    text-align: center;
-    margin-bottom: 50px;
-    font-family: "Raleway", sans-serif;
-  }
-
-  .footer__hr {
-    border: 1px solid #37d800;
-    width: 500px;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 20px;
-  }
 }

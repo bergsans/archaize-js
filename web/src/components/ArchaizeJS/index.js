@@ -4,7 +4,6 @@ import Editor from 'react-simple-code-editor';
 import { highlight, languages } from 'prismjs/components/prism-core';
 import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
-
 import { Scrollbars } from 'react-custom-scrollbars';
 
 import { snippets } from './snippets';
@@ -18,11 +17,9 @@ import './index.css';
 
 class ArchaizeJS extends Component {
   state = {
-    response: false,
-    endpoint: 'http://localhost:3000',
     code: snippets[0],
-    code_transpiled: '',
-    code_transpiled_ast: {},
+    codeTranspiled: '',
+    codeTranspiledAST: {},
     astViewer: false
   };
 
@@ -39,8 +36,8 @@ class ArchaizeJS extends Component {
   changeASTOpen = () => this.setState({ astViewer: true });
   changeASTClose = () => this.setState({ astViewer: false });
 
-  setNewCode(code_transpiled, code_transpiled_ast) {
-    this.setState({ code_transpiled, code_transpiled_ast });
+  setNewCode(codeTranspiled, codeTranspiledAST) {
+    this.setState({ codeTranspiled, codeTranspiledAST });
   }
 
   componentDidMount() {
@@ -52,32 +49,32 @@ class ArchaizeJS extends Component {
     }, 700);
 
     socket.on('TRANSPILED_CODE', data => {
-      const code_transpiled = data.transpiled;
-      const code_transpiled_ast = data.ast;
-      this.setNewCode(code_transpiled, code_transpiled_ast);
+      const codeTranspiled = data.transpiled;
+      const codeTranspiledAST = data.ast;
+      this.setNewCode(codeTranspiled, codeTranspiledAST);
     });
   }
 
   render() {
     const { code } = this.state;
-    const { code_transpiled } = this.state;
-    const { code_transpiled_ast } = this.state;
+    const { codeTranspiled } = this.state;
+    const { codeTranspiledAST } = this.state;
 
     return (
       <div className='code__container'>
         <h2 className='code__container__header'>
           Stay Young, appear old, be wise
         </h2>
-        <pre className='code__container__box-desktop'>{box}</pre>
-        <pre className='code__container__box-mobile'>{box_responsive}</pre>
+        <pre className='code__container__box-desktop'>{ box }</pre>
+        <pre className='code__container__box-mobile'>{ box_responsive }</pre>
 
         <div className='code__container__editor'>
     <Scrollbars autohide='true'>
           <Editor
             value={code}
-            onValueChange={code => this.setState({ code })}
-            highlight={code => highlight(code, languages.js)}
-            padding={10}
+            onValueChange={ (code) => this.setState({ code }) }
+            highlight={ (code) => highlight(code, languages.js) }
+            padding={ 10 }
             style={{
               fontFamily: '"Fira code", "Fira Mono", monospace',
               fontSize: 14
@@ -89,10 +86,10 @@ class ArchaizeJS extends Component {
         <div className='code__container__transpiled-code'>
           <Scrollbars autohide='true'>
           <Editor
-            value={code_transpiled}
-            onValueChange={() => {}}
+            value={ codeTranspiled }
+            onValueChange={ () => {} }
             highlight={code => highlight(code, languages.js)}
-            padding={10}
+            padding={ 10 }
             style={{
               fontFamily: '"Fira code", "Fira Mono", monospace',
               fontSize: 14
@@ -104,7 +101,7 @@ class ArchaizeJS extends Component {
         <div className='code__container__menu'>
           <a
             href='#'
-            onClick={this.randomizeSnippet}
+            onClick={ this.randomizeSnippet }
             className='code__container__menu__button-link'
           >
             <img
@@ -116,7 +113,7 @@ class ArchaizeJS extends Component {
           </a>
           <a
             href='#'
-            onClick={this.changeASTOpen}
+            onClick={ this.changeASTOpen }
             className='code__container__menu__button-link'
           >
             <img
@@ -127,9 +124,10 @@ class ArchaizeJS extends Component {
             VIEW AST
           </a>
         </div>
-        { this.state.astViewer ? <ViewerAST ast={this.state.code_transpiled_ast} changeASTClose={this.changeASTClose} /> : null }
+        { this.state.astViewer ? <ViewerAST ast={this.state.codeTranspiledAST} changeASTClose={this.changeASTClose} /> : null }
       </div>
     );
   }
 }
 export default ArchaizeJS;
+

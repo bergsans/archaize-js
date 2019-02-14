@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+@media only screen and (max-width: 767px) {
+
+  .footer__paragraph__link,
+  .footer__paragraph__link:visited,
+  .footer__paragraph__link:active {
+    color: #76905b;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .footer__paragraph__link:hover {
+    color: #37d800;
+  }
+
+  .footer {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .footer__hr {
+    border: 1px solid #37d800;
+    width: 250px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .footer__paragraph__link,
+  .footer__paragraph__link:visited,
+  .footer__paragraph__link:active {
+    color: #76905b;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .footer__paragraph__link:hover {
+    color: #37d800;
+  }
+
+  .footer {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .footer__hr {
+    border: 1px solid #37d800;
+    width: 250px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+
+  .footer__paragraph__link,
+  .footer__paragraph__link:visited,
+  .footer__paragraph__link:active {
+    color: #76905b;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .footer__paragraph__link:hover {
+    color: #37d800;
+  }
+
+  .footer {
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: "Raleway", sans-serif;
+  }
+
+  .footer__hr {
+    border: 1px solid #37d800;
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}

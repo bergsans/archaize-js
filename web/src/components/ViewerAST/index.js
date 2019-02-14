@@ -17,22 +17,21 @@ class ViewerAST extends Component {
     console.log(this.props.ast);
     const { ast } = this.props;   
 
-     return(
-          <div className='code__container__modal__ast-viewer'>
-            <div className='code__container__modal__ast-viewer__content-ast'>
-              <span
-                className='code__container__modal__ast-viewer__content-ast-close'
-                onClick={ this.onClick }
-              >
-                &times;
-              </span>
-              <JSONTree
-                data={ ast }
-                theme={ theme }
-                invertTheme={ false }
-              />
-            </div>
-          </div>)
+     return(<div className='code__container__modal__ast-viewer'>
+  <div className='code__container__modal__ast-viewer__content-ast'>
+    <span
+      className='code__container__modal__ast-viewer__content-ast-close'
+      onClick={ this.onClick }
+    >
+      &times;
+    </span>
+    <JSONTree
+      data={ ast }
+      theme={ theme }
+      invertTheme={ false }
+    />
+  </div>
+</div>)
   }
 }
 export default ViewerAST;
