@@ -1,10 +1,11 @@
 function replaceReturnStatement(node) {
-  const { type, operator } = node.argument;
+
+  let newNode = { ...node };
+  const { type, operator } = newNode.argument;
   if (type === 'BinaryExpression' && operator === '===') {
-    node.argument.operator = '==';
+    newNode.argument.operator = '==';
   }
-  return node;
+  return newNode;
 }
 module.exports = { replaceReturnStatement  };
-
 

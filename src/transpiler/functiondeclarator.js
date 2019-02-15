@@ -1,10 +1,12 @@
 function replaceFunctionDeclaration(node) {
+  
+	let newNode = { ...node };	
 
-  if (node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'AssignmentPattern')) {
+  if (newNode.type === 'FunctionDeclaration' && newNode.params.find((el) => el.type === 'AssignmentPattern')) {
 
-    node.params.forEach((param, i) => {
+    newNode.params.forEach((param, i) => {
       if (param.type === 'AssignmentPattern') {
-        node.params[i] = { type: 'Identifier', name: param.left.name };
+        newNode.params[i] = { type: 'Identifier', name: param.left.name };
         let newVarInBody = {
           type: 'VariableDeclaration',
           declarations: [
@@ -31,16 +33,16 @@ function replaceFunctionDeclaration(node) {
           ],
           kind: 'var'
         };
-        let oldBody = [...node.body.body];
-        node.body.body = [newVarInBody, ...oldBody];
+        let oldBody = [...newNode.body.body];
+        newNode.body.body = [newVarInBody, ...oldBody];
       }
     });
-  } else if (node.type === 'FunctionDeclaration' && node.params.find((el) => el.type === 'RestElement')) {
+  } else if (newNode.type === 'FunctionDeclaration' && newNode.params.find((el) => el.type === 'RestElement')) {
 
-    let restElIndex = node.params.findIndex((el) => el.type === 'RestElement');
-    let tempName = node.params[restElIndex].argument.name;
+    let restElIndex = newNode.params.findIndex((el) => el.type === 'RestElement');
+    let tempName = newNode.params[restElIndex].argument.name;
 
-    for(let el of node.body.body) {
+    for(let el of newNode.body.body) {
       if(el.type === 'ExpressionStatement') {
         el.expression.arguments.forEach((el) => {
           if(el.name === tempName) {
@@ -54,8 +56,8 @@ function replaceFunctionDeclaration(node) {
       }
     }
 
-    let newParams = node.params.filter((param) => param.type !== 'RestElement');
-    node.params = newParams;
+    let newParams = newNode.params.filter((param) => param.type !== 'RestElement');
+    newNode.params = newParams;
     let funcArguments = {
       type: 'VariableDeclaration',
       declarations: [{
@@ -86,11 +88,11 @@ function replaceFunctionDeclaration(node) {
       }],
       kind: 'var'
     };
-    let oldBody = [...node.body.body];
-    node.body.body = [funcArguments, ...oldBody];
+    let oldBody = [...newNode.body.body];
+    newNode.body.body = [funcArguments, ...oldBody];
   }
-  if (node.body.body) {
-    const body = [...node.body.body];
+  if (newNode.body.body) {
+    const body = [...newNode.body.body];
     const callExpressionsInBody = body.filter((el) => el.type === 'ExpressionStatement');
     if (callExpressionsInBody) {
       let temp = [];
@@ -115,13 +117,13 @@ function replaceFunctionDeclaration(node) {
           ],
           kind: 'var'
         };
-        let declarations = [thisDeclared, ...node.body.body];
-        node.body.body = declarations;
+        let declarations = [thisDeclared, ...newNode.body.body];
+        newNode.body.body = declarations;
       }
     }
   }
-  node.type = 'FunctionExpression';
-  return node;
+  newNode.type = 'FunctionExpression';
+  return newNode;
 }
 module.exports = { replaceFunctionDeclaration };
 

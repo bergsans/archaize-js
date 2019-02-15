@@ -34,8 +34,8 @@ class App extends Component {
           <main className="container__main">
             <Switch>
               <Route exact path="/" component={ArchaizeJS} />
-              <Route path="/text" component={Text} />
-              <Route path="/about" component={About} />
+              <Route exact path="/text" component={Text} />
+              <Route exact path="/about" component={About} />
               <Redirect to="/" />
             </Switch>
           </main>

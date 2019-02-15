@@ -69,8 +69,8 @@ function transpile(expression) {
         if(!isPolyfillPresent[polyfill]) {
           isPolyfillPresent = { ...isPolyfillPresent, [polyfill]: true };
           const polyfillAST = mappingsOfPolyfillAST[polyfill];
-          let includesES6AST = JSON.stringify(polyfillAST);
-          let parsed = JSON.parse(includesES6AST);
+          const includesES6AST = JSON.stringify(polyfillAST);
+          const parsed = JSON.parse(includesES6AST);
           ast.body = [parsed, ...ast.body];  
         }
         return tempNode[0]; 

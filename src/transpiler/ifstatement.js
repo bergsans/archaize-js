@@ -22,41 +22,44 @@ function returnType(name, ast) {
 
 function replaceIfStatement(node, ast) {
 
+  let newNode = { ...node };
+
   let polyfill = undefined;
 
-  if (node.test.type === 'BinaryExpression' && node.test.operator === '===') {
-    node.test.operator = '==';
-  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'includes') {
+  if (newNode.test.type === 'BinaryExpression' && newNode.test.operator === '===') {
+    newNode.test.operator = '==';
+  } else if (newNode.test.type === 'CallExpression' && newNode.test.callee.property.name === 'includes') {
     
-    let name = node.test.callee.object.name;
+    let name = newNode.test.callee.object.name;
     let type = returnType(name, ast);
     if (type === 'ArrayExpression') {
       polyfill = 'POLYFILL_ARR_INCLUDES';
     } else {
       polyfill = 'POLYFILL_INCLUDES';
     }
-  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'repeat') {
+  } else if (newNode.test.type === 'CallExpression' && newNode.test.callee.property.name === 'repeat') {
     polyfill = 'POLYFILL_REPEAT';
-  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'startsWith') {
+  } else if (newNode.test.type === 'CallExpression' && newNode.test.callee.property.name === 'startsWith') {
     polyfill = 'POLYFILL_STARTSWITH';
-  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'endsWith') {
+  } else if (newNode.test.type === 'CallExpression' && newNode.test.callee.property.name === 'endsWith') {
     polyfill = 'POLYFILL_ENDSWITH';
-  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'find') {
+  } else if (newNode.test.type === 'CallExpression' && newNode.test.callee.property.name === 'find') {
     polyfill = 'POLYFILL_FIND';
-  } else if (node.test.type === 'CallExpression' && node.test.callee.property.name === 'findIndex') {
+  } else if (newNode.test.type === 'CallExpression' && newNode.test.callee.property.name === 'findIndex') {
     polyfill = 'POLYFILL_FIND_INDEX';
   }
   if (polyfill) {
     return [
       {
-        ...node 
+        ...newNode 
       },{ 
         polyfillType: polyfill
       }
     ];
   } else {
-    return node;
+    return newNode;
   }
 }
 module.exports = { replaceIfStatement };
+
 

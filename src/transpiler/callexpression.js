@@ -1,9 +1,11 @@
 function replaceCallExpression(node) {
-   
-  if (node.arguments.find((el) => el.type === 'ArrowFunctionExpression')) {
-    node.arguments.forEach((arg, i) => {    
+  
+	let newNode = { ...node };	
+
+  if (newNode.arguments.find((el) => el.type === 'ArrowFunctionExpression')) {
+    newNode.arguments.forEach((arg, i) => {    
       if (arg.body.type !== 'BlockStatement') {
-        let oldBody = { ...node.arguments[i].body };
+        let oldBody = { ...newNode.arguments[i].body };
         let newBody = { 
           type: 'BlockStatement',
           body: [
@@ -13,23 +15,23 @@ function replaceCallExpression(node) {
             } 
           ]
         };
-        node.arguments[i].expression = false;
-        node.arguments[i].body = newBody;
+        newNode.arguments[i].expression = false;
+        newNode.arguments[i].body = newBody;
       } else {
-        node.arguments[i].body.type = 'BlockStatement';
+        newNode.arguments[i].body.type = 'BlockStatement';
       }  
-      node.arguments[i].type = 'FunctionExpression';
+      newNode.arguments[i].type = 'FunctionExpression';
     });
   } 
-  node.arguments.forEach((arg, i) => {
+  newNode.arguments.forEach((arg, i) => {
     if (arg.type === 'ThisExpression') {
-      node.arguments[i].type = 'Identifier';
-      node.arguments[i].name = 'self';
+      newNode.arguments[i].type = 'Identifier';
+      newNode.arguments[i].name = 'self';
     } else if (arg.type === 'BinaryExpression') {
-      node.arguments[i].operator = '==';
+      newNode.arguments[i].operator = '==';
     }
   }); 
-  return node;
+  return newNode;
 }
 module.exports = { replaceCallExpression };
 
