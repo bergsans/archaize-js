@@ -91,7 +91,7 @@ function replaceVariableDeclarations(node, ast) {
     if (declaration.init.type === 'ArrowFunctionExpression') {
 
       declaration.init.type = 'FunctionExpression';
-      
+/*      
       if(declaration.init.body && declaration.init.body.type !== 'BlockStatement') {
    
           let oldBody = { ...declaration.init.body };
@@ -108,7 +108,7 @@ function replaceVariableDeclarations(node, ast) {
           declaration.init.body = newBody;
 
       }
-
+*/
       if(declaration.init.params.some((param) => param.type === 'RestElement')) {
         let newParams = declaration.init.params.filter((param) => param.type !== 'RestElement');
         declaration.init.params = newParams;

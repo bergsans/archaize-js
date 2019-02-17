@@ -91,7 +91,7 @@ function replaceFunctionDeclaration(node) {
     let oldBody = [...newNode.body.body];
     newNode.body.body = [funcArguments, ...oldBody];
   }
-  if (newNode.body.body) {
+  if (newNode.body && newNode.body.body) {
     const body = [...newNode.body.body];
     const callExpressionsInBody = body.filter((el) => el.type === 'ExpressionStatement');
     if (callExpressionsInBody) {
