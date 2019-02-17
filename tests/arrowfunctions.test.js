@@ -15,22 +15,3 @@ test('Expect arrow function to be converted to function', () => {
   expect(archaizedCode).toEqual(transpiledCode);
 });
 
-test('Expect composite function to be accurately transpiled to ES5', () => {
-  const contentOfSnippet = readJSFile('tests/snippets/arrowfunctiondeclaration2.js');
-	const archaizedCode = transpile(contentOfSnippet);
-
-  const transpiledCode = `var theGreatGruffalonTest = function (arrayOfNames) { 
-    return arrayOfNames.includes('Gruffalon') ? true : false; 
-  };
-
-    var array = [
-        'Gruffalon',
-        'Little G.',
-        'Virginia Woolf'
-    ];
-    var isGruffalonIncluded = theGreatGruffalonTest(array);
-    console.log(isGruffalonIncluded);`;
-
-  expect(archaizedCode).toEqual(transpiledCode);
-});
-

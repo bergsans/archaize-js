@@ -37,11 +37,3 @@ function test() {
   expect(archaizedCode).toEqual(transpiledCode);
 });
 
-test('Use of second parameter in find method', () => {
- 
-  const contentOfSnippet = readJSFile('tests/snippets/polyfill_find2.js');
-  const archaizedCode = transpile(contentOfSnippet);
-  const transpiledCode = ``;
-  expect(archaizedCode).toEqual(transpiledCode);
-
-});
