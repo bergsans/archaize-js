@@ -30,6 +30,7 @@ numberStr = 5;
 console.log(typeof numberStr)
 ```
 
+
 ### Problem
 <pre>
 The  main  difficulty here  is  that  the application  using
@@ -55,8 +56,22 @@ unstrict counterpart.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pre>
-
-
-
-

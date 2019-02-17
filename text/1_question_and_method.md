@@ -1,5 +1,4 @@
 # Question
-
 <pre>
 This  essay tries  to answer  the question  on how  to build
 a  transpiler,  using  modern JavaScript.  The  question  is
@@ -34,7 +33,6 @@ context.
 
 
 ### Method
-
 <pre>
 In a  sort, a compiler  is an advanced data  transformer and
 the main  difficulty of writing a  compiler/transpiler is to
@@ -144,9 +142,21 @@ general terms explain the meaning of compilers.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pre>
-
-
-
-
-

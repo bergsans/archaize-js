@@ -18,6 +18,7 @@ Also,  there  is a  difference  between  `let` and  `const`,
 `const` being (sort of) constant in most cases.
 </pre>
 
+
 ### Problem
 <pre>
 The question relevant to us, is if the scoping matter in the
@@ -211,6 +212,24 @@ is,  however,  possible  to  the  same  in  ES5  by  use  of
 the  `defineProperty`   in  Object.prototype.   Setting  the
 change-is-possible-flags to  false, would include more  of a
 ceremony though.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

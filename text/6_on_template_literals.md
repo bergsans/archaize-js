@@ -34,6 +34,7 @@ var surName = "Skywalker";
 var name = firstName + " " + surName;
 ```
 
+
 ### Problem 
 <pre>
 This  means,  that  between *each*  expression  a  'joining'
@@ -714,6 +715,24 @@ of ES5 by traversing and transformaing each included value.
 1) From now  on, I will not include as  lengthy AST's. But I
 thought it was  important, as well as interesting,  to do so
 with the feature described first.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

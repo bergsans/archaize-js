@@ -1,5 +1,6 @@
 # ES5 polyfills
 
+
 ## Background
 <pre>
 Archaize JS includes ES6 subroutine features. In the case of
@@ -59,6 +60,29 @@ just like for instance grammars of natural language.
 Each polyfill included in this  transpiler include a link to
 the relevant section of  the ECMAScript specification at the
 top of the sourecode.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pre>
 
 

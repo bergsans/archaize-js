@@ -1,7 +1,7 @@
 # APPENDIX
 
-## Archaize JS dependencies
 
+## Archaize JS dependencies
 <pre>
 From package.json:
 
@@ -24,6 +24,7 @@ From package.json:
 **The man dependency is Esprima.**
 
 </pre>
+
 
 ### On CLI's
 <pre>
@@ -68,6 +69,7 @@ that the application is  'linkable', that other applications
 can  'pipe' it,  you've created  a  small part  of a  larger
 eco-system.
 </pre>
+
 
 ## Archaize JS Web solution dependencies
 <pre>

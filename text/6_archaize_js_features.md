@@ -1,5 +1,4 @@
 # Archaize JS Features
-
 <pre>
 The following chapter will contain a number of sections with
 an identical structure. Each  section will first provide the
@@ -30,6 +29,24 @@ that will be gathered, clumped together under one umbrella.
 - strict/type equality (===)
 - default parameter
 - property shorthand
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

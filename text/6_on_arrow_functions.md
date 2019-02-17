@@ -2,7 +2,6 @@
 
 
 ## Background. What's an arrow function?
-
 <pre>
 The advantage of fat arrows,  arrow functions because of the
 `=>`, resides in a) it's not as lengthy as a normal function
@@ -14,6 +13,7 @@ arrow  function. These  examples constitute  a selection  of
 different use  cases of  arrow functions and  differences in
 how you can write them.
 </pre>
+
 
 #### Type A (an example). The shorthand part.
 
@@ -47,6 +47,7 @@ const authors = [{name:'Virginia Woolf', maritalStatus: 'Mrs.'},
 const formalAuthorNames = authors.map((author) => `${author.maritalStatus} ${author.name}`);
 ```
 
+
 #### Type B (an example). The `this` part.
 
 ```
@@ -71,6 +72,7 @@ function UiComponent2() {
 }
 
 ```
+
 
 ### Problem
 <pre>
@@ -110,8 +112,21 @@ context stored before the program enters the child node.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pre>
-
-
-
-

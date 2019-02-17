@@ -7,6 +7,7 @@ of 'documentation'  on how  I've worked,  and an  attempt to
 explain to myself (and others) how a transpiler works.
 </pre>
 
+
 ## An anecdote, and (again) on why transpillers matters
 <pre>
 As a developer, I like to have the latest version of Node.js
@@ -52,6 +53,47 @@ more negative  impact if the  behavior would be  faulty. And
 that this, arguably, means that you make use of transpilers.
 And if you use transpilers, as with all things, there can be
 gains of knowing the process, so to speak.
+</pre>
+
+
+## The benefits of tests
+<pre>
+When  writing  a  transpiler  (or  parts  of  a  transpiler)
+everything  is connected.  Of  course, in  most cases,  your
+application attempts to solve a  general problem, but this -
+I think - is especially true for a transpiler or a compiler.
+The transpiler can't beforehand know  what to expect, it's a
+machine made of abstractions and its purpose is to transform
+inputted abstractions. It's quite obvious that it can't have
+'prejudices', if it is to  solve inputted (accurate) code in
+general.
+
+In this context, tests and testing shine. Actually, it would
+be impossible, or at  least unreasonable way more difficult,
+to make a transpiler without writing tests, tests that cover
+as many use  cases as possible. When  programming, trying to
+solve a specific problem I often  managed this to later on -
+when  running  the  tests  - facing  the  insight  that  the
+specific problem was solved  but that the solution generated
+errors in code  that earlier was fully  'functional'. In the
+codes of  programming languages, things  are interconnected,
+and it  would be  vain to even  try calculated  what ripples
+might arise from a change to the codebase. Surely this would
+possible (compilers  arose before testing, I  think) but the
+time lost  on such an  endeavor -  if it would  be something
+more than  theoretically speaking possible -  could be spent
+on developing new features  and 'securing' the codebase from
+bugs.
+
+With this  project, I've started to  think differently about
+testing.  Before  starting  programming this  transpiler,  I
+understood the benefits of  testing o a philosophical level.
+Now my  feeling is that I've  taken the first real  steps to
+incorporate testing in actual programming, a very satisfying
+feeling.
+
+Archaize JS is a very  flawed project. But without tests, it
+would have been even more flawed.
 </pre>
 
 
@@ -114,6 +156,7 @@ soon be lost and a quite random building process initiated.
 ________________________________
 * https://homepage.cs.uri.edu/~thenry/resources/unix_art/ch01s06.html
 
+
 ## Difficulties
 <pre>
 A transpiler consists  of many parts, I  imagine being quite
@@ -161,6 +204,7 @@ you'll -just  like me -  be stuck with  data transformations
 for a while.
 </pre>
 
+
 ### On documentation, or lack thereof
 <pre>
 At   first,  I   used   the   minimalistic  library   [Acorn
@@ -176,6 +220,7 @@ material on  Esprima, and therefore  I believe that  a quite
 unexperienced developer  like me would gain  much from using
 it.
 </pre>
+
 
 ## Concluding remarks
 <pre>
@@ -226,6 +271,23 @@ identifies console  logs, warns about un-used  variables and
 so on. Depending on your  project, you could tailor this and
 make  the  'search  and replace'-pattern  specific  to  your
 project. Not bad.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

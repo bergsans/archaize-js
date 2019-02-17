@@ -36,6 +36,7 @@ polyfills, although  the polyfill,  in this case,  is rather
 small.
 </pre>
 
+
 ## Array spread
 <pre>
 You can do something very  similar when handling arrays. The
@@ -53,6 +54,7 @@ const robotCharacters = ['C3PO', 'RJD2'];
 
 const humansAndRobots = [...humanCharacters, ...robotCharacters];
 ```
+
 
 ### Problem
 <pre>
@@ -81,8 +83,21 @@ including (in the example above) param1 and param2.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pre>
-
-
-
-

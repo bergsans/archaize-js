@@ -1,5 +1,4 @@
 # Introduction
-
 <pre>
 This  essay  is my  way  to  substantiate  how my  (or  any)
 transpiler works.  To manage this task,  it seems reasonable
@@ -97,6 +96,25 @@ how to use programming languages in general.
 
 
 / Claes-Magnus Bernson
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

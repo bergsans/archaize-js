@@ -1,5 +1,4 @@
 # Overview. How compilers work
-
 <pre>
 A  compiler  consists of  two  parts:  analysis (front  end)
 and  synthesis (back  end).  Analysis of  the code  precedes
@@ -189,8 +188,21 @@ number five.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </pre>
-
-
-
-
