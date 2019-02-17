@@ -11,7 +11,7 @@ function createContent(...strings) {
 }
 
 /*
- * returns the content of file
+ * returns the contents of file
  *
  */
 function readJSFile(filename) {
@@ -23,11 +23,11 @@ function readJSFile(filename) {
 }
 
 /*
- * write content to a file
+ * write contents to a file
  *
  */
 function writeToFile(filename, contents, fileEnding) {
-  let output = contents; //JSON.stringify(contents, null, 2);
+  let output = contents;
   let name = `${filename.replace(/\./g, '')}.${fileEnding}`;
   try {
     fs.writeFileSync(name, output);
@@ -58,7 +58,7 @@ function printAST(ast) {
 }
 
 /*
- * colors used in Dandy-UI TODO: FIX BETTER SYSTEM!
+ * colors used in Dandy-UI
  */
 function returnColor(n) {
   const colors = ['black', 'purple', 'blue', 'cyan', 'purple', 'green', 'red'];

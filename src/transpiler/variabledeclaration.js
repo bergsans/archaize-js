@@ -29,6 +29,7 @@ function replaceVariableDeclarations(node, ast) {
   let newNode = { ...node };
 
   newNode.declarations.forEach((declaration, i) => {
+
     if (declaration.init && declaration.init.type === 'BinaryExpression' && declaration.init.operator === '===') {
       declaration.init.operator = '==';
     } else if (declaration.init && declaration.init && declaration.init.type === 'ArrayExpression' && declaration.init.elements
@@ -86,9 +87,27 @@ function replaceVariableDeclarations(node, ast) {
       const count = namesIds.filter((elIdName) => elIdName === idName).length;
       declaration.id.name = `${idName}${count}`;
     }
-    if (declaration.init.type === 'ArrowFunctionExpression') {
-      declaration.init.type = 'FunctionExpression';
 
+    if (declaration.init.type === 'ArrowFunctionExpression') {
+
+      declaration.init.type = 'FunctionExpression';
+      
+      if(declaration.init.body && declaration.init.body.type !== 'BlockStatement') {
+   
+          let oldBody = { ...declaration.init.body };
+          let newBody = { 
+            type: 'BlockStatement',
+            body: [
+              {
+                type: 'ReturnStatement',
+                argument: { ...oldBody }
+              } 
+            ]
+          };
+          declaration.init.body.expression = false;
+          declaration.init.body = newBody;
+
+      }
 
       if(declaration.init.params.some((param) => param.type === 'RestElement')) {
         let newParams = declaration.init.params.filter((param) => param.type !== 'RestElement');
@@ -157,6 +176,7 @@ function replaceVariableDeclarations(node, ast) {
       polyfill = 'POLYFILL_FIND_INDEX';
     }
   });
+
   if (polyfill) {
     return [{
       ...newNode,
