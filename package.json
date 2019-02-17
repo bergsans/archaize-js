@@ -17,7 +17,8 @@
   "main": "src/archaize.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+		"read-doc": "cd text && less *.md > temp.md | grip temp.md && rm temp.md && cd .."
   },
   "jest": {
     "verbose": true
