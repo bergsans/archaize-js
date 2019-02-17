@@ -2502,13 +2502,42 @@ gains of knowing the process, so to speak.
 
 ## The benefits of tests
 <pre>
-When writing a transpiler (or parts of a transpiler) everything is connected.  Of course, in most cases, your application attempts to solve a general problem, but this - I think - is especially true for a transpiler or a compiler. The transpiler can't beforehand know what to expect, it's a machine made of abstractions and its purpose is to transform inputted abstractions. It's quite obvious that it can't have 'prejudices', if it is to solve inputted (accurate) code in general.
+When  writing  a  transpiler  (or  parts  of  a  transpiler)
+everything  is connected.  Of  course, in  most cases,  your
+application attempts to solve a  general problem, but this -
+I think - is especially true for a transpiler or a compiler.
+The transpiler can't beforehand know  what to expect, it's a
+machine made of abstractions and its purpose is to transform
+inputted abstractions. It's quite obvious that it can't have
+'prejudices', if it is to  solve inputted (accurate) code in
+general.
 
-In this context, tests and testing shine. Actually, it would be impossible, or at least unreasonable way more difficult, to make a transpiler without writing tests, tests that cover as many use cases as possible. When programming, trying to solve a specific problem I often managed this to later on - when running the tests - facing the insight that the specific problem was solved but that the solution generated errors in code that earlier was fully 'functional'. In the codes of programming languages, things are interconnected, and it would be vain to even try calculated what ripples might arise from a change to the codebase. Surely this would possible (compilers arose before testing, I think) but the time lost on such an endeavor - if it would be something more than theoretically speaking possible -  could be spent on developing new features and 'securing' the codebase from bugs.
+In this context, tests and testing shine. Actually, it would
+be impossible, or at  least unreasonable way more difficult,
+to make a transpiler without writing tests, tests that cover
+as many use  cases as possible. When  programming, trying to
+solve a specific problem I often  managed this to later on -
+when  running  the  tests  - facing  the  insight  that  the
+specific problem was solved  but that the solution generated
+errors in code  that earlier was fully  'functional'. In the
+codes of  programming languages, things  are interconnected,
+and it  would be  vain to even  try calculated  what ripples
+might arise from a change to the codebase. Surely this would
+possible (compilers  arose before testing, I  think) but the
+time lost  on such an  endeavor -  if it would  be something
+more than  theoretically speaking possible -  could be spent
+on developing new features  and 'securing' the codebase from
+bugs.
 
-With this project, I've started to think differently about testing. Before starting programming this transpiler, I understood the benefits of testing o a philosophical level. Now my feeling is that I've taken the first real steps to incorporate testing in actual programming, a very satisfying feeling.
+With this  project, I've started to  think differently about
+testing.  Before  starting  programming this  transpiler,  I
+understood the benefits of  testing o a philosophical level.
+Now my  feeling is that I've  taken the first real  steps to
+incorporate testing in actual programming, a very satisfying
+feeling.
 
-Archaize JS is a very flawed project. But without tests, it would have been even more flawed.
+Archaize JS is a very  flawed project. But without tests, it
+would have been even more flawed.
 </pre>
 
 
@@ -5380,13 +5409,42 @@ gains of knowing the process, so to speak.
 
 ## The benefits of tests
 <pre>
-When writing a transpiler (or parts of a transpiler) everything is connected.  Of course, in most cases, your application attempts to solve a general problem, but this - I think - is especially true for a transpiler or a compiler. The transpiler can't beforehand know what to expect, it's a machine made of abstractions and its purpose is to transform inputted abstractions. It's quite obvious that it can't have 'prejudices', if it is to solve inputted (accurate) code in general.
+When  writing  a  transpiler  (or  parts  of  a  transpiler)
+everything  is connected.  Of  course, in  most cases,  your
+application attempts to solve a  general problem, but this -
+I think - is especially true for a transpiler or a compiler.
+The transpiler can't beforehand know  what to expect, it's a
+machine made of abstractions and its purpose is to transform
+inputted abstractions. It's quite obvious that it can't have
+'prejudices', if it is to  solve inputted (accurate) code in
+general.
 
-In this context, tests and testing shine. Actually, it would be impossible, or at least unreasonable way more difficult, to make a transpiler without writing tests, tests that cover as many use cases as possible. When programming, trying to solve a specific problem I often managed this to later on - when running the tests - facing the insight that the specific problem was solved but that the solution generated errors in code that earlier was fully 'functional'. In the codes of programming languages, things are interconnected, and it would be vain to even try calculated what ripples might arise from a change to the codebase. Surely this would possible (compilers arose before testing, I think) but the time lost on such an endeavor - if it would be something more than theoretically speaking possible -  could be spent on developing new features and 'securing' the codebase from bugs.
+In this context, tests and testing shine. Actually, it would
+be impossible, or at  least unreasonable way more difficult,
+to make a transpiler without writing tests, tests that cover
+as many use  cases as possible. When  programming, trying to
+solve a specific problem I often  managed this to later on -
+when  running  the  tests  - facing  the  insight  that  the
+specific problem was solved  but that the solution generated
+errors in code  that earlier was fully  'functional'. In the
+codes of  programming languages, things  are interconnected,
+and it  would be  vain to even  try calculated  what ripples
+might arise from a change to the codebase. Surely this would
+possible (compilers  arose before testing, I  think) but the
+time lost  on such an  endeavor -  if it would  be something
+more than  theoretically speaking possible -  could be spent
+on developing new features  and 'securing' the codebase from
+bugs.
 
-With this project, I've started to think differently about testing. Before starting programming this transpiler, I understood the benefits of testing o a philosophical level. Now my feeling is that I've taken the first real steps to incorporate testing in actual programming, a very satisfying feeling.
+With this  project, I've started to  think differently about
+testing.  Before  starting  programming this  transpiler,  I
+understood the benefits of  testing o a philosophical level.
+Now my  feeling is that I've  taken the first real  steps to
+incorporate testing in actual programming, a very satisfying
+feeling.
 
-Archaize JS is a very flawed project. But without tests, it would have been even more flawed.
+Archaize JS is a very  flawed project. But without tests, it
+would have been even more flawed.
 </pre>
 
 
@@ -6083,5 +6141,4 @@ instance C, a language which is, relatively speaking, closer
 to the core than for instance JavaScript.
 
 A 'sentence' in code is  Grammarly  speaking either, given a
-context, unambiguously correct  or it's incorrect; something
-that  may or  not  be true  
+context, unambiguously correct  o
