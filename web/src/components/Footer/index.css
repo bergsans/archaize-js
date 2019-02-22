@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url("https://fonts.googleapis.com/css?family=Raleway");
 
 @media only screen and (max-width: 767px) {
-
   .footer__paragraph__link,
   .footer__paragraph__link:visited,
   .footer__paragraph__link:active {
@@ -29,7 +28,6 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-
   .footer__paragraph__link,
   .footer__paragraph__link:visited,
   .footer__paragraph__link:active {
@@ -57,7 +55,6 @@
 }
 
 @media only screen and (min-width: 1024px) {
-
   .footer__paragraph__link,
   .footer__paragraph__link:visited,
   .footer__paragraph__link:active {

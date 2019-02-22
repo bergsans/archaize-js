@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 
 import { logo } from "./logo";
 
-const Logo = () => <header className="container__header">
+const Logo = () => (
+  <header className="container__header">
     <pre className="container__header__logo">{logo}</pre>
-  </header>;
+  </header>
+);
 export default Logo;
-

@@ -24,7 +24,6 @@
     text-align: justify;
     font-family: "Raleway", sans-serif;
     line-height: 25px;
-
   }
 
   .about__paragraph__link,
@@ -117,7 +116,7 @@
   }
 
   .about__ordered-list {
-      width: 500px;
+    width: 500px;
     margin: auto;
     list-style-type: upper-roman;
     font-family: "Raleway", sans-serif;
@@ -188,5 +187,4 @@
     margin: auto;
     width: 600px;
   }
-
 }

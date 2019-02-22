@@ -1,14 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Footer from '../Footer';
+import Footer from "../Footer";
 
 import "./index.css";
 
 const About = () => (
   <div className="about__container">
     <h2 className="about__container__header">About</h2>
-
     <p className="about__paragraph" style={{ marginBottom: "15px" }}>
       <strong>This is Archaize JS:</strong>
     </p>
@@ -48,24 +47,21 @@ const About = () => (
       >
         /claes-magnus/archaize-js
       </a>
-      . The aesthetics of this site, stems form that the project orginally
-      was supposed to only be a CLI. I thought it would be kind of cool nice to
+      . The aesthetics of this site, stems form that the project orginally was
+      supposed to only be a CLI. I thought it would be kind of cool nice to
       apply the same aesthetics to the Web; in this case the 'branding' is quite
       narrow anyway.
     </p>
-
     <p className="about__paragraph">
       In the year 2019, transpilers are more important than ever. The Web Wide
       Web development is global and should be inclusive. In the context of
       front-end development this is spelled backward compatibility.
     </p>
-
     <p className="about__paragraph">
       Archaize JS is neither the best transpiler, nor support full functionality
       for transpiling ES6 to ES5. But it includes all necessary parts of a fully
       functional transpiler.
     </p>
-
     <h3
       className="about__container__sub-header"
       style={{ marginTop: "35px", color: "#37d800" }}
@@ -89,8 +85,6 @@ const About = () => (
       <li className="about__ordered-list__item">default parameter</li>
     </ol>
     <Footer />
-
   </div>
 );
 export default About;
-

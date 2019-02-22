@@ -9,7 +9,7 @@ textarea {
     display: none;
   }
   .code__container__header {
-    display:none;
+    display: none;
   }
 
   .code__container__box-mobile {
@@ -20,7 +20,7 @@ textarea {
   .code__container {
     width: 306px;
     height: 500px;
-    margin:auto;
+    margin: auto;
   }
 
   .code__container__editor {
@@ -33,7 +33,6 @@ textarea {
     top: -560px;
     left: 15px;
     overflow-x: hidden;
-
   }
 
   .code__container__transpiled-code {
@@ -46,7 +45,6 @@ textarea {
     top: -520px;
     left: 15px;
     overflow-x: hidden;
-
   }
 
   .code__container__menu {
@@ -55,7 +53,6 @@ textarea {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
-
   .code__container__box-mobile {
     display: none;
   }
@@ -63,7 +60,7 @@ textarea {
   .code__container {
     width: 700px;
     height: 400px;
-   margin: auto;
+    margin: auto;
   }
 
   .code__container__header {
@@ -73,7 +70,7 @@ textarea {
   }
 
   .code__container__box-desktop {
-    padding:0;
+    padding: 0;
     font-size: 16px;
     transform: scale(0.95);
   }
@@ -86,7 +83,7 @@ textarea {
     margin: 1.67em 0;
     position: relative;
     top: -380px;
-    left: 30px;    
+    left: 30px;
   }
 
   .code__container__transpiled-code {
@@ -125,7 +122,7 @@ textarea {
   }
 
   .code__container__modal__ast-viewer {
-    position: static  !important;
+    position: static !important;
     width: 1000% !important;
     height: 1000% !important;
     right: 0;
@@ -138,8 +135,8 @@ textarea {
 
   .code__container__modal__ast-viewer__content-ast {
     position: fixed !important;
-top:0;
-left:0;
+    top: 0;
+    left: 0;
     width: 1000% !important;
     height: 1000px !important;
     margin: auto;
@@ -172,13 +169,12 @@ left:0;
 }
 
 @media only screen and (min-width: 1024px) {
-
   .code__container__box-mobile {
     display: none;
   }
 
   .code__container {
-}
+  }
 
   .code__container__header {
     color: #37d800;
@@ -192,7 +188,6 @@ left:0;
   }
 
   .code__container__editor {
- 
     height: 327px;
     width: 362px;
     word-break: break-all;
@@ -204,7 +199,6 @@ left:0;
   }
 
   .code__container__transpiled-code {
-
     height: 327px;
     width: 362px;
     word-break: break-all;
@@ -281,9 +275,6 @@ left:0;
     cursor: pointer;
   }
 }
-
-
-
 
 /**
  * Darcula theme
