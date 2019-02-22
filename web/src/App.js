@@ -8,7 +8,7 @@ import Header from './components/Header';
 import MenuDesktop from './components/MenuDesktop';
 import MenuResponsive from './components/MenuResponsive';
 
-import "./App.css";
+import './App.css';
 
 class App extends Component {
   state = { menuOpen: false };
