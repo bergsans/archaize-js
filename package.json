@@ -2,23 +2,23 @@
   "name": "archaize-js",
   "version": "0.7.1",
   "description": "Transpiler of JavaScript (ES6 to ES5)",
-	"keywords": [
-	  "transpiler",
-		"ES6",
-		"ES5",
-		"Esprima",
-		"cli",
-		"NPM package",
-	  "web solution",
-		"Abstract Syntax Tree",
-		"AST",
-		"codemod"
-	],
+  "keywords": [
+    "transpiler",
+    "ES6",
+    "ES5",
+    "Esprima",
+    "cli",
+    "NPM package",
+    "web solution",
+    "Abstract Syntax Tree",
+    "AST",
+    "codemod"
+  ],
   "main": "src/archaize.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-		"read-doc": "cd text && less *.md > temp.md | grip temp.md && rm temp.md && cd .."
+    "read-doc": "cd text && less *.md > temp.md | grip temp.md && rm temp.md && cd .."
   },
   "jest": {
     "verbose": true

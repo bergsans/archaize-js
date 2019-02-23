@@ -79,7 +79,7 @@ console.log(transpiledCode);
 #### Web
 
 ```
-cd web && npm run start 
+cd web && npm install && npm run start 
 
 visit localhost:3000
 
