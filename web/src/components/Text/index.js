@@ -78,15 +78,15 @@ const Text = () => (
 
     <h5 className="essay__container__sub_sub-header">Outline of Strategy</h5>
 
-    <ul>
-      <li>Write code covering a feature of ES6 not included in ES5</li>
-      <li>Compare differences in the syntax tree</li>
-      <li>Establish rules that would be necessary for transforming</li>
-      <li>
+    <ul className="essay__list">
+      <li className="essay__list__item">Write code covering a feature of ES6 not included in ES5</li>
+      <li className="essay__list__item">Compare differences in the syntax tree</li>
+      <li className="essay__list__item">Establish rules that would be necessary for transforming</li>
+      <li className="essay__list__item">
         differences in way that would produce the same end result, identical
         output.
       </li>
-      <li>Write code rules for transformation & transform!</li>
+      <li className="essay__list__item">Write code rules for transformation & transform!</li>
     </ul>
 
     <h5 className="essay__container__sub_sub-header">Limitations</h5>
@@ -109,31 +109,32 @@ const Text = () => (
       therefore have higher priority than lesser known and used features.
     </p>
 
-    <ul>
-      <li>template literals</li>
-      <li>variable declarations</li>
-      <li>arrow functions</li>
-      <li>string method: repeat</li>
-      <li>string method: includes</li>
-      <li>string method: startsWith</li>
-      <li>string method: endsWith</li>
-      <li>array method: find index</li>
-      <li>array method: find</li>
-      <li>array method: includes</li>
-      <li>operator: rest</li>
-      <li>operator: spread (array)</li>
-      <li>strict/type equality (===)</li>
-      <li>default parameter</li>
+    <ul className="essay__list">
+      <li className="essay__list__item">template literals</li>
+      <li className="essay__list__item">variable declarations</li>
+      <li className="essay__list__item">arrow functions</li>
+      <li className="essay__list__item">string method: repeat</li>
+      <li className="essay__list__item">string method: includes</li>
+      <li className="essay__list__item">string method: startsWith</li>
+      <li className="essay__list__item">string method: endsWith</li>
+      <li className="essay__list__item">array method: find index</li>
+      <li className="essay__list__item">array method: find</li>
+      <li className="essay__list__item">array method: includes</li>
+      <li className="essay__list__item">operator: rest</li>
+      <li className="essay__list__item">operator: spread (array)</li>
+      <li className="essay__list__item">strict/type equality (===)</li>
+      <li className="essay__list__item">default parameter</li>
     </ul>
 
-    <h5 className="essay__container__sub_sub-header">Finished Product</h5>
+    <h5 className="essay__container__sub_sub-header">Finished Product (definition of done)</h5>
 
-    <pre>
-      * ...a ES6 to ES5 transpiler (main part) * Feature list include the core
-      of ES6 * Theory. How a transpiler works and why they are important * ...a
-      NPM package * ...a CLI to transpile JavaScript files * ...a Minimalistic
-      Web Solution * Front-end (React) * Back-end (Node.js, Express & Socket.io)
-    </pre>
+    <ul className="essay__list">
+      <li className="essay__list__item">...a ES6 to ES5 transpiler (main part)</li>
+      <li className="essay__list__item">...a essay on jow a transpiler works and why they are important</li>
+      <li className="essay__list__item">...a NPM package</li>
+      <li className="essay__list__item">...a CLI to transpile JavaScript files</li>
+      <li className="essay__list__item">...a Minimalistic Web Solution. Front-end (React), Back-end (Node.js, Express & Socket.io)</li>
+    </ul>
 
     <h5 className="essay__container__sub_sub-header">In a nutshell</h5>
 
@@ -288,15 +289,15 @@ const Text = () => (
       Web and Web development this is spelled backward compatibility. This has
       also been the spirit of the Web since its origination. As Tim
       Berners-Lee,the inventor of the Web,{" "}
-      <a
+      <a className="essay__paragraph__link" 
         href="https://www.w3.org/People/Berners-Lee/1996/ppf.html)1996"
         title=""
       >
         stated it
       </a>{" "}
-      <quote>
+      <cite>
         information must be available on all platforms, including future ones
-      </quote>
+      </cite>
       .
     </p>
 
@@ -311,7 +312,7 @@ const Text = () => (
 
     <p className="essay__paragraph">
       A quick glance at{" "}
-      <a href="https://kangax.github.io/compat-table/es6/">
+      <a className="essay__paragraph__link"  href="https://kangax.github.io/compat-table/es6/">
         The ES6 Compatability Table
       </a>{" "}
       clearly demonstrates the need for backward-compatibility and the only way
@@ -329,9 +330,9 @@ const Text = () => (
     </p>
 
     <p className="essay__paragraph">
-      After the advent of transpilers like
-      <a href="https://babeljs.io/" title="">
-        Babel.js
+      After the advent of transpilers like 
+      <a className="essay__paragraph__link"  href="https://babeljs.io/" title="">
+         Babel.js
       </a>
       , poly-fills is (probably) not used as often. Instead, you include
       Babel.js in a build environment like Webpack (or use it manually), to
@@ -397,57 +398,9 @@ const Text = () => (
       For now, don't bother much about the terminology to the left. Concentrate
       on code and how it gets transformed. I believe the example to be quite
       self-explanatory.
-    </p>
 
-    <pre>
-    +----------------------------------+-----------------------------------+
-    |           ABSTRACTION            |              EXAMPLE              |
-    +----------------------------------+-----------------------------------+
-    |  character stream                |  let area = a**2                  |
-    |                 ↓                |                                   |
-    |  Lexical Analyzer                |                                   |
-    |                 ↓                |                                   |
-    |  token stream                    |   let id,1  = id,2 ** 2           |
-    |                 ↓                |                                   |
-    |  Syntax Analyzer                 |         let                       |
-    |                 ↓                |          |                        |
-    |  syntax tree                     |          =                        |
-    |                 ↓                |        /   \                      |
-    |                                  |    id,1     **                    |
-    |                                  |      /       \                    |
-    |                                  |      id,2     2                   |
-    |                                  |                                   |
-    |  Semantic Analyzer               |                                   |
-    |                 ↓                |         let                       |
-    |                                  |          |                        |
-    |  syntax tree                     |          =                        |
-    |                 ↓                |      /       \                    |
-    |                                  |   id,1     id,2  *  int           |
-    |                                  |                      |            |
-    |                                  |                      2            |
-    |                                  |                                   |
-    |                 ↓                |                                   |
-    |  Intermediate Code Generator     |                                   |
-    |                 ↓                |                                   |
-    |  intermediate representation     |  id1 = id2 * int(2)               |
-    |                                  |                                   |
-    |                 ↓                |                                   |
-    |  Machine-Interdependent          |                                   |
-    |  Code Optimizer                  |                                   |
-    |                 ↓                |                                   |
-    |  intermediate representation     |  id1 = id2 * id2                  |
-    |                 ↓                |                                   |
-    |                                  |                                   |
-    |  Code Generator                  |                                   |
-    |                 ↓                |                                   |
-    |  target-machine code             |  Weird code, your name is...      |
-    |                 ↓                |  ...ASSEMBLER... (or something    |
-    |  Machine-Dependent               |  else)                            |
-    |  Code Optimizer                  |                                   |
-    |                 ↓                |                                   |
-    |  target-machine code             |  ... 010010000101011 ...          |
-    +---------------------------------+------------------------------------+
-    </pre>
+    <img src="table.png" alt="" title="" />
+    </p>    
 
     <p className="essay__paragraph">
       So, a compiler consists of front-end and a back-end (not to be confused
@@ -510,21 +463,7 @@ const Text = () => (
       - as I said in the introduction - doesn't mean that the code can run, that
       the code doesn't include bugs and so on. I only mean that the code is
       accurate, it doesn't mean the semantics actually produce something (to us)
-      'meaningful'. This, i.e., is **valid** code in JavaScript of ES6:
-      <Scrollbars autohide="true">
-        <Editor
-          value={`{}`}
-          onValueChange={() => {}}
-          highlight={code => highlight(code, languages.js)}
-          padding={10}
-          style={{
-            fontFamily: '"Fira code", "Fira Mono", monospace',
-            fontSize: 14,
-            backgroundColor: "#001426"
-          }}
-          className="code-theme"
-        />
-      </Scrollbars>
+      'meaningful'. This, i.e., is **valid** code in JavaScript of ES6: <code>{}</code>
     </p>
 
     <p className="essay__paragraph">
@@ -586,12 +525,13 @@ const Text = () => (
 
     <p className="essay__paragraph">
       Consider this JavaScript code:
-      <Scrollbars autohide="true">
+      <div className="essay__code-essay">
+      <Scrollbars autohide="true" style={{height:'175px'}}>
         <Editor
           value={`function addNums(...nums) {
   return nums.reduce((a, b) => a + b);
 }
-console.log(\`2 + 2 = ${addNums(2, 2)}\`);
+console.log(\`2 + 2 = $\{addNums(2, 2)\}\`);
 // output: 2 + 2 = 4`}
           onValueChange={() => {}}
           highlight={code => highlight(code, languages.js)}
@@ -604,7 +544,8 @@ console.log(\`2 + 2 = ${addNums(2, 2)}\`);
           className="code-theme"
         />
       </Scrollbars>
-    </p>
+</div>
+    </p>  
 
     <p className="essay__paragraph">
       Esprima includes both a lexical analyzer (a tokenizer) and a syntax
@@ -656,7 +597,7 @@ console.log(\`2 + 2 = ${addNums(2, 2)}\`);
       though, that the transpiler would make use of a explanatory naming system,
       something that's the case with Esprima (and Acorn, another quite famous
       AST-ifier) who follows the suggestion of the project{" "}
-      <a href="https://github.com/estree/estree/" title="">
+      <a className="essay__paragraph__link"  href="https://github.com/estree/estree/" title="">
         ESTree
       </a>
       , a standardization project.
@@ -666,7 +607,7 @@ console.log(\`2 + 2 = ${addNums(2, 2)}\`);
       These kind of abstractions are useful to the compiler, enabling a way to
       translate from one language to another. Esprima, following ESTree, would
       articulate a AST for a function with this kind of terminology:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'330px'}}>
         <Editor
           value={`{
       "type": "FunctionDeclaration",
@@ -714,22 +655,22 @@ console.log(\`2 + 2 = ${addNums(2, 2)}\`);
       gathered, clumped together under one umbrella.
     </p>
 
-    <ul>
-      <li>template literals</li>
-      <li>variable declarations</li>
-      <li>arrow functions</li>
-      <li>string method: repeat</li>
-      <li>string method: includes</li>
-      <li>string method: startsWith</li>
-      <li>string method: endsWith</li>
-      <li>array method: findIndex</li>
-      <li>array method: find</li>
-      <li>array method: includes</li>
-      <li>operator: rest</li>
-      <li>operator: spread (array)</li>
-      <li>strict/type equality (===)</li>
-      <li>default parameter</li>
-      <li>property shorthand</li>
+    <ul className="essay__list">
+      <li className="essay__list__item">template literals</li>
+      <li className="essay__list__item">variable declarations</li>
+      <li className="essay__list__item">arrow functions</li>
+      <li className="essay__list__item">string method: repeat</li>
+      <li className="essay__list__item">string method: includes</li>
+      <li className="essay__list__item">string method: startsWith</li>
+      <li className="essay__list__item">string method: endsWith</li>
+      <li className="essay__list__item">array method: findIndex</li>
+      <li className="essay__list__item">array method: find</li>
+      <li className="essay__list__item">array method: includes</li>
+      <li className="essay__list__item">operator: rest</li>
+      <li className="essay__list__item">operator: spread (array)</li>
+      <li className="essay__list__item">strict/type equality (===)</li>
+      <li className="essay__list__item">default parameter</li>
+      <li className="essay__list__item">property shorthand</li>
     </ul>
 
     <h4 className="essay__container__sub-header">Arrow Functions</h4>
@@ -755,13 +696,13 @@ console.log(\`2 + 2 = ${addNums(2, 2)}\`);
     </h5>
 
     <p className="essay__paragraph">
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'1700px'}}>
         <Editor
           value={`const totalSum = (...nums) => nums.reduce((a, b) => a + b);
 
-const sayHiTo = (name) => \`Hi ${name}!\`;
+const sayHiTo = (name) => \`Hi $\{name}!\`;
 
-const sayHelloTo = name => \`Hello ${name}!\`;
+const sayHelloTo = name => \`Hello $\{name}!\`;
 
 const injectThisDate = (string, pos) => {
   if(typeof pos !== 'number' || typeof string !== 'string') {
@@ -769,7 +710,7 @@ const injectThisDate = (string, pos) => {
   } else if(pos > 0 && pos < (string.length - 1)) {
    let firstPartOfString = string.slice(0, pos);
    let lastPartOfString = string.slice(pos, string.length);
-   return \`${firstPartOfString}${Date()}${lastPartOfString}\`;
+   return \`$\{firstPartOfString}$\{Date()}$\{lastPartOfString}\`;
   } else {
     return undefined;
   }
@@ -783,7 +724,7 @@ Time)) might be last day before Earth spinns out of orbit and enter
 
 const authors = [{name:'Virginia Woolf', maritalStatus: 'Mrs.'},
  {name:'Alice Munroe', maritalStatus:'Ms.'}];
-const formalAuthorNames = authors.map((author) => \`${author.maritalStatus} ${
+const formalAuthorNames = authors.map((author) => \`$\{author.maritalStatus} $\{
             author.name
           }\`);
 
@@ -861,7 +802,7 @@ function UiComponent2() {
     <p className="essay__paragraph">
       The possibility of default parameters in function definitions is also one
       of ES6 'shorthands'.
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'80px'}}>
         <Editor
           value={`function someFunc(a = 'a', b = 'b') { console.log(a, b) } someFunc(); // a, b `}
           onValueChange={() => {}}
@@ -911,7 +852,7 @@ function UiComponent2() {
     </p>
 
     <p className="essay__paragraph">
-      JavaScript is not *a* thing, it's several things. We tend to speak of it
+      JavaScript is not <em>a</em> thing, it's several things. We tend to speak of it
       as it is one thing only for reasons of convenience. JavaScript is
       interpreted in real-time, you can't compile it an end up with some sort of
       executable file (unless you make use of some kind of 'external'
@@ -964,7 +905,7 @@ function UiComponent2() {
     <p className="essay__paragraph">
       The property shorthand of ES6 admits declaring keys whose value is a
       reference to a variable with the same name as the key.
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'150px'}}>
         <Editor
           value={`let a = 1;
 let b = 2;
@@ -998,7 +939,7 @@ console.log(obj); // { a: 1, b: 2 }`}
       In JavaScript ES6, the `rest` operator makes it possible to collect an
       arbitrarily large number of parameters, stated in the function definition.
       It would look like this:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'175px'}}>
         <Editor
           value={`function addNums(...nums) {
   return nums.reduce((a, b) => a + b);
@@ -1021,7 +962,7 @@ console.log(addNums(1,1,1,1,1)) // 5`}
       This feature surelymakes your life easier, but the main functionality is
       not unique. In ES5 you could have written a function with the same
       semantic meaning:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'205px'}}>
         <Editor
           value={`function addNums() {
   var nums = Object.values(arguments);
@@ -1060,7 +1001,7 @@ console.log(addNums(1,1,1,1,1)) // 5
     <p className="essay__paragraph">
       The array spread operator makes it possible to use a handy shorthand (and
       doesn't have to use the concat method):
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'235px'}}>
         <Editor
           value={`const humanCharacters = ['Luke Skywalker', 'Princess Leia', 'Darth Vader'];
 
@@ -1094,7 +1035,7 @@ const humansAndRobots = [...humanCharacters, ...robotCharacters];
     <p className="essay__paragraph">
       A problem that might arise would be if other parameters are included in
       the function definition.
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'80px'}}>
         <Editor
           value={`function someFunc(param1, param2, ...allOtherParams) {}
 `}
@@ -1123,14 +1064,14 @@ const humansAndRobots = [...humanCharacters, ...robotCharacters];
     <h5 className="essay__container__sub_sub-header">Background</h5>
 
     <p className="essay__paragraph">
-      Strict equality is impossible in ES5. You **can** do it on a global level
+      Strict equality is impossible in ES5. You <strong>can</strong> do it on a global level
       with a polyfill, with a customized Object method (
       <code>defineProperty</code>). But in a local scope it can't be done.
     </p>
 
     <p className="essay__paragraph">
       In ES6 this code would print 'TRUE':
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'280px'}}>
         <Editor
           value={`let number = 5;
 let numberStr = '5';
@@ -1158,7 +1099,7 @@ number === numberStr?
       would print 'FALSE'. Because JavaScript is a dynamically typed it's
       possible, if the variable declaration did not use <code>const</code>, to
       re-define the data type:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'110px'}}>
         <Editor
           value={`numberStr = 5;
 console.log(typeof numberStr)
@@ -1217,11 +1158,11 @@ console.log(typeof numberStr)
 
     <p className="essay__paragraph">
       Let's begin by exemplifiing how template literals are used:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'140px'}}>
         <Editor
           value={`const firstName = "Luke";
 const surName = "Skywalker";
-const name = \`${firstName} ${surName}\`;
+const name = \`$\{firstName} $\{surName}\`;
 `}
           onValueChange={() => {}}
           highlight={code => highlight(code, languages.js)}
@@ -1241,7 +1182,7 @@ const name = \`${firstName} ${surName}\`;
       whose task is to 'archaize' modern JavaScript must handle this change.
       With and before ES5, you would have to use a binary expression (a 'join')
       to manage the same kind of problem:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'140px'}}>
         <Editor
           value={`var firstName = "Luke";
 var surName = "Skywalker";
@@ -1263,7 +1204,7 @@ var name = firstName + " " + surName;
     <h5 className="essay__container__sub_sub-header">Problem</h5>
 
     <p className="essay__paragraph">
-      This means, that between *each* expression a 'joining' procedure would
+      This means, that between <em>each</em> expression a 'joining' procedure would
       have to be in place. With the terminology of ESTree, you'd call this a
       'Binary Expression'.It could, of course, be some other kind of binary
       expression, if you handle non-strings(3 - 2 and so on).
@@ -1285,7 +1226,7 @@ var name = firstName + " " + surName;
 
     <p className="essay__paragraph">
       Now consider this (ES5) code snippet.
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'125px'}}>
         <Editor
           value={`var name = "C-M";
 var str = "As of this date (" + Date() + "), I, " + name + ", (...)";
@@ -1302,7 +1243,7 @@ var str = "As of this date (" + Date() + "), I, " + name + ", (...)";
         />
       </Scrollbars>
       ESTree would produce an AST with the following structure:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'600px'}}>
         <Editor
           value={`{
   "type": "Program",
@@ -1653,10 +1594,10 @@ var str = "As of this date (" + Date() + "), I, " + name + ", (...)";
 
     <p className="essay__paragraph">
       Written with ES6 (same 'meaning', different syntax):
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'110px'}}>
         <Editor
           value={`let name = "C-M"
-let str = \`Hello ${name}!\`;
+let str = \`Hello $\{name}!\`;
 `}
           onValueChange={() => {}}
           highlight={code => highlight(code, languages.js)}
@@ -1673,7 +1614,7 @@ let str = \`Hello ${name}!\`;
 
     <p className="essay__paragraph">
       This would produce quite a different AST: (1)
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'600px'}}>
         <Editor
           value={`{
   "type": "Program",
@@ -2037,7 +1978,7 @@ let str = \`Hello ${name}!\`;
       not that important in this specific context. What I write about blocks and
       scopes is heavily incluenced by the section Static Scope and Block
       Structure in the Dragon-book (p. 28 - 33).
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'425px'}}>
         <Editor
           value={`
 {                                             //start > | *BLOCK 1* |
@@ -2075,7 +2016,7 @@ let str = \`Hello ${name}!\`;
 
     <p className="essay__paragraph">
       On the other hand, this code would produce an error:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'375px'}}>
         <Editor
           value={`{
   let a = 0;
@@ -2102,7 +2043,7 @@ let str = \`Hello ${name}!\`;
 
     <p className="essay__paragraph">
       This code attempts to output something that is not yet declared. The fact
-      that, there *is* a existing, previously declared value named 'a' doesn't
+      that, there <em>is</em> a existing, previously declared value named 'a' doesn't
       matter, since 'a' is in another scope.
     </p>
 
@@ -2114,7 +2055,7 @@ let str = \`Hello ${name}!\`;
       <code>available</code>
       for and identifying and can thus be assigned a parameter and
       unproblematically log:ed.
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'2 25px'}}>
         <Editor
           value={`{
   var a = 0;
@@ -2144,7 +2085,7 @@ let str = \`Hello ${name}!\`;
 
     <p className="essay__paragraph">
       In the context of JavaScript, quite a few developers argue that there are
-      obvious advantages to the <code>let</code> keyword; you can *see* the
+      obvious advantages to the <code>let</code> keyword; you can <em>see</em> the
       limits for a declared value right away (or rather, more easily). One
       could, however, make some kind of case for using <code>var</code> for
       global values, even though this is also possible with <code>let</code> and{" "}
@@ -2174,12 +2115,12 @@ let str = \`Hello ${name}!\`;
     </p>
 
     <p className="essay__paragraph">
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'250px'}}>
         <Editor
           value={`let a = { value: 0 };
 let b = a;
 b.value = 1;
-console.log(\`a: \${a.value\}\`)
+console.log(\`a: \$\{a.value\}\`)
 // output: "a: 1"
 `}
           onValueChange={() => {}}
@@ -2201,16 +2142,16 @@ console.log(\`a: \${a.value\}\`)
     </p>
 
     <p className="essay__paragraph">
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'350px'}}>
         <Editor
           value={`let a = { value: 0 };
 let b = a;
 b.value = 1;
-console.log(\`a: \${a.value\}\`);
+console.log(\`a: \$\{a.value\}\`);
 // output: "a: 1"
 let c = { ...a };
 c.value = 2;
-console.log(\`a: \${a.value}\`);
+console.log(\`a: \$\{a.value}\`);
 // output: "a: 1" (still...)
 `}
           onValueChange={() => {}}
@@ -2227,7 +2168,7 @@ console.log(\`a: \${a.value}\`);
     </p>
 
     <p className="essay__paragraph">
-      *But nothing of this really changes everything*, partly because JavaScript
+      <em>But nothing of this really changes everything</em>, partly because JavaScript
       is a loosely typed language. In all cases described above, we could
       replace <code>let</code> and <code>const</code> with
       <code>var</code>. The purpose with <code>let</code> and <code>const</code>{" "}
@@ -2241,7 +2182,7 @@ console.log(\`a: \${a.value}\`);
     </p>
 
     <p className="essay__paragraph">
-      There *can* be a problem here though. Even though it is possible to reuse
+      There <em>can</em> be a problem here though. Even though it is possible to reuse
       variable names, this would not be to recommend. Depending on the scope,
       you can the same variable name declared with <code>let</code> or{" "}
       <code>const</code> (i.e. for the index of a classic for-loop). Simply
@@ -2255,7 +2196,7 @@ console.log(\`a: \${a.value}\`);
 
     <p className="essay__paragraph">
       This is how Babel.js seems to solve the problem stated above:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'350px'}}>
         <Editor
           value={`{
   var a = 0;
@@ -2279,7 +2220,7 @@ console.log(\`a: \${a.value}\`);
         />
       </Scrollbars>
       (The solution is from the Babel.js{" "}
-      <a href="https://babeljs.io/" title="">
+      <a className="essay__paragraph__link"  href="https://babeljs.io/" title="">
         Online transpiler
       </a>{" "}
       as of 2019-01-22.)
@@ -2466,7 +2407,7 @@ console.log(\`a: \${a.value}\`);
       Philosophy(*), focus the main problem of my code.
     </p>
 
-    <blockquote>
+    <blockquote className="essay__blockquote">
       Rule of Composition: Design programs to be connected to other programs.
       Rule of Separation: Separate policy from mechanism; separate interfaces
       from engines. Rule of Simplicity: Design for simplicity; add complexity
@@ -2492,7 +2433,7 @@ console.log(\`a: \${a.value}\`);
     <p className="essay__paragraph">
       An example. `===` occurs in lots of different places in programming, or
       rather - it _can_ occurs in lots of different places. We are used to this:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'80px'}}>
         <Editor
           value={`const isStringInArray = [...].includes('Am I here?')? 'yes' : 'no';
 `}
@@ -2514,7 +2455,7 @@ console.log(\`a: \${a.value}\`);
     </p>
 
     <p className="essay__paragraph">
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'80px'}}>
         <Editor
           value={`if(1 === 1) {}
 `}
@@ -2533,7 +2474,7 @@ console.log(\`a: \${a.value}\`);
 
     <p className="essay__paragraph">
       But... this is also correct JavaScript:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'80px'}}>
         <Editor
           value={`if(1 === 1) {}
 `}
@@ -2564,7 +2505,7 @@ console.log(\`a: \${a.value}\`);
       program. I've used dependencies in every aspect for the included steps of
       a transpiler, beside the Abstract Syntax Tree. To me, the AST seems like
       the most fun part of a transpiler because it's in the AST 'something
-      happens', it's the locus of **essential** data transformations of a
+      happens', it's the locus of <strong>essential</strong> data transformations of a
       transpiler - at least of a transpiler of modern to less modern JavaScript.
       However much I would've appreciated being able to handle the process as a
       whole, I would not have managed what I've done, given the time limit.
@@ -2692,12 +2633,13 @@ console.log(\`a: \${a.value}\`);
       the Abstract Syntax Tree. The finished product includes these parts:
     </p>
 
-    <pre>
-      * ...a ES6 to ES5 transpiler (main part) * Feature list include the core
-      of ES6 * Theory. How a transpiler works and why they are important * ...a
-      NPM package * ...a CLI to transpile JavaScript files * ...a Minimalistic
-      Web Solution * Front-end (React) * Back-end (Node.js, Express & Socket.io)
-    </pre>
+     <ul className="essay__list">
+      <li className="essay__list__item">...a ES6 to ES5 transpiler (main part)</li>
+      <li className="essay__list__item">...a essay on jow a transpiler works and why they are important</li>
+      <li className="essay__list__item">...a NPM package</li>
+      <li className="essay__list__item">...a CLI to transpile JavaScript files</li>
+      <li className="essay__list__item">...a Minimalistic Web Solution. Front-end (React), Back-end (Node.js, Express & Socket.io)</li>
+    </ul>
 
     <h4 className="essay__container__sub-header">APPENDIX</h4>
 
@@ -2707,7 +2649,7 @@ console.log(\`a: \${a.value}\`);
 
     <p className="essay__paragraph">
       From package.json:
-      <Scrollbars autohide="true">
+      <Scrollbars autohide="true" style={{height:'300px'}}>
         <Editor
           value={`"dependencies": {
   "commander": "^2.19.0",
@@ -2730,25 +2672,25 @@ console.log(\`a: \${a.value}\`);
       </Scrollbars>
     </p>
 
-    <ul>
-      <li>
+    <ul className="essay__list">
+      <li className="essay__list__item">
         <em>Commander.js</em>. CLI-functionality (Node.js).{" "}
       </li>
-      <li>
+      <li className="essay__list__item">
         <em>Dandy UI</em>. Minimalistic terminal UI library (Node.js).{" "}
       </li>
-      <li>
+      <li className="essay__list__item">
         <em>Esprima</em>. Provides the Abstract Syntax Tree.{" "}
       </li>
-      <li>
+      <li className="essay__list__item">
         <em>Estraverse</em>. Library for traversing the JSON-like data.{" "}
       </li>
-      <li>
+      <li className="essay__list__item">
         <em>Estracode</em>. Transforms a Abstract Syntax Tree to source code.
       </li>
     </ul>
 
-    <strong>The man dependency is Esprima.</strong>
+    <p className="essay__paragraph"><strong>The man dependency is Esprima.</strong></p>
 
     <h5 className="essay__container__sub_sub-header">On CLI's</h5>
 
@@ -2775,13 +2717,13 @@ console.log(\`a: \${a.value}\`);
       processes of Node.js here) main options:
     </p>
 
-    <ul>
-      <li>
+    <ul className="essay__list">
+      <li className="essay__list__item">
         By using the Archaize JS NPM package and by using the functionality of{" "}
         <code>makeAST</code> and <code>transpile</code>.
       </li>
 
-      <li>
+      <li className="essay__list__item">
         Or by including the CLI in package.json; something I would recommend.
       </li>
     </ul>
@@ -2795,7 +2737,7 @@ console.log(\`a: \${a.value}\`);
       most of the time want to focus on the 'logic', the problem your
       application wants to solve. My contention is that there are good reasons
       to honor the tradition of the Unix Philosophy when writing these kind of
-      application. *Do one thing and do it well.* If you see to it that the
+      application. <em>Do one thing and do it well.</em> If you see to it that the
       application is 'linkable', that other applications can 'pipe' it, you've
       created a small part of a larger eco-system.
     </p>
@@ -2814,10 +2756,11 @@ console.log(\`a: \${a.value}\`);
 
     <p className="essay__paragraph">
       The notions of transpiler is old as one understands from this cover:
-      <img src="acm-babel.png" alt="" title="ACM Front page, 1961" />
+      <img src="acm-babel.png" alt="" title="ACM Front page, 1961" style={{maxWidth: '600px'}}/>
     </p>
 
     <Footer />
   </div>
 );
 export default Text;
+
