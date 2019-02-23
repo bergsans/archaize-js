@@ -67,7 +67,7 @@ Transpiles inputted JavaScript code (file) to another file:
 #### NPM package
 
 ```
-const { transpile } = require('archaize-js');
+const { transpile } = require('archaize-js/index.js');
 
 // to avoid issues, it's recommended to firstly develop
 // a read file function that returns the source code.
