@@ -73,7 +73,7 @@ const Text = () => (
       problem, I've formulated some code covering a certain problem. Then I've
       compared the syntax trees of both code snippets using the BASH
       applications diff and sdiff. I've also used Vims -d flag (
-      <code>vim -d file1.ast file2.asti</code>).
+      <code className="essay__code">vim -d file1.ast file2.asti</code>).
     </p>
 
     <h5 className="essay__container__sub_sub-header">Outline of Strategy</h5>
@@ -102,7 +102,7 @@ const Text = () => (
     </h5>
 
     <p className="essay__paragraph">
-      The Website [es6-features.org](es6-features.org) lists all features of
+      The Website <a href="es6-features.org" title="es6-features.org" className="essay__paragraph__link">es6-features.org</a> lists all features of
       ES6. Archaize.js won't be able to handle more than a handful of the
       present features. My goal is to finish the features stated below. These
       features, I think, could be regarded as core features of ES6, and
@@ -184,7 +184,7 @@ const Text = () => (
       stops being a language fit for communication (fit for use) and therefore
       viewed more as part of the machine, being 'metal'. A transpiler can also,
       something which is true for the transpiler of the project, translate
-      'within' the *same* language.
+      'within' the <strong>same</strong> language.
     </p>
 
     <p className="essay__paragraph">
@@ -214,7 +214,7 @@ const Text = () => (
       unambiguously correct or it's incorrect; something that may or not be true
       concerning grammars of natural languages. This is not the case with
       compilers; the grammar of a compiler must provide a set of definite rules.
-      An expression can only have *one* meaning in the context of the grammar,
+      An expression can only have <strong>one</strong> meaning in the context of the grammar,
       but with that said it might not be the case that the application actually
       does precisely what the developer intended it to do.
     </p>
@@ -252,7 +252,7 @@ const Text = () => (
     </p>
 
     <p className="essay__paragraph">
-      To me, it's strange how one could *not* be interested in how a compiler
+      To me, it's strange how one could <strong>not</strong> be interested in how a compiler
       works if you're an application developer. On the other hand, I always want
       to gothe roots of a subject matter that interest me and totally ignore
       some thingsthat (perhaps) *should* interest me.
@@ -272,7 +272,7 @@ const Text = () => (
 
     <p className="essay__paragraph">
       Even though a scientific essay should be objective, the motivation for
-      writing an essay is **not**, neither is the importance of the subject
+      writing an essay is <em>not</em>, neither is the importance of the subject
       itself. Much of the last centuries debate in the philosophy and the social
       sciences revolved around questions on the value of a certain pursuit. The
       general consensus, I think, was that there are better reasons to the
@@ -312,7 +312,7 @@ const Text = () => (
 
     <p className="essay__paragraph">
       A quick glance at{" "}
-      <a className="essay__paragraph__link"  href="https://kangax.github.io/compat-table/es6/">
+      <a className="essay__paragraph__link" title="https://kangax.github.io/compat-table/es6/" href="https://kangax.github.io/compat-table/es6/">
         The ES6 Compatability Table
       </a>{" "}
       clearly demonstrates the need for backward-compatibility and the only way
@@ -331,7 +331,7 @@ const Text = () => (
 
     <p className="essay__paragraph">
       After the advent of transpilers like 
-      <a className="essay__paragraph__link"  href="https://babeljs.io/" title="">
+      <a className="essay__paragraph__link"  href="https://babeljs.io/" title="https://babeljs.io/">
          Babel.js
       </a>
       , poly-fills is (probably) not used as often. Instead, you include
@@ -399,7 +399,7 @@ const Text = () => (
       on code and how it gets transformed. I believe the example to be quite
       self-explanatory.
 
-    <img src="table.png" alt="" title="" />
+    <img src="table.png" alt="TABLE DISPLAYING COMPILATION PROCESS" title="" />
     </p>    
 
     <p className="essay__paragraph">
@@ -458,16 +458,16 @@ const Text = () => (
       categorized item is valid according to the rules (the grammar) of the
       language. If the code would use of the word 'private' (a keyword in many
       languages) and the language of the compiler doesn't use the{" "}
-      <code>private</code> keyword this would not be a valid expression. Each
+      <code className="essay__code">private</code> keyword this would not be a valid expression. Each
       'block' must be accurate, or the construct would be faulty. This, however
       - as I said in the introduction - doesn't mean that the code can run, that
       the code doesn't include bugs and so on. I only mean that the code is
       accurate, it doesn't mean the semantics actually produce something (to us)
-      'meaningful'. This, i.e., is **valid** code in JavaScript of ES6: <code>{}</code>
+      'meaningful'. This, i.e., is <em>valid</em> code in JavaScript of ES6: <code className="essay__code">{}</code>
     </p>
 
     <p className="essay__paragraph">
-      This IIFE doesn't **do** anything. It will be called when interpreted, but
+      This IIFE doesn't <strong>do</strong> anything. It will be called when interpreted, but
       nothing 'happens'. These distinctions are important to bear in mind when
       relating to programming in general and compilers/transpiler in particular.
     </p>
@@ -500,7 +500,7 @@ const Text = () => (
     <p className="essay__paragraph">
       Code generation. In a computer, everything is 'code' in some sense. But
       there is a 'semantic gap' between what we would normally consider readable
-      and the code **of** the machine. At the childhood of computers,
+      and the code <em>of</em> the machine. At the childhood of computers,
       enthusiasts would hardcode these codes to the computer on a pure 'system'
       level. But the lengthiness of a programming language like Assembler pales
       in comparison with that kind of codes. It would be still, I guess, be code
@@ -512,9 +512,9 @@ const Text = () => (
     <h4 className="essay__container__sub-header">The Abstract Syntax Tree</h4>
 
     <p className="essay__paragraph">
-      In this project, the real work begins *after* - or rather *with* the
+      In this project, the real work begins <em>after</em> - or rather <em>with</em> the
       Abstract Syntax Tree, AST, since Archaize JS make use of
-      [Esprima](https://www.npmjs.com/package/esprima). Let's begin by
+      <a href="https://www.npmjs.com/package/esprima" className="essay__paragraph__link" title="https://www.npmjs.com/package/esprima">Esprima</a>. Let's begin by
       explaining what comes before an AST.
     </p>
 
@@ -561,7 +561,7 @@ console.log(\`2 + 2 = $\{addNums(2, 2)\}\`);
     </p>
 
     <p className="essay__paragraph">
-      The 'atoms' would also include 'keywords' like function, return, reduce
+      The 'atoms' would also include 'keywords' like <code className="essay__code">function</code>, <code className="essay__code">return</code>, <code className="essay__code">reduce</code>
       etc. At the end of this process, a token stream emerges, replacing the
       character stream. I guess you could see it as a sort of word-list of
       'words', present in the program code.
@@ -597,7 +597,7 @@ console.log(\`2 + 2 = $\{addNums(2, 2)\}\`);
       though, that the transpiler would make use of a explanatory naming system,
       something that's the case with Esprima (and Acorn, another quite famous
       AST-ifier) who follows the suggestion of the project{" "}
-      <a className="essay__paragraph__link"  href="https://github.com/estree/estree/" title="">
+      <a className="essay__paragraph__link"  href="https://github.com/estree/estree/" title="https://github.com/estree/estree/">
         ESTree
       </a>
       , a standardization project.
@@ -791,7 +791,7 @@ function UiComponent2() {
       parent. Therefore we must append a variable declaration to the parent
       node. Because it's easier and more efficient to traverse the 'tree' from
       top to bottom, we will look for any parent containing a child with an
-      arrow function making use of <code>this</code>. If this is the case, we'll
+      arrow function making use of <code className="essay__code">this</code>. If this is the case, we'll
       inject a variable declaration named 'self' that contains the (lexical)
       this so that 'self' would have this context stored before the program
       enters the child node.
@@ -821,7 +821,7 @@ function UiComponent2() {
     <p className="essay__paragraph">
       Its use is that you don't have to bother about setting the variable if
       it's 'void'. A 'void' parameter in JavaScript gets assigned to{" "}
-      <code>undefined</code>. Pre-ES6, you would set the parameter to a default
+      <code className="essay__code">undefined</code>. Pre-ES6, you would set the parameter to a default
       value in the body of the defined function.
     </p>
 
@@ -862,8 +862,8 @@ function UiComponent2() {
     </p>
 
     <p className="essay__paragraph">
-      Can we i.e. say that <code>addEventListener</code>, a browser method, is a
-      part of JavaScript, <code>CreateEvent</code> in Node.js are part of the
+      Can we i.e. say that <code className="essay__code">addEventListener</code>, a browser method, is a
+      part of JavaScript, <code className="essay__code">CreateEvent</code> in Node.js are part of the
       language although these functionalities don't exist on the 'other' side?
       Or what about different 'machine' libraries (Nodebot.js) or Virtual
       Reality-libraries? They may have basic subroutines that are dependent on
@@ -930,7 +930,7 @@ console.log(obj); // { a: 1, b: 2 }`}
       Solving the AST transformation of this feature can be handled by
       'explicitivity'. Instead of relying on the JavaScript engine to handle
       this inference, you just provide the reference. Thus doing it compatible
-      with ES5: <code>a: a, b: b</code>.
+      with ES5: <code className="essay__code">a: a, b: b</code>.
     </p>
 
     <h4 className="essay__container__sub-header">Rest</h4>
@@ -1027,7 +1027,7 @@ const humansAndRobots = [...humanCharacters, ...robotCharacters];
     <p className="essay__paragraph">
       When replacing the rest operator in the function definition you have to
       make use of the arguments object, you'll also need to inject the values
-      method inherit in Object (or some other solution) at the first line to
+      method inherit in <code className="essay__code>">Object</code> (or some other solution) at the first line to
       make sure that no function make use of any of the parameters included in
       the function definition.
     </p>
@@ -1066,7 +1066,7 @@ const humansAndRobots = [...humanCharacters, ...robotCharacters];
     <p className="essay__paragraph">
       Strict equality is impossible in ES5. You <strong>can</strong> do it on a global level
       with a polyfill, with a customized Object method (
-      <code>defineProperty</code>). But in a local scope it can't be done.
+      <code className="essay__code">defineProperty</code>). But in a local scope it can't be done.
     </p>
 
     <p className="essay__paragraph">
@@ -1095,9 +1095,9 @@ number === numberStr?
     </p>
 
     <p className="essay__paragraph">
-      But if you would replace <code> === </code> with <code> == </code> it
+      But if you would replace <code className="essay__code"> === </code> with <code className="essay__code"> == </code> it
       would print 'FALSE'. Because JavaScript is a dynamically typed it's
-      possible, if the variable declaration did not use <code>const</code>, to
+      possible, if the variable declaration did not use <code className="essay__code">const</code>, to
       re-define the data type:
       <Scrollbars autohide="true" style={{height:'110px'}}>
         <Editor
@@ -1942,20 +1942,20 @@ let str = \`Hello $\{name}!\`;
 
     <p className="essay__paragraph">
       JavaScript has data types of the same kind as most other programming
-      languages: <code>boolean</code>, <code>null</code>, <code>undefined</code>
-      ,<code>strings</code>, <code>numbers</code> and as of ES6 also{" "}
-      <code>symbols</code>. A contrast against for instance C or Rust, is that
+      languages: <code className="essay__code">boolean</code>, <code className="essay__code">null</code>, <code className="essay__code">undefined</code>
+      ,<code className="essay__code">strings</code>, <code className="essay__code">numbers</code> and as of ES6 also{" "}
+      <code className="essay__code">symbols</code>. A contrast against for instance C or Rust, is that
       JavaScript is a loosely typed language. You are not locked to the data
       type of your variable declaration; something that can be equally dynamic
       and useful as problematic and confusing.
     </p>
 
     <p className="essay__paragraph">
-      With ES6 it's possible to use <code>let</code> and <code>const</code>, as
-      well as the pre-ES6 <code>var</code> to declare values. The difference
+      With ES6 it's possible to use <code className="essay__code">let</code> and <code className="essay__code">const</code>, as
+      well as the pre-ES6 <code className="essay__code">var</code> to declare values. The difference
       resides in what scope the variable and its inherent value have. Also,
-      there is a difference between <code>let</code> and <code>const</code>,
-      <code>const</code> being (sort of) constant in most cases.
+      there is a difference between <code className="essay__code">let</code> and <code className="essay__code">const</code>,
+      <code className="essay__code">const</code> being (sort of) constant in most cases.
     </p>
 
     <h5 className="essay__container__sub_sub-header">Problem</h5>
@@ -2048,11 +2048,11 @@ let str = \`Hello $\{name}!\`;
     </p>
 
     <p className="essay__paragraph">
-      <code>let</code> and <code>const</code> have another scope than{" "}
-      <code>var</code>, or rather can have. This means that the blocks above
+      <code className="essay__code">let</code> and <code className="essay__code">const</code> have another scope than{" "}
+      <code className="essay__code">var</code>, or rather can have. This means that the blocks above
       would not be the same - or rather, that their 'meaning' would be another.
-      In the example below the <code>var</code> would actually be{" "}
-      <code>available</code>
+      In the example below the <code className="essay__code">var</code> would actually be{" "}
+      <code className="essay__code">available</code>
       for and identifying and can thus be assigned a parameter and
       unproblematically log:ed.
       <Scrollbars autohide="true" style={{height:'2 25px'}}>
@@ -2085,11 +2085,11 @@ let str = \`Hello $\{name}!\`;
 
     <p className="essay__paragraph">
       In the context of JavaScript, quite a few developers argue that there are
-      obvious advantages to the <code>let</code> keyword; you can <em>see</em> the
+      obvious advantages to the <code className="essay__code">let</code> keyword; you can <em>see</em> the
       limits for a declared value right away (or rather, more easily). One
-      could, however, make some kind of case for using <code>var</code> for
-      global values, even though this is also possible with <code>let</code> and{" "}
-      <code>const</code>.
+      could, however, make some kind of case for using <code className="essay__code">var</code> for
+      global values, even though this is also possible with <code className="essay__code">let</code> and{" "}
+      <code className="essay__code">const</code>.
     </p>
 
     <p className="essay__paragraph">
@@ -2110,7 +2110,7 @@ let str = \`Hello $\{name}!\`;
     <p className="essay__paragraph">
       While using JavaScript you can't highlight how to assign parameters
       explicitly with an asterisk. If you don't take special precautions when
-      copying an <code>Object</code>, you will end up with the scenario
+      copying an <code className="essay__code">Object</code>, you will end up with the scenario
       presented here, since the assignment implicitly will occur by reference:
     </p>
 
@@ -2170,12 +2170,12 @@ console.log(\`a: \$\{a.value}\`);
     <p className="essay__paragraph">
       <em>But nothing of this really changes everything</em>, partly because JavaScript
       is a loosely typed language. In all cases described above, we could
-      replace <code>let</code> and <code>const</code> with
-      <code>var</code>. The purpose with <code>let</code> and <code>const</code>{" "}
+      replace <code className="essay__code">let</code> and <code className="essay__code">const</code> with
+      <code className="essay__code">var</code>. The purpose with <code className="essay__code">let</code> and <code className="essay__code">const</code>{" "}
       would (of course) be lost, but that's not true for the opposite. To
-      translate from <code>var</code> to <code>let</code> and fully make use of
+      translate from <code className="essay__code">var</code> to <code className="essay__code">let</code> and fully make use of
       the advantages of
-      <code>let</code> would be complex; you would have to make a scope analysis
+      <code className="essay__code">let</code> would be complex; you would have to make a scope analysis
       and rearrange the code if it were to be truly meaningful. And even then
       these changes would only make sense to the human reader, not the 'ghost in
       the machine' (the interpreter). The advantage is only in the scoping.
@@ -2184,10 +2184,10 @@ console.log(\`a: \$\{a.value}\`);
     <p className="essay__paragraph">
       There <em>can</em> be a problem here though. Even though it is possible to reuse
       variable names, this would not be to recommend. Depending on the scope,
-      you can the same variable name declared with <code>let</code> or{" "}
-      <code>const</code> (i.e. for the index of a classic for-loop). Simply
-      converting each <code>let</code> and <code>const</code>
-      to <code>var</code> might cause problems, simply because the potential
+      you can the same variable name declared with <code className="essay__code">let</code> or{" "}
+      <code className="essay__code">const</code> (i.e. for the index of a classic for-loop). Simply
+      converting each <code className="essay__code">let</code> and <code className="essay__code">const</code>
+      to <code className="essay__code">var</code> might cause problems, simply because the potential
       problems would only stand in relation to the developers' intention. To put
       it plainly: the code would still run. This could, of course, be solved
       with some kind of re-naming strategy (if a name conflict arises, then
@@ -2228,7 +2228,7 @@ console.log(\`a: \$\{a.value}\`);
 
     <p className="essay__paragraph">
       To me, the purpose of the limited scoping and the immutability of{" "}
-      <code>const</code>(1) <em>is</em> the limits, that they establish limits
+      <code className="essay__code">const</code>(1) <em>is</em> the limits, that they establish limits
       lacking in JavaScript. This is also the case with TypeScript. Sometimes
       borders and limits make your life as a developer simpler, even though you{" "}
       <em>can</em> do without them.
@@ -2242,10 +2242,10 @@ console.log(\`a: \$\{a.value}\`);
 
     <p className="essay__paragraph">
       ---------- 1) Immutability can also - in modern JavaScript - be
-      accomplished with the <code>freeze</code> method of <code>Object</code>.
+      accomplished with the <code className="essay__code">freeze</code> method of <code className="essay__code">Object</code>.
       It is, however, possible to the same in ES5 by use of the{" "}
-      <code>defineProperty</code> in <code>Object.prototype</code>. Setting the
-      change-is-possible-flags to <code>false</code>, would include more of a
+      <code className="essay__code">defineProperty</code> in <code className="essay__code">Object.prototype</code>. Setting the
+      change-is-possible-flags to <code className="essay__code">false</code>, would include more of a
       ceremony though.
     </p>
 
@@ -2492,10 +2492,10 @@ console.log(\`a: \$\{a.value}\`);
     </p>
 
     <p className="essay__paragraph">
-      My point is that without haven drawn a map beforehand (before really
-      knowing the language), the architecture will soon be lost and a quite
-      random building process initiated.
-      https://homepage.cs.uri.edu/~thenry/resources/unix_art/ch01s06.html
+      My point is that without haven drawn a map beforehand, the architecture will soon be lost and a quite
+      random developing process initiated. I have yet to learn the 'practical' part of the Unix Philosophy. But
+      on a 'philosophical'-'theoretical' level I very much like the Unix Philosophy as described in 
+      Eric Raymonds <a href="https://homepage.cs.uri.edu/~thenry/resources/unix_art/ch01s06.html" title="https://homepage.cs.uri.edu/~thenry/resources/unix_art/ch01s06.html" className="essay__paragraph__link">The Art of Unix Programming</a>
     </p>
 
     <h5 className="essay__container__sub_sub-header">Difficulties</h5>
@@ -2551,8 +2551,9 @@ console.log(\`a: \$\{a.value}\`);
     </h5>
 
     <p className="essay__paragraph">
-      At first, I used the minimalistic library [Acorn
-      JS](https://github.com/acornjs/acorn). It seems great and I always enjoy
+      At first, I used the minimalistic library 
+<a href="https://github.com/acornjs/acorn" title="https://github.com/acornjs/acorn" className="essay__paragraph__link">
+Acorn JS</a>. It seems great and I always enjoy
       the writings of the open source developer Marijn Haverbeke, the main
       developer of the project. But the lack of good documentation and examples
       made it hard for me, being a junior developer. Otherwise, I much would
@@ -2720,7 +2721,7 @@ console.log(\`a: \$\{a.value}\`);
     <ul className="essay__list">
       <li className="essay__list__item">
         By using the Archaize JS NPM package and by using the functionality of{" "}
-        <code>makeAST</code> and <code>transpile</code>.
+        <code className="essay__code">makeAST</code> and <code className="essay__code">transpile</code>.
       </li>
 
       <li className="essay__list__item">
