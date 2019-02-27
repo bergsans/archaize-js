@@ -81,8 +81,9 @@
 
 .essay__blockquote {
     font-family: "Raleway", sans-serif;
-    padding: '25px';
-    line-height: '20px';
+    width: 500px;
+    margin: auto;
+    line-height: '22px';
     font-size: '16px'
 }
 
@@ -169,8 +170,9 @@
 
 .essay__blockquote {
     font-family: "Raleway", sans-serif;
-    padding: '25px';
-    line-height: '20px';
+    width: 500px;
+    margin: auto;
+    line-height: '22px';
     font-size: '16px'
 }
 }
@@ -204,7 +206,7 @@
   margin-top: 20px;
   width: 600px;
   text-align: justify;
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
   line-height: 30px;
 }
 
@@ -223,6 +225,10 @@
   margin: 600px;
   color: #37d800;
   font-family: "Raleway", sans-serif;
+}
+
+.essay__code {
+  color: #FFB300;
 }
 
 .essay__list {
@@ -252,9 +258,12 @@
 
 .essay__blockquote {
     font-family: "Raleway", sans-serif;
-    padding: '25px';
-    line-height: '20px';
-    font-size: '16px'
+    width: 500px;
+    margin: auto;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: justify;
+    color: #B6B6B6;
 }
 
 }
