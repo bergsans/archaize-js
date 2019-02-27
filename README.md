@@ -91,7 +91,7 @@ visit localhost:3000
 - /assets (images)
 - /examples (transpiled code snippets - before/after)
 - /src **>>> /helpers, /utils, /transpiler <<<**
-- /tests (Jest - main functionality)
+- /tests (Jest - main functionality & **EPIC BUGS**)
 - /text (essay on transpilers)
 
 
