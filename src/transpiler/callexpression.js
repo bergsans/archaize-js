@@ -2,7 +2,7 @@ function replaceCallExpression(node) {
   
 	let newNode = { ...node };	
 
-  if (newNode.arguments && newNode.arguments.find((el) => el.type === 'ArrowFunctionExpression')) {
+  if (newNode.arguments && newNode.arguments.some((el) => el.type === 'ArrowFunctionExpression')) {
     newNode.arguments.forEach((arg, i) => {    
       if (arg.body && arg.body.type !== 'BlockStatement') {
         let oldBody = { ...newNode.arguments[i].body };
