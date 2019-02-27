@@ -66,7 +66,7 @@ function replaceVariableDeclarations(node, ast) {
               arguments: [
                 {
                   type: 'Identifier',
-                  name: spread[0].argument.name
+                  name: spread[i].argument.name
                 },
                 {
                   type: 'ArrayExpression',
