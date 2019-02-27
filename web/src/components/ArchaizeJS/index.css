@@ -18,14 +18,14 @@ textarea {
   }
 
   .code__container {
-    width: 306px;
+    width: 300px;
     height: 500px;
     margin: auto;
   }
 
   .code__container__editor {
     height: 220px;
-    width: 270px;
+    width: 265px;
     word-break: break-all;
     overflow-y: scroll;
     margin: 1.67em 0;
@@ -37,7 +37,7 @@ textarea {
 
   .code__container__transpiled-code {
     height: 220px;
-    width: 270px;
+    width: 265px;
     word-break: break-all;
     overflow-y: scroll;
     margin: 1.67em 0;
