@@ -17,10 +17,12 @@ function replaceCallExpression(node) {
         };
         newNode.arguments[i].expression = false;
         newNode.arguments[i].body = newBody;
-      } else if(newNode.arguments && newNode.body) {
-        newNode.arguments[i].body.type = 'BlockStatement';
-      }  
-      newNode.arguments[i].type = 'FunctionExpression';
+      } 
+						//else if(arg) {
+    //    newNode.arguments[i].body.type = 'BlockStatement';
+   //   }  
+     // newNode.arguments[i].type = 'FunctionExpression';
+      arg.type = 'FunctionExpression';
     });
   } 
   newNode.arguments.forEach((arg, i) => {
