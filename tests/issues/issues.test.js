@@ -135,4 +135,11 @@ test('Use of second parameter in findIndex method', () => {
 
 });
 
+test('Composite function', () => {
+  const contentOfSnippet = readJSFile('tests/composites/snippets/mix_of_expressions_05.js');
+	const archaizedCode = transpile(contentOfSnippet);
+	const transpiledCode = ``;
+  expect(archaizedCode).toEqual(transpiledCode);
+
+});
 
