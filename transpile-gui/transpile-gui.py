@@ -6,11 +6,11 @@ import os
 
 root = Tk()
 
-canvas = Canvas(root, width=200, height=200)
+canvas = Canvas(root, width=250, height=50)
 canvas.pack()
 
-myLabel = Label(root, justify=LEFT, text="Archaize JS")
-myLabel.pack()
+myLabel = Label(root, text="Archaize JS v. 0.7")
+myLabel.pack(side=LEFT)
 
 def chooseFile():  
   filename = filedialog.askopenfilename(title="Select JS file", filetypes=(("JavaScript files", "*.js"), ("all files","*.*")))
@@ -26,8 +26,7 @@ def chooseFile():
     os.system(command)
   
 btn = Button(root, text ="Transpile file", bd=1, relief="ridge", command = chooseFile)
-btn.pack()
-
+btn.pack(side=RIGHT)
 
 root.mainloop()
 
