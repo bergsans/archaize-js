@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+# Dependencies
 from PIL import Image, ImageTk
 from tkinter import messagebox, filedialog
 from tkinter import Tk, Button, Label
@@ -26,13 +27,14 @@ def archaize(option, actionInfo):
     else:
         messagebox.showerror("Epic ERROR.", "Something went wrong.")
 
+# Fucntions for click events
 def clickTranspile():
     archaize("--transpile", " transpiled.")
 
 def clickAST():
     archaize("--ast", " saved as AST.")
 
-# Main 
+# Main function 
 root = Tk()
 
 image = Image.open("../assets/logo.png")
