@@ -25,7 +25,7 @@ def archaize(option):
       elif option == "--ast":
         action = "saved as AST"
       else:
-        action = "FAIL"
+        action = "INVALID OPTION (well, this SHOULD be impossible but...)"
       info_msg = "File {0:s}.".format(action)
       messagebox.showinfo("Success", info_msg)
     else: # Mind this! This checks ONLY for non-success exit codes.
