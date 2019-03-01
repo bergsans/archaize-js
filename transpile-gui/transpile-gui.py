@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 
-from tkinter import messagebox
-from tkinter import filedialog
-from tkinter import *
+from PIL import Image, ImageTk
+from tkinter import messagebox, filedialog
+
+from tkinter import Tk, Button, Canvas, Label
 import os
+
 
 def chooseFile():  
   filename = filedialog.askopenfilename(title="Select JS file", filetypes=(("JavaScript files", "*.js"), ("all files","*.*")))
@@ -28,11 +30,18 @@ root = Tk()
 canvas = Canvas(root, width=250, height=50)
 canvas.pack()
 
+
+image = Image.open("../assets/logo.png")
+display = ImageTk.PhotoImage(image)
+logo = Label(root, image=display)
+logo.pack()
+
+
 myLabel = Label(root, text="Archaize JS v. 0.7")
-myLabel.pack(side=LEFT)
+myLabel.pack()
 
 btn = Button(root, text ="Transpile file", command = chooseFile)
-btn.pack(side=RIGHT)
+btn.pack()
 
 root.mainloop()
 
