@@ -3,9 +3,9 @@
 
 ## Background. What's an arrow function?
 <pre>
-The advantage of fat arrows,  arrow functions because of the
-`=>`, resides in a) it's not as lengthy as a normal function
-and b) it's binding of (lexical) this.
+The  advantage  of fat arrows, arrow functions, is the `=>`, 
+resides in a)  it's not as  lengthy as a normal function and 
+b) it's binding of (lexical) this.
 
 An  arrow function  can be  expressed in  quite a  few ways.
 Beneath you'll  find some examples  on how you can  write an
@@ -80,9 +80,9 @@ The main difficulty handling  arrow functions in the context
 of a transpiler,  is that the arrow function can  be used in
 more  than  one context.  This  differentiates  it from  for
 instance  a  variable  declaration. An  arrow  function  can
-be  anonymous, a  parameter  of another  function and  will,
-therefore,  can  have  lots  of  diffent  locations  in  the
-hierarchy of the AST.
+be anonymous, a parameter of another function and therefore,  
+can  have  lots  of  diffent  locations  in the hierarchy of 
+the AST.
 
 In  actual  code,  this  makes  no  difference.  A  'normal'
 function also  have a name  (if it's not anonymous  and only

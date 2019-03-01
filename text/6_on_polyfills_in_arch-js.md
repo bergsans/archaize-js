@@ -19,9 +19,9 @@ speak  of  it  as  it  is one  thing  only  for  reasons  of
 convenience.  JavaScript is  interpreted  in real-time,  you
 can't compile it an end up with some sort of executable file
 (unless you make use of  some kind of 'external' framework).
-This true for the browser, as well as for Node.js. Sometimes
-it's  unclear what  actually  belongs to  the language,  and
-what's an 'alien' implementation.
+This  is true  for the  browser, as  well  as  for  Node.js. 
+Sometimes it's unclear what actually belong to the language,  
+and what's an 'alien' implementation.
 
 Can we  i.e. say that `addEventListener`,  a browser method,
 is a part  of JavaScript, `CreateEvent` in  Node.js are part
