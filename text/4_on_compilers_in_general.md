@@ -1,11 +1,11 @@
 # Overview. How compilers work
 <pre>
-A  compiler  consists of  two  parts:  analysis (front  end)
-and  synthesis (back  end).  Analysis of  the code  precedes
+A compiler consists of two major parts: analysis (front-end)
+and  synthesis (back-end).  Analysis of  the  code  precedes
 synthesis  in the  compiling process.  Before compiling  the
 source code  is broken  into parts, enforcing  a grammatical
 structure.   This   form   an  intermediate   structure   of
-'abstractions' (a abstract  syntax tree), representations of
+'abstractions' (an abstract syntax tree), representations of
 the source at hand.
 
 If   the   compiler   finds   that  the   source   code   is
@@ -14,7 +14,7 @@ and/or errors. If the source,  on the other hand, is correct
 (there  by not  guarteing it  actually works;  it can  still
 include  major bugs),  it  produces a  symbol table  storing
 data  present in  the code.  The synthesis  builds upon  the
-representations  and the  symbol table  from the  front end,
+representations  and the  symbol table  from the  front-end,
 producing a translation into a new code — the target code.
 
 I  will explain  in  more  detail the  inner  workings of  a
@@ -99,7 +99,7 @@ change  its  'meaning'  or 'intend',  but  re-structure  the
 code  to  another  'modality'.   That  modality  may  be  an
 executable file, a  file the user can run. It  may also be a
 transformation of the  code from a high-level  language to a
-low-level  language, an  Assembler language.  In that  case,
+low-level  language, an  Assembly  language.  In that  case,
 you'd need an Assembler to  actually interpret and 'run' the
 code, execute it. You  may or may or not also  make use of a
 Linker;  a  Linker  hides  this  relationship  so  the  user
@@ -165,8 +165,8 @@ part is not  mostly included in a transpiler.  In a compiler
 this  phase adopts  the source  code to  the machine,  so to
 speak. What's readable to us is not that important here; the
 focus  is to  make changes  that would  help the  machine to
-execude the code more efficient.  In the context of a normal
-computer, this  means that the optimization  focus on memory
+execude the code more efficiently. In the context of  normal
+computera, this means that the optimization  focus on memory
 and performance  (speed). If  the programming  language i.e.
 would include some kind of unneccessary abstraction it would
 be replaced with more 'concrete' code.
@@ -175,9 +175,9 @@ be replaced with more 'concrete' code.
 some sense.  But there is  a 'semantic gap' between  what we
 would  normally consider  readable and  the code  **of** the
 machine. At  the childhood  of computers,  enthusiasts would
-hardcode  these codes  to the  computer on  a pure  'system'
+'hardcode' these codes to the  computer on  a pure  'system'
 level. But  the lengthiness  of a programming  language like
-Assembler pales  in comparison with  that kind of  codes. It
+Assembler pales  in comparison with these kind of  codes. It
 would  be still,  I guess,  be  code since  it would  follow
 'rules', namely the  rules inherent in the  processor. I bet
 there would  be quite a  few ones  and zeros to  express the
