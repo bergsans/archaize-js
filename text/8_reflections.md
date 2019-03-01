@@ -1,7 +1,7 @@
 # Reflections
 <pre>
 As I state in the first chapter, I don't consider this essay
-being 'science'. This will be reflected in how I write about
+'scientific'. This  will  be  reflected in how I write about
 my project in  this chapter. I think of my  writings more as
 of 'documentation'  on how  I've worked,  and an  attempt to
 explain to myself (and others) how a transpiler works.
@@ -48,10 +48,10 @@ On  the other  hand, if  the behavior  is invalid  even more
 serious problem can emerge. I'm  not saying that some aspect
 is more important than another;  actually, I think there are
 good reasons to view applications  as wholes. All I'm saying
-that the 'gravity' of a bug,  I guess, could have a greater,
-more negative  impact if the  behavior would be  faulty. And
-that this, arguably, means that you make use of transpilers.
-And if you use transpilers, as with all things, there can be
+is that the 'gravity' of  a bug, could have a  greater, more 
+negative  impact if the  behavior would be  faulty. And that 
+this, arguably, means  that you make use of transpilers. And 
+if  you use  transpilers, as  with all  things, there can be 
 gains of knowing the process, so to speak.
 </pre>
 
@@ -159,7 +159,7 @@ ________________________________
 
 ## Difficulties
 <pre>
-A transpiler consists  of many parts, I  imagine being quite
+A transpiler consists  of  many parts I  imagine being quite
 hard to program. I've used  dependencies in every aspect for
 the  included steps  of  a transpiler,  beside the  Abstract
 Syntax Tree. To me, the AST  seems like the most fun part of
@@ -265,12 +265,12 @@ important,  I've been  fortunate  enough to  grow very  fond
 of  compilers/transpilers. Also,  I  think that  transpilers
 (especially understanding Abstract Syntax  Trees and be able
 to  manipulate  them) are  very  useful,  even to  a  junior
-developer. Ok, I know this can be included in, for instance,
-ESLint  but  you have  the  ability  to write  'logic'  that
+developer. Ok, I know that his is included in, for instance,
+ESLint   but  you gain the  ability  to write  'logic'  that
 identifies console  logs, warns about un-used  variables and
-so on. Depending on your  project, you could tailor this and
-make  the  'search  and replace'-pattern  specific  to  your
-project. Not bad.
+so on - by your self. Depending  on your  project, you could 
+tailor  this   and  make  the  'search  and replace'-pattern  
+specific  to  your project. Not bad.
 
 
 
