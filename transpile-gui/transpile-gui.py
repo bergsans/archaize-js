@@ -6,7 +6,7 @@ from tkinter import Tk, Button, Label
 import os
 
 # Funcion archaize
-def archaize(option):  
+def archaize(option, actionInfo):  
     filename = filedialog.askopenfilename(title="Select JS file", filetypes=(("JavaScript files", "*.js"), ("all files","*.*")))
     if len(filename) == 0:
         return messagebox.showwarning("No file selected", "No transpilation :(")    
@@ -19,24 +19,18 @@ def archaize(option):
     command_to_os = "../src/archaize.js -i {0:s} -o {1:s} {2:s}".format(filename, new_file, option)
     result = os.system(command_to_os)
     
-    if result == 0: # Mind this! This only checks the programs exit code and say nothing about the success and failure per se.
-
-        if option == "--transpile":
-            action = "file transpiled" 
-        else: 
-            action = "saved as AST"
-  
-        info_msg = "File {0:s}.".format(action)
+    # Mind this: only checks exit code (something else than success/fail of transpilation)
+    if result == 0:
+        info_msg = "File {0:s}.".format(actionInfo)
         messagebox.showinfo("Success", info_msg)
-    
-    else: # Mind this! This checks ONLY for non-success exit codes.
+    else:
         messagebox.showerror("Epic ERROR.", "Something went wrong.")
 
 def clickTranspile():
-    archaize("--transpile")
+    archaize("--transpile", " transpiled.")
 
 def clickAST():
-    archaize("--ast")
+    archaize("--ast", " saved as AST.")
 
 # Main 
 root = Tk()
