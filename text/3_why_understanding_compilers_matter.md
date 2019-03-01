@@ -7,9 +7,9 @@ importance of the subject itself. Much of the last centuries
 debate in  the philosophy  and the social  sciences revolved
 around  questions on  the value  of a  certain pursuit.  The
 general  consensus,  I  think,  was that  there  are  better
-reasons to the  relativize these matters and  relate them to
+reasons  to relativize  these matters  and   relate them  to
 social norms  than to ignore these  matters. Your scientific
-pursuit might be pure(although it's  likely not, or at least
+pursuit might be pure (although it's likely not, or at least
 partly not), but the consequences  of the same pursuit might
 lead to things you did not wish for. Sometimes the pale cast
 of thought  - to contradict  the Hamlet of Shakespeare  - is
@@ -17,7 +17,7 @@ quite good.
 
 In  the  year  2019,  transpilers are  more  important  than
 ever.  And  why?  Because  we  need  and  want  the  Web  to
-be  inclusive,  and  in  the   context  ofthe  Web  and  Web
+be  inclusive,  and  in  the   context of the  Web  and  Web
 development this is spelled backward compatibility. This has
 also  been the  spirit  of the  Web  since its  origination.
 As  Tim   Berners-Lee,the  inventor  of  the   Web,  [stated
