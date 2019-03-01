@@ -11,7 +11,7 @@ transpiler will  have great similarities with  projects like
 Babel.js. In fact, Babel.js has  been the point in the skies
 I navigate towards, a North  star in the realm of JavaScript
 transpilers. I  will concentrate  my energy on  the Abstract
-Syntax Tree, to most interesting part, of a transpiler since
+Syntax Tree, the most interesting part of a transpiler since
 it's the 'hub' or 'nave' of the semantics - if you will, the
 'logic' - in the process of transpiling source code.
 
@@ -45,7 +45,7 @@ strive to find patterns; a pattern is general in some sense,
 and I hypothesize  that if I can find such  a pattern (for a
 given feature) I'll be able to produce rules for translating
 ES6  to ES5.  The  rules produced  is not  by  any means  in
-themselves  to be  thought of  as 'necessary'.  Although the
+themselves  to be  thought of  as 'necessary',  although the
 expected output must be accurate. Another set of rules would
 be able to produce the same output.
 
@@ -53,7 +53,8 @@ I've chosen an experimental  take on the problem. Confronted
 with a problem, I've formulated some code covering a certain
 problem. Then  I've compared the  syntax trees of  both code
 snippets using  the BASH  applications diff and  sdiff. I've
-also used Vims -d flag (`$vim -d file1.ast file2.asti`).
+also used Vims -d flag (`$vim -d file1.ast file2.asti`)  and
+vimdiff.
 </pre>
 
 #### Outline of Strategy
@@ -62,7 +63,7 @@ also used Vims -d flag (`$vim -d file1.ast file2.asti`).
 * Write code covering a feature of ES6 not included in ES5
 * Compare differences in the syntax tree
 * Establish  rules that would be  necessary for transforming
-differences in way  that would produce the  same end result,
+differences in a way that would produce the same end result,
 identical output.
 * Write code rules for transformation -> transform!
 </pre>
@@ -135,7 +136,7 @@ texts Online written  in the context of JavaScript  on how a
 transpiler is  configured, combining concrete  code examples
 with 'theory'.  There are  quite a few  texts on  Babel, but
 none of  them really  deals with examples  and only  in very
-general terms explain the meaning of compilers.
+general terms explain the meaning of compilers/transpilers.
 
 
 
