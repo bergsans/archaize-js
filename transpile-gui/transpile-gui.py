@@ -2,7 +2,7 @@
 
 from PIL import Image, ImageTk
 from tkinter import messagebox, filedialog
-from tkinter import Tk, Button, Canvas, Label
+from tkinter import Tk, Button, Label
 import os
 
 # Funcion archaize
@@ -34,16 +34,10 @@ def archaize(option):
 # Main 
 root = Tk()
 
-canvas = Canvas(root, width=250, height=50)
-canvas.pack()
-
 image = Image.open("../assets/logo.png")
 display = ImageTk.PhotoImage(image)
 logo = Label(root, image=display)
 logo.pack()
-
-infoOnArchaizeJS = Label(root, text="Archaize JS v. 0.7")
-infoOnArchaizeJS.pack()
 
 btnTranspile = Button(root, text ="Transpile file", command = lambda:archaize("--transpile"))
 btnTranspile.pack()
