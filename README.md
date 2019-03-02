@@ -84,7 +84,11 @@ cd web && npm install && npm run start
 visit localhost:3000
 
 ```
+#### GUI
 
+```
+python3 /transpile-gui/transpile-gui.py
+```
 
 ## Folder structure
 
