@@ -1,7 +1,7 @@
 # APPENDIX
 
 
-## Archaize JS dependencies
+### Archaize JS dependencies
 <pre>
 From package.json:
 
@@ -23,10 +23,10 @@ From package.json:
 
 **The man dependency is Esprima.**
 
+
+
 </pre>
-
-
-### On CLI's
+#### On CLI's
 <pre>
 CLI  is an  acronym for  Command-line Interface.  A CLI  can
 include aspects of a GUI, a Graphical User Interface, but is
@@ -68,18 +68,19 @@ application. *Do one thing and do it well.* If you see to it
 that the application is  'linkable', that other applications
 can  'pipe' it,  you've created  a  small part  of a  larger
 eco-system.
+
+
 </pre>
-
-
-## Archaize JS Web solution dependencies
+### Archaize JS Web solution dependencies
 <pre>
 The Web solution uses Node.js,  Express and Socket.io on the
 back-end. As view-layer on the  front-end, I use React. I've
 used WebPack/Babel.js in the build process.
+
+
+
 </pre>
-
-
-## Trivia
+### Trivia
 <pre>
 The notions  of transpiler  is old  as one  understands from
 this cover:
