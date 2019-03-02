@@ -63,7 +63,7 @@ the best way to gain a deeper understanding is often said to
 Do It Yourself.
 
 To me, this  means that you must acquire  both a theoretical
-understanding  of the  subject  matter as  well,  as do  the
+understanding  of  the  subject  matter as  well  as do  the
 required programming.  Otherwise, you'll fumble in  the dark
 and can't communicate what you do; I would even say that you
 don't know what you're doing - theory matters.

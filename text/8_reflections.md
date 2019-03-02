@@ -11,16 +11,16 @@ explain to myself (and others) how a transpiler works.
 ## An anecdote, and (again) on why transpillers matters
 <pre>
 As a developer, I like to have the latest version of Node.js
-at hand. During the project,  my computer crashed, and I had
-to resort  to another computer  at home. I've not  used this
-computer for programming  for a long time or  had not anyway
-installed a new version of Node.js (11.x). When I cloned the
-GitHub repo and  ran the tests some of them  failed. I could
-at first  not understand  why, but later  I realized  that I
-had  used a  new feature  of  Node.js from  the latest  ECMA
-Specification (.flat).  This method  is not a  fancy feature
-(it flattens multidimensional arrays), but it's a convenient
-feature that makes your life easier.
+at hand. During  the project  my computer crashed, and I had
+to resort to another computer, a computer  I've not used for
+programming for a year and lacked a new Node.js (11.x). 
+
+When I cloned the GitHub repo and ran the tests some of them  
+failed.  I could  at first not understand  why, but later  I 
+realized that I had used a  new feature of Node.js from  the 
+latest  ECMA  Specification  (.flat). This method  is  not a  
+fancy feature (it flattens multidimensional arrays), but  it 
+is a convenient feature that makes your life easier.
 
 Because I  worked with  a transpiler  of my  own, I  had not
 included Babel.js  in some  sort of  build process  as you'd
@@ -77,7 +77,7 @@ when  running  the  tests  - facing  the  insight  that  the
 specific problem was solved  but that the solution generated
 errors in code  that earlier was fully  'functional'. In the
 codes of  programming languages, things  are interconnected,
-and it  would be  vain to even  try calculated  what ripples
+and it  would be vain to even try to calculate  what ripples
 might arise from a change to the codebase. Surely this would
 possible (compilers  arose before testing, I  think) but the
 time lost  on such an  endeavor -  if it would  be something
@@ -102,7 +102,7 @@ would have been even more flawed.
 I can't say I've been able  to follow the principles I state
 below but  would have wanted  to; actually, I  believe these
 principles from the Unix  philosophy, interpreted by Eric S.
-Raymond in Basics of the  Unix Philosophy(*), focus the main
+Raymond in Basics of the  Unix Philosophy(1), focus the main
 problem of my code.
 
 ```
@@ -142,19 +142,25 @@ or... (don't mind the examples being silly)
 if(1 === 1) {}
 ```
 
-But... this is also correct JavaScript:
+But... this is also 'correct' JavaScript:
 function someFunc(one = 1 === 1) {
 console.log(one);
 }
 someFunc(); // true
+
+It is 'correct', but at the same time 'strange'. But this is
+only me being a human, some sort of fleshy  existence with a
+limited intellect. My main point is that 'intention'  and so
+on makes no sense to a computer. Further, it doesn't  matter
+to the compiler if something is elegant, speedy, readable.
 
 My  point  is that  without  haven  drawn a  map  beforehand
 (before really knowing the  language), the architecture will
 soon be lost and a quite random building process initiated.
 </pre>
 
-________________________________
-* https://homepage.cs.uri.edu/~thenry/resources/unix_art/ch01s06.html
+___
+1) https://homepage.cs.uri.edu/~thenry/resources/unix_art/ch01s06.html
 
 
 ## Difficulties

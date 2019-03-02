@@ -4,7 +4,10 @@ The  big  question I  stated  in  the first  chapter  really
 doesn't get an  answer in this text. I  need more experience
 and gain a deeper understanding of  the process at work in a
 compiler  or  transpiler,  to  explain  everything  in  more
-detail.
+detail. As  I've  state  before,  I  believe that theory and 
+practice goes best together. Therefore, if one would want to
+grasp how a compiler works it's essential to  code one. This 
+is also a long-term goal of mine.
 
 The main question  of this essay is how  the Abstract Syntax
 Tree  of  a  transpiler  works.  I  have  partly  implicitly

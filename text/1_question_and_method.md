@@ -53,7 +53,7 @@ I've chosen an experimental  take on the problem. Confronted
 with a problem, I've formulated some code covering a certain
 problem. Then  I've compared the  syntax trees of  both code
 snippets using  the BASH  applications diff and  sdiff. I've
-also used Vims -d flag (`$vim -d file1.ast file2.asti`)  and
+also  used Vims -d flag (`$vim -d file1.ast file2.ast`)  and
 vimdiff.
 </pre>
 

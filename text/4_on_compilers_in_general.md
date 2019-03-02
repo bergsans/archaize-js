@@ -5,7 +5,7 @@ and  synthesis (back-end).  Analysis of  the  code  precedes
 synthesis  in the  compiling process.  Before compiling  the
 source code  is broken  into parts, enforcing  a grammatical
 structure.   This   form   an  intermediate   structure   of
-'abstractions' (an abstract syntax tree), representations of
+'abstractions' (an Abstract Syntax Tree), representations of
 the source at hand.
 
 If   the   compiler   finds   that  the   source   code   is

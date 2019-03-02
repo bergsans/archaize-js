@@ -1,6 +1,6 @@
 # The Abstract Syntax Tree
 <pre>
-In this  project, the real  work begins *after* -  or rather
+In this  project, the real  work  begins *after*,  or rather
 *with* the Abstract Syntax Tree, AST, since Archaize JS make
 use   of   [Esprima](https://www.npmjs.com/package/esprima).
 Let's begin by explaining what comes before an AST.
@@ -22,10 +22,10 @@ console.log(`2 + 2 = ${addNums(2, 2)}`);
 
 <pre>
 Esprima includes both a lexical analyzer (a tokenizer) and a
-syntax  analyzer (another  word for  AST). Somewhere  in its
-inner workings, it  starts out with by  performing a lexical
-analysis of  the code  (["function", "addNums",  "(", "...",
-"nums", ")" ...]).
+syntax   analyzer (another  word   for  AST, well what comes 
+before). Somewhere in its inner workings, it starts out with 
+by  performing a lexical analysis of  the code (["function", 
+"addNums",  "(", "...", "nums", ")" ...]).
 
 A  lexical analysis  breaks down  the code  into atoms,  the
 smallest possible semantic  unit of the code,  and creates a
